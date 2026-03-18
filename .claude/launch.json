@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "GPC Website",
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["/Users/tg/Desktop/Webseite-GPC/node_modules/.bin/next", "dev"],
+      "env": { "PATH": "/usr/local/bin:/usr/bin:/bin" },
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}
