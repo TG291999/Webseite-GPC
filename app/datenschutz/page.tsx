@@ -227,6 +227,7 @@ export default function DatenschutzPage() {
             </p>
           </section>
 
+          <section>
             <h3 className="text-sm font-semibold mb-2" style={{ color: "#1A1A1A" }}>
               Haftung für Inhalte
             </h3>
