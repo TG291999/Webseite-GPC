@@ -1,37 +1,68 @@
-import type { Metadata, Viewport } from 'next'
-import { Playfair_Display, DM_Sans } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata, Viewport } from "next"
+import { Inter, Source_Serif_4 } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import "./globals.css"
 
-const playfair = Playfair_Display({ 
+const inter = Inter({
   subsets: ["latin"],
-  variable: '--font-serif',
-  display: 'swap',
+  variable: "--font-inter",
+  display: "swap",
 })
 
-const dmSans = DM_Sans({ 
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
-  variable: '--font-sans',
-  display: 'swap',
+  style: ["normal", "italic"],
+  variable: "--font-source-serif",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: 'Goebel & Partner Consulting | Strategieberatung & Softwareentwicklung',
-  description: 'Ich berate nicht nur – ich baue die Lösung selbst. Prozessoptimierung, Strategieberatung, individuelle Softwareentwicklung und KI-Integration für den deutschen Mittelstand.',
-  keywords: ['Unternehmensberatung', 'Softwareentwicklung', 'KI-Integration', 'Prozessoptimierung', 'Strategieberatung', 'Mittelstand', 'Deutschland'],
-  authors: [{ name: 'Tim Goebel' }],
-  creator: 'Tim Goebel',
+  metadataBase: new URL("https://www.goebel-partner.de"),
+  title: "Automatisierung für Hausverwaltungen – ohne Systemwechsel | GPC",
+  description:
+    "Wir geben Hausverwaltungen ihre Sachbearbeiter zurück — durch strukturierte Prozesse, Automatisierung und KI in Ihrer bestehenden Software. Jetzt kostenlose Analyse sichern.",
+  keywords: [
+    "Hausverwaltung Automatisierung",
+    "Prozesse digitalisieren Hausverwaltung",
+    "E-Mail-Flut Hausverwaltung",
+    "KI Hausverwaltung ohne Systemwechsel",
+    "Domus Automatisierung",
+    "Immoware24 Automatisierung",
+  ],
+  authors: [{ name: "Tim Goebel" }],
+  creator: "Tim Goebel",
+  publisher: "Goebel & Partner Consulting",
+  robots: { index: true, follow: true },
   openGraph: {
-    title: 'Goebel & Partner Consulting',
-    description: 'Strategieberatung & Softwareentwicklung aus einer Hand',
-    type: 'website',
-    locale: 'de_DE',
+    type: "website",
+    locale: "de_DE",
+    siteName: "Goebel & Partner Consulting",
+    url: "https://www.goebel-partner.de/",
+    title: "Die meisten starten mit KI. Wir starten mit Struktur.",
+    description:
+      "Weniger E-Mail-Flut, weniger Telefon-Stress, entlastete Sachbearbeiter — ohne neues ERP und ohne IT-Projekt. Kostenlose 30-Minuten-Analyse für Hausverwaltungen mit 8–25 Mitarbeitern.",
+    // TODO: OG-Bild unter /public/og-image.png ablegen (1200×630, eigenes Motiv in Markenfarben, kein Stockfoto).
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Goebel & Partner Consulting — Struktur, Automatisierung und KI für Hausverwaltungen",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Die meisten starten mit KI. Wir starten mit Struktur.",
+    description:
+      "Kostenlose 30-Minuten-Automatisierungs-Analyse für Hausverwaltungen — ohne Systemwechsel.",
+    images: ["/og-image.png"],
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#1B5E3B',
-  width: 'device-width',
+  themeColor: "#FAF7F1",
+  width: "device-width",
   initialScale: 1,
 }
 
@@ -41,8 +72,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="de" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className="font-sans antialiased">
+    <html
+      lang="de"
+      className={`${inter.variable} ${sourceSerif.variable}`}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
+      <body>
+        {/* Ohne JavaScript bleiben Reveal-Elemente sichtbar */}
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         {children}
         <Analytics />
       </body>

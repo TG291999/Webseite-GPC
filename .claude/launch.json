@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "GPC Website",
-      "runtimeExecutable": "/usr/local/bin/node",
-      "runtimeArgs": ["/Users/tg/Desktop/Webseite-GPC/node_modules/.bin/next", "dev"],
+      "runtimeExecutable": "/usr/local/bin/npm",
+      "runtimeArgs": ["run", "dev"],
       "env": { "PATH": "/usr/local/bin:/usr/bin:/bin" },
       "port": 3000,
       "autoPort": true

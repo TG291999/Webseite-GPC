@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer"
 export const metadata = {
   title: "Datenschutzerklärung – Goebel & Partner Consulting",
   description: "Datenschutzerklärung gemäß DSGVO für Goebel & Partner Consulting.",
+  alternates: { canonical: "/datenschutz" },
 }
 
 export default function DatenschutzPage() {
@@ -11,259 +12,197 @@ export default function DatenschutzPage() {
     <>
       <Navigation />
 
-      <main className="bg-white pt-32 pb-20">
-        <div className="mx-auto max-w-[800px] px-6">
-          {/* Header */}
-          <p
-            className="text-xs font-semibold uppercase tracking-widest mb-4"
-            style={{ color: "#B8963E" }}
-          >
-            Rechtliches
-          </p>
-          <h1
-            className="font-serif text-4xl md:text-5xl font-semibold mb-6"
-            style={{ color: "#1A1A1A" }}
-          >
-            Datenschutzerklärung
-          </h1>
-          <p className="text-sm mb-12" style={{ color: "#6B7280" }}>
-            Stand: März 2026
+      <main className="legal bg-canvas">
+        <div className="container legal-wrap">
+          <p className="eyebrow">Rechtliches</p>
+          <h1>Datenschutzerklärung</h1>
+          <p className="legal-date">Stand: Juni 2026</p>
+
+          <p>
+            Der Schutz Ihrer personenbezogenen Daten ist mir wichtig. Nachfolgend informiere ich Sie
+            gemäß der Datenschutz-Grundverordnung (DSGVO) darüber, welche Daten beim Besuch dieser
+            Website verarbeitet werden. Diese Website verarbeitet personenbezogene Daten so sparsam
+            wie möglich.
           </p>
 
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
+          <hr />
 
-          {/* 1. Verantwortlicher */}
-          <section className="mb-12">
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              1. Verantwortlicher
-            </h2>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
-              Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze sowie sonstiger datenschutzrechtlicher Bestimmungen ist:
-            </p>
-            <address className="not-italic text-sm leading-relaxed" style={{ color: "#374151" }}>
-              <strong>Goebel & Partner Consulting</strong><br />
-              Tim Goebel<br />
-              Hilgenloh 19<br />
-              44379 Dortmund<br />
-              Deutschland<br /><br />
-              E-Mail:{" "}
-              <a
-                href="mailto:info@goebel-partner.de"
-                className="underline transition-colors hover:text-primary"
-                style={{ color: "#1B5E3B" }}
-              >
-                info@goebel-partner.de
-              </a><br />
-              Telefon: [Platzhalter]
-            </address>
-          </section>
+          <h2>1. Verantwortlicher</h2>
+          <p>
+            Verantwortlicher im Sinne der DSGVO und anderer nationaler Datenschutzgesetze ist:
+          </p>
+          <address>
+            Goebel &amp; Partner Consulting<br />
+            Inhaber Tim Goebel<br />
+            Hilgenloh 19<br />
+            44379 Dortmund<br />
+            Deutschland<br />
+            <br />
+            Telefon: <a href="tel:+491726932222">0172 - 693 22 22</a>
+            <br />
+            E-Mail: <a href="mailto:tim@goebel-partner.de">tim@goebel-partner.de</a>
+          </address>
 
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
+          <hr />
 
-          {/* 2. Erhebung und Speicherung personenbezogener Daten */}
-          <section className="mb-12">
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              2. Erhebung und Speicherung personenbezogener Daten
-            </h2>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
-              Beim Besuch der Website werden automatisch Informationen durch den Browser übermittelt (Server-Log-Files): Browsertyp und -version, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage, IP-Adresse. Diese Daten sind nicht bestimmten Personen zuordenbar und werden nicht mit anderen Datenquellen zusammengeführt.
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
-              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Bereitstellung der Website).
-            </p>
-          </section>
+          <h2>2. Aufruf der Website &amp; Server-Logfiles</h2>
+          <p>
+            Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch Informationen
+            verarbeitet, die Ihr Browser übermittelt (Server-Logfiles): Browsertyp und -version,
+            verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der
+            Serveranfrage sowie die IP-Adresse. Diese Daten dienen ausschließlich der technischen
+            Bereitstellung, der Sicherheit und Stabilität der Website und werden nicht mit anderen
+            Datenquellen zusammengeführt.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+            der sicheren und stabilen Bereitstellung der Website).
+          </p>
 
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
+          <hr />
 
-          {/* 3. Kontaktformular */}
-          <section className="mb-12">
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              3. Kontaktformular
-            </h2>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
-              Wenn Sie das Kontaktformular nutzen, werden folgende Daten erhoben: Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Ihr Anliegen sowie optional die Quelle Ihres Besuchs. Diese Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
-              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen). Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind.
-            </p>
-          </section>
+          <h2>3. Hosting</h2>
+          <p>
+            Diese Website wird bei <strong>Vercel Inc.</strong> (340 S Lemon Ave #4133, Walnut, CA
+            91789, USA) gehostet. Vercel verarbeitet dabei die unter Ziffer 2 genannten Zugriffsdaten
+            in unserem Auftrag. Mit Vercel besteht ein Vertrag zur Auftragsverarbeitung (Art. 28
+            DSGVO). Soweit dabei Daten in die USA übertragen werden, erfolgt dies auf Grundlage der
+            EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).
+          </p>
+          <p>
+            Weitere Informationen:{" "}
+            <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+              vercel.com/legal/privacy-policy
+            </a>
+          </p>
 
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
+          <hr />
 
-          {/* 4. Hosting – aktualisiert */}
-          <section className="mb-12">
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              4. Hosting
-            </h2>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
-              Diese Website wird bei <strong>Vercel Inc.</strong> (340 S Lemon Ave #4133, Walnut, CA 91789, USA) gehostet. Vercel kann bei Aufruf der Website Zugriffsdaten erheben. Der Datentransfer in die USA wird auf Basis von EU-Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO abgesichert.
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
-              Weitere Informationen finden Sie in der Datenschutzerklärung von Vercel:{" "}
-              <a
-                href="https://vercel.com/legal/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline transition-colors hover:text-primary"
-                style={{ color: "#1B5E3B" }}
-              >
-                https://vercel.com/legal/privacy-policy
+          <h2>4. Reichweitenmessung (Vercel Web Analytics)</h2>
+          <p>
+            Zur Verbesserung der Website nutze ich <strong>Vercel Web Analytics</strong>. Dieser
+            Dienst arbeitet <strong>ohne Cookies</strong> und ohne die Bildung von wiedererkennbaren
+            Nutzerprofilen. Es werden anonymisierte Nutzungsdaten (z. B. aufgerufene Seiten, grobe
+            Herkunftsregion, Gerätetyp) erfasst, ohne dass diese einer bestimmten Person zugeordnet
+            werden können. Eine Einwilligung über ein Cookie-Banner ist daher nicht erforderlich.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+            einer datensparsamen Reichweitenmessung).
+          </p>
+
+          <hr />
+
+          <h2>5. Schriftarten</h2>
+          <p>
+            Die verwendeten Schriftarten (Inter, Source Serif 4) werden lokal von diesem Server
+            ausgeliefert und beim Seitenaufruf <strong>nicht</strong> von externen Servern (etwa
+            Google Fonts) nachgeladen. Es findet dadurch keine Übertragung Ihrer IP-Adresse an
+            Dritte zum Zweck der Schriftbereitstellung statt.
+          </p>
+
+          <hr />
+
+          <h2>6. Terminbuchung (zcal)</h2>
+          <p>
+            Für die Vereinbarung der kostenlosen Analyse nutze ich den Dienst <strong>zcal</strong>{" "}
+            (zcal.co). Wenn Sie auf den Buchungs-Button klicken, werden Sie auf eine Seite von zcal
+            weitergeleitet. Erst dort von Ihnen eingegebene Daten (z. B. Name, E-Mail-Adresse,
+            gewünschter Termin) werden zur Vereinbarung und Durchführung des Termins verarbeitet.
+            Dabei können Daten auch in Drittländer übertragen werden; eine Absicherung erfolgt über
+            die EU-Standardvertragsklauseln.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Durchführung
+            vorvertraglicher Maßnahmen auf Ihre Anfrage). Es gilt zusätzlich die
+            Datenschutzerklärung von zcal:{" "}
+            <a href="https://zcal.co/privacy" target="_blank" rel="noopener noreferrer">
+              zcal.co/privacy
+            </a>
+            .
+          </p>
+
+          <hr />
+
+          <h2>7. Kontaktaufnahme per E-Mail oder Telefon</h2>
+          <p>
+            Wenn Sie mich per E-Mail oder Telefon kontaktieren, werden Ihre Angaben zur Bearbeitung
+            der Anfrage und für mögliche Anschlussfragen gespeichert. Diese Daten gebe ich nicht ohne
+            Ihre Einwilligung weiter.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Anbahnung oder Erfüllung
+            eines Vertrags) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+            Beantwortung Ihrer Anfrage). Die Daten werden gelöscht, sobald sie für die Erreichung des
+            Zwecks nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten
+            entgegenstehen.
+          </p>
+
+          <hr />
+
+          <h2>8. Cookies</h2>
+          <p>
+            Diese Website verwendet ausschließlich technisch notwendige Cookies, soweit sie für den
+            Betrieb erforderlich sind. Es werden keine Tracking-, Werbe- oder Analyse-Cookies
+            eingesetzt. Eine Einwilligung ist daher nicht erforderlich (Art. 6 Abs. 1 lit. f DSGVO).
+          </p>
+
+          <hr />
+
+          <h2>9. Ihre Rechte</h2>
+          <p>Sie haben im Rahmen der gesetzlichen Vorgaben jederzeit das Recht auf:</p>
+          <ul>
+            <li>Auskunft über Ihre verarbeiteten Daten (Art. 15 DSGVO)</li>
+            <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+            <li>Löschung (Art. 17 DSGVO)</li>
+            <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+            <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+            <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+          </ul>
+          <p>
+            Zur Ausübung Ihrer Rechte genügt eine Nachricht an{" "}
+            <a href="mailto:tim@goebel-partner.de">tim@goebel-partner.de</a>. Soweit eine
+            Verarbeitung auf einer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für
+            die Zukunft widerrufen.
+          </p>
+
+          <hr />
+
+          <h2>10. Beschwerderecht</h2>
+          <p>
+            Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für
+            mich zuständige Behörde ist:
+          </p>
+          <div className="legal-card">
+            <address>
+              <strong>Landesbeauftragte für Datenschutz und Informationsfreiheit
+              Nordrhein-Westfalen (LDI NRW)</strong>
+              <br />
+              Postfach 20 04 44, 40102 Düsseldorf
+              <br />
+              <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener noreferrer">
+                www.ldi.nrw.de
               </a>
-            </p>
-          </section>
+            </address>
+          </div>
 
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
+          <hr />
 
-          {/* 5. Cookies – aktualisiert */}
-          <section className="mb-12">
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              5. Cookies
-            </h2>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
-              Diese Website verwendet ausschließlich technisch notwendige Cookies. Es werden keine Tracking-Cookies, Werbe-Cookies oder Cookies für Analysezwecke eingesetzt. Eine Einwilligung ist daher nicht erforderlich (Art. 6 Abs. 1 lit. f DSGVO).
-            </p>
-          </section>
+          <h2>11. Datensicherheit</h2>
+          <p>
+            Diese Website nutzt eine TLS-Verschlüsselung (erkennbar am „https" in der Adresszeile),
+            um die Übertragung Ihrer Daten zu schützen.
+          </p>
 
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
+          <hr />
 
-          {/* 6. Social-Media-Plugins */}
-          <section className="mb-12">
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              6. Social-Media-Plugins und externe Links
-            </h2>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
-              Auf dieser Website werden <strong>keine Social-Media-Plugins mit Tracking</strong> eingesetzt. Sofern Links zu meinen Profilen in sozialen Netzwerken vorhanden sind, handelt es sich um einfache Verlinkungen ohne eingebettete Tracking-Funktionen.
-            </p>
-          </section>
-
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
-
-          {/* 7. Ihre Rechte */}
-          <section className="mb-12">
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              7. Ihre Rechte
-            </h2>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
-              Sie haben das Recht auf:
-            </p>
-            <ul className="text-sm leading-relaxed mb-4 list-disc list-inside space-y-2" style={{ color: "#374151" }}>
-              <li><strong>Auskunft</strong> (§ 15 DSGVO)</li>
-              <li><strong>Berichtigung</strong> (§ 16 DSGVO)</li>
-              <li><strong>Löschung</strong> (§ 17 DSGVO)</li>
-              <li><strong>Einschränkung der Verarbeitung</strong> (§ 18 DSGVO)</li>
-              <li><strong>Datenübertragbarkeit</strong> (§ 20 DSGVO)</li>
-              <li><strong>Widerspruch</strong> gegen die Verarbeitung (§ 21 DSGVO)</li>
-            </ul>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
-              Zur Ausübung Ihrer Rechte wenden Sie sich an: <strong>info@goebel-partner.de</strong>
-            </p>
-          </section>
-
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
-
-          {/* 8. Beschwerderecht */}
-          <section className="mb-12">
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              8. Beschwerderecht
-            </h2>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
-              Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für Nordrhein-Westfalen zuständige Aufsichtsbehörde ist:
-            </p>
-            <div className="p-4 rounded-lg border" style={{ backgroundColor: "#F8F7F4", borderColor: "#1B5E3B" }}>
-              <address className="not-italic text-sm leading-relaxed" style={{ color: "#374151" }}>
-                <strong>Landesbeauftragte für Datenschutz und Informationsfreiheit</strong><br />
-                <strong>Nordrhein-Westfalen (LDI NRW)</strong><br />
-                Postfach 20 04 44<br />
-                40102 Düsseldorf<br /><br />
-                <a
-                  href="https://www.ldi.nrw.de"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline transition-colors hover:text-primary"
-                  style={{ color: "#1B5E3B" }}
-                >
-                  www.ldi.nrw.de
-                </a>
-              </address>
-            </div>
-          </section>
-
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
-
-          {/* 9. Aktualität dieser Datenschutzerklärung */}
-          <section className="mb-12">
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              9. Aktualität und Änderung dieser Datenschutzerklärung
-            </h2>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
-              Diese Datenschutzerklärung ist aktuell gültig. Durch die Weiterentwicklung der Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen.
-            </p>
-          </section>
-
-          <section>
-            <h3 className="text-sm font-semibold mb-2" style={{ color: "#1A1A1A" }}>
-              Haftung für Inhalte
-            </h3>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
-              Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.
-            </p>
-
-            <h3 className="text-sm font-semibold mb-2" style={{ color: "#1A1A1A" }}>
-              Haftung für Links
-            </h3>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: "#374151" }}>
-              Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen.
-            </p>
-
-            <h3 className="text-sm font-semibold mb-2" style={{ color: "#1A1A1A" }}>
-              Urheberrecht
-            </h3>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
-              Die durch mich erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen meiner schriftlichen Zustimmung. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht von mir erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.
-            </p>
-          </section>
-
-          <div className="h-px w-full mb-12" style={{ backgroundColor: "#E5E7EB" }} />
-
-          {/* 10. Aktualität */}
-          <section>
-            <h2
-              className="font-serif text-xl font-semibold mb-4"
-              style={{ color: "#1B5E3B" }}
-            >
-              10. Aktualität und Änderung dieser Datenschutzerklärung
-            </h2>
-            <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand März 2026. Durch die Weiterentwicklung meiner Website oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf dieser Website abgerufen werden.
-            </p>
-          </section>
+          <h2>12. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+          <p>
+            Diese Datenschutzerklärung hat den Stand Juni 2026. Durch die Weiterentwicklung der
+            Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es
+            notwendig werden, sie anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser
+            Seite abgerufen werden.
+          </p>
         </div>
       </main>
 
