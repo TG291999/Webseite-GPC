@@ -216,13 +216,20 @@ p{max-width:var(--measure)}
 
 /* ============ Warum Tim ============ */
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,60px);align-items:center}
-.about-photo{width:100%;aspect-ratio:4/5;border-radius:var(--r-lg);background:
-  linear-gradient(150deg,var(--sig-soft),var(--tint-cool));border:1px solid var(--border-cool);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
-  color:var(--muted);text-align:center;font-size:.88rem;padding:24px;overflow:hidden;position:relative}
-.about-photo .ph-icon{color:var(--signature);opacity:.9}
-.about-photo .ph-label{font-weight:600;color:var(--ink);font-size:.95rem}
-.about-photo .ph-sub{font-size:.82rem;color:var(--muted)}
+.about-media{display:flex;flex-direction:column;gap:16px}
+.about-photo-img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;
+  border-radius:var(--r-lg);border:1px solid var(--border-cool);box-shadow:var(--shadow-md)}
+.about-linkedin{align-self:flex-start}
+.about-linkedin svg{flex:0 0 auto}
+/* Speaker-/Bühnen-Vertrauensanker */
+.speaker-strip{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(24px,4vw,44px);
+  align-items:center;margin-top:clamp(40px,6vw,64px);padding-top:clamp(32px,5vw,48px);
+  border-top:1px solid var(--border-warm)}
+.speaker-photo{width:100%;border-radius:var(--r-lg);border:1px solid var(--border-cool);box-shadow:var(--shadow-md)}
+.speaker-text .eyebrow{margin-bottom:10px}
+.speaker-text p{font-size:1.05rem;color:var(--body);max-width:none}
+.speaker-text b{color:var(--ink);font-weight:600}
+@media (max-width:860px){.speaker-strip{grid-template-columns:1fr;gap:24px}}
 .about h2{margin-bottom:16px}
 .about .subhead{margin-bottom:24px}
 .about p{margin-bottom:18px;color:var(--body)}
@@ -241,6 +248,33 @@ p{max-width:var(--measure)}
 .tile p{font-size:.9rem;color:var(--muted)}
 .tile.full{grid-column:1/-1}
 .proof-note{font-style:italic;color:var(--muted);font-size:.88rem;margin-top:18px}
+/* Software-/Workflow-Mockups — abstrakte UI in Markenfarben (Platzhalter für spätere Screenshots) */
+.mockups{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+.mock{background:var(--surface);border:1px solid var(--border-warm);border-radius:var(--r-lg);
+  box-shadow:var(--shadow-md);overflow:hidden;margin:0;display:flex;flex-direction:column}
+.mock-top{display:flex;align-items:center;gap:6px;padding:13px 16px;border-bottom:1px solid var(--border-warm);background:var(--off-white)}
+.mock-top i{width:9px;height:9px;border-radius:50%;background:var(--border-warm)}
+.mock-top span{margin-left:8px;font-size:.78rem;color:var(--muted);font-weight:600}
+.mock-body{padding:20px 18px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:172px}
+.mock-row{display:flex;align-items:center;gap:12px}
+.mock-avatar{width:34px;height:34px;border-radius:50%;background:var(--sig-soft);flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;color:var(--action)}
+.mock-lines{flex:1;display:flex;flex-direction:column;gap:7px;min-width:0}
+.mock-line{height:9px;border-radius:5px;background:var(--border-cool)}
+.mock-line.dark{background:#C2CCD9}
+.mock-subject{font-size:.92rem;color:var(--ink);font-weight:600}
+.mock-badge{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;
+  background:var(--tint-cool);color:var(--action);border:1px solid var(--sig-soft);
+  font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:99px}
+.mock-badge svg{flex:0 0 auto}
+.mock-badge.ok{background:#E4F1EB;color:var(--success);border-color:#CDE7DC}
+.mock-actions{display:flex;align-items:center;gap:14px;margin-top:auto}
+.mock-btn{background:var(--action);color:#fff;font-size:.85rem;font-weight:600;
+  padding:10px 18px;border-radius:8px;display:inline-flex;align-items:center;gap:7px}
+.mock-btn.ghost{background:transparent;color:var(--muted);padding-inline:4px}
+.mock figcaption{padding:14px 18px;border-top:1px solid var(--border-warm);
+  font-size:.92rem;color:var(--body);font-weight:500}
+@media (max-width:860px){.mockups{grid-template-columns:1fr}}
 
 /* ============ FAQ ============ */
 .faq-list{max-width:760px;margin-inline:auto;border-top:1px solid var(--border-warm)}

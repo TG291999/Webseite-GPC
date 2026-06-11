@@ -17,6 +17,7 @@ const jsonLd = {
       email: "tim@goebel-partner.de",
       telephone: "+49 172 6932222",
       founder: { "@type": "Person", name: "Tim Goebel" },
+      sameAs: ["https://www.linkedin.com/in/tim-goebel-gpc/"],
       address: {
         "@type": "PostalAddress",
         streetAddress: "Hilgenloh 19",

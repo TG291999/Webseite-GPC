@@ -18,7 +18,7 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.goebel-partner.de"),
-  title: "Automatisierung für Hausverwaltungen – ohne Systemwechsel | GPC",
+  title: "Automatisierung für Hausverwaltungen – ohne Systemwechsel | Goebel & Partner",
   description:
     "Wir geben Hausverwaltungen ihre Sachbearbeiter zurück — durch strukturierte Prozesse, Automatisierung und KI in Ihrer bestehenden Software. Jetzt kostenlose Analyse sichern.",
   keywords: [

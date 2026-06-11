@@ -122,18 +122,20 @@ export const HOME_HTML = `
           <h2>Die teuerste Rechnung, die Ihnen niemand stellt.</h2>
           <p class="subhead">Repetitive Anfragen binden Arbeitszeit, die nicht in Wachstum, zufriedene Eigentümer und neue Objekte fließt.</p>
         </div>
-        <p style="color:var(--body)">Das Problem ist nicht, dass Ihr Team zu langsam ist. Das Problem ist, dass Menschen Arbeit machen, die längst kein Mensch mehr machen müsste. Diese Zeit fehlt an genau den Stellen, die Ihre Verwaltung weiterbringen — und sie ist der Grund, warum gute Sachbearbeiter ausbrennen oder kündigen.</p>
+        <p style="color:var(--body)">Das Problem ist nicht, dass Ihr Team zu langsam ist — sondern dass Menschen Arbeit machen, die längst kein Mensch mehr machen müsste. Diese Zeit fehlt genau dort, wo sie Ihre Verwaltung weiterbringt.</p>
+        <p style="color:var(--body);margin-top:14px"><strong style="color:var(--ink)">Beispiel:</strong> Wenn 4 Sachbearbeiter jeweils 10 Stunden pro Woche mit wiederkehrenden Standardanfragen verbringen, bindet das bei 25&nbsp;€ internem Stundensatz und 46 Arbeitswochen rund 46.000&nbsp;€ Arbeitszeit pro Jahr.</p>
       </div>
       <div class="calc-card reveal">
         <div class="label">Ein Rechenbeispiel</div>
-        <div class="calc-row"><span>Sachbearbeiter</span><span>6</span></div>
-        <div class="calc-row"><span>Std./Woche für Standardanfragen</span><span>je 12</span></div>
-        <div class="calc-row"><span>Interner Stundensatz</span><span>35&nbsp;€</span></div>
+        <div class="calc-row"><span>Sachbearbeiter</span><span>4</span></div>
+        <div class="calc-row"><span>Std./Woche für Standardanfragen</span><span>je 10</span></div>
+        <div class="calc-row"><span>Interner Stundensatz</span><span>25&nbsp;€</span></div>
+        <div class="calc-row"><span>Arbeitswochen pro Jahr</span><span>46</span></div>
         <div class="calc-result">
-          <span class="muted" style="font-size:.85rem">Gebundene Zeit über das Jahr</span>
-          <div class="big">ein hoher fünfstelliger Betrag</div>
+          <span class="muted" style="font-size:.85rem">Beispielhafte gebundene Arbeitszeit pro Jahr</span>
+          <div class="big" style="font-size:clamp(2.1rem,4vw,2.7rem);font-weight:600">46.000&nbsp;€</div>
         </div>
-        <p class="calc-note">Beispielwerte. Ihre echten Zahlen schauen wir uns in der kostenlosen Analyse an — ohne Schönrechnen.</p>
+        <p class="calc-note">Das ist keine garantierte Ersparnis, sondern ein transparentes Rechenbeispiel. Ihre echten Zahlen prüfen wir in der kostenlosen Analyse.</p>
       </div>
     </div>
   </div>
@@ -181,7 +183,8 @@ export const HOME_HTML = `
       <h2>Wir bauen die Automatisierung <em>in</em> Ihre Software — nicht daneben.</h2>
       <p class="subhead">Kein neues ERP. Kein Datenumzug. Kein monatelanges IT-Projekt. Auch dann nicht, wenn Ihr System in die Jahre gekommen ist.</p>
     </div>
-    <p class="reveal" style="margin-bottom:36px;color:var(--body)">Die meisten „Digitalisierungs"-Versprechen bedeuten in Wahrheit eins: Sie müssen Ihr System wechseln. Neue Software, neue Schulungen, Daten migrieren, Widerstand im Team — und ein Jahr später läuft es schlechter als vorher. Wir machen das Gegenteil. Wir lassen Ihr ERP, Ihre Postfächer und Ihre Abläufe genau so, wie sie sind. Darüber bauen wir eine zusätzliche Ebene, die die immer gleichen Anfragen vorsortiert, fertige Antwortentwürfe vorbereitet und Vorgänge direkt in Ihr System schreibt. Ihre Leute klicken nur noch auf „Freigeben".</p>
+    <p class="reveal" style="margin-bottom:18px;color:var(--body)">Die meisten „Digitalisierungs"-Versprechen bedeuten in Wahrheit eins: Sie müssen Ihr System wechseln. Neue Software, neue Schulungen, Daten migrieren, Widerstand im Team — und ein Jahr später läuft es schlechter als vorher.</p>
+    <p class="reveal" style="margin-bottom:36px;color:var(--body)">Wir machen das Gegenteil. Wir lassen Ihr ERP, Ihre Postfächer und Ihre Abläufe genau so, wie sie sind. Darüber bauen wir eine zusätzliche Ebene, die Anfragen vorsortiert, Antwortentwürfe vorbereitet und Vorgänge direkt in Ihr System schreibt. Ihre Leute klicken nur noch auf „Freigeben".</p>
     <div class="compare reveal">
       <div class="compare-col without">
         <div class="compare-head">Ohne uns</div>
@@ -259,8 +262,8 @@ export const HOME_HTML = `
         <span class="badge">Empfohlen</span>
         <div class="step-n">Schritt 2</div>
         <h3>Quick-Win-Audit</h3>
-        <p>1–2 Wochen. Wir analysieren Prozesse und Anfragen im Detail: Wo geht die Zeit hin, was ist automatisierbar, was bringt das in Euro. Sie erhalten eine klare Liste — was sich lohnt, in welcher Reihenfolge, und was es spart.</p>
-        <div class="price"><span class="note">Voll verrechnet, wenn wir die Umsetzung machen.</span><span class="amount muted" style="font-size:.92rem;font-weight:500">Investition: 6.500&nbsp;€</span></div>
+        <p>Wir analysieren Prozesse und Anfragen im Detail: Wo geht die Zeit hin, was ist automatisierbar, was bringt das in Euro. Sie erhalten eine klare Liste — was sich lohnt, in welcher Reihenfolge, und was es spart.</p>
+        <div class="price"><span class="note">Wird bei anschließender Umsetzung angerechnet.</span></div>
       </div>
       <div class="step-card reveal">
         <div class="step-n">Schritt 3</div>
@@ -310,24 +313,30 @@ export const HOME_HTML = `
 
 <!-- ======================= 9 · WARUM TIM ======================= -->
 <section class="section bg-canvas about" id="ueber-mich">
-  <div class="container about-grid">
-    <div class="about-photo reveal" role="img" aria-label="Platzhalter für ein professionelles Foto von Tim Goebel">
-      <!-- TODO: Echtes Foto einsetzen. Datei unter /public/images/tim-goebel.jpg ablegen und
-           diesen Platzhalter-Inhalt ersetzen durch:
-           <img src="/images/tim-goebel.jpg" alt="Tim Goebel, Inhaber Goebel & Partner Consulting"
-                width="640" height="800" loading="lazy"
-                style="width:100%;height:100%;object-fit:cover" /> -->
-      <svg class="ph-icon" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <span class="ph-label">Tim Goebel</span>
-      <span class="ph-sub">Professionelles Foto folgt in Kürze</span>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media reveal">
+        <img class="about-photo-img" src="/images/tim-goebel-portrait.jpg" width="1000" height="1500" loading="lazy" alt="Tim Goebel, Inhaber von Goebel & Partner Consulting" />
+        <a href="https://www.linkedin.com/in/tim-goebel-gpc/" target="_blank" rel="noopener" class="textlink about-linkedin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          Tim Goebel auf LinkedIn ansehen →
+        </a>
+      </div>
+      <div class="reveal">
+        <h2>Ich komme aus Ihrer Welt — nicht aus einer KI-Agentur.</h2>
+        <p class="subhead">Immobilienkaufmann. 8+ Jahre Branche. Gründer einer Hausverwaltungs-Software. Heute baue ich die Automatisierung, die ich mir damals selbst gewünscht hätte.</p>
+        <p>Ich habe nicht über Hausverwaltung gelesen — ich war drin. Als Immobilienkaufmann kenne ich Vermietung, Vertrieb und den Verwaltungsalltag von innen. Danach habe ich mit Immo&nbsp;One eine eigene Hausverwaltungs-Software aufgebaut und vertrieben.</p>
+        <p class="pullquote">Aus Immo&nbsp;One habe ich eine entscheidende Lektion mitgenommen: Für viele Verwaltungen ist die bestehende Software das Herzstück des Betriebs. Wird dieses Herzstück gewechselt und läuft danach nicht sauber, steht der ganze Laden still.</p>
+        <p>Genau deshalb drehe ich den Ansatz heute um: nicht Ihre Software ersetzen — sondern die bestehenden Systeme so entlasten, dass Ihr Team wieder Luft bekommt. Sie reden dabei nicht mit einem Berater, der eine Folie zeichnet und die Umsetzung weiterreicht, sondern mit dem, der es selbst baut.</p>
+        <p class="logo-strip"><b>Vertraut mit:</b> Domus · Immoware24 · GFAD · casavi · impower</p>
+      </div>
     </div>
-    <div class="reveal">
-      <h2>Ich komme aus Ihrer Welt — nicht aus einer KI-Agentur.</h2>
-      <p class="subhead">Immobilienkaufmann. 8+ Jahre Branche. Gründer einer Hausverwaltungs-Software. Heute baue ich die Automatisierung, die ich mir damals selbst gewünscht hätte.</p>
-      <p>Ich habe nicht über Hausverwaltung gelesen. Ich war drin. Als Immobilienkaufmann kenne ich Vermietung, Vertrieb und den Verwaltungsalltag von innen. Dann habe ich eine eigene Hausverwaltungs-Software gegründet — und dabei gelernt, was Verwalter wirklich brauchen und was reine Tech-Anbieter regelmäßig übersehen.</p>
-      <p class="pullquote">Sie reden nicht mit einem Berater, der eine Folie zeichnet und die Umsetzung weiterreicht. Sie reden mit dem, der es baut.</p>
-      <p>Diese Kombination ist selten: Ich verstehe Ihr Tagesgeschäft <em>und</em> ich kann die Lösung selbst bauen — von der Struktur bis zum Code. Generische KI-Agenturen kennen Ihre Branche nicht. Software-Giganten kennen Ihren Mittelstand nicht. Ich kenne beides. Genau deshalb verspreche ich Ihnen keine neue Software — sondern weniger Arbeit in der, die Sie haben.</p>
-      <p class="logo-strip"><b>Vertraut mit:</b> Domus · Immoware24 · GFAD · casavi · impower</p>
+    <div class="speaker-strip reveal">
+      <img class="speaker-photo" src="/images/tim-goebel-speaker.jpg" width="800" height="533" loading="lazy" alt="Tim Goebel als Speaker auf der Bühne vor Publikum" />
+      <div class="speaker-text">
+        <div class="eyebrow">Auf der Bühne</div>
+        <p>Speaker bei der <b>BuildinX</b>-Messe in der Dortmunder Westfalenhalle und 2× bei der <b>Founder Fight Night</b>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -341,7 +350,7 @@ export const HOME_HTML = `
           <h2>Was strukturierte Prozesse in der Praxis bringen.</h2>
           <p class="subhead">Aus eigener Anwendung — und aus den Projekten, die ich umsetze.</p>
         </div>
-        <p style="color:var(--body)">Ich baue diese Systeme nicht nur für andere. In der eigenen Praxis bei 365&nbsp;Grundbesitz setze ich die gleichen Abläufe selbst ein — von der strukturierten Anfragen-Bearbeitung bis zur dokumentierten Prozesskette. Das ist kein Theorie-Case: Es ist die Umgebung, in der ich täglich teste, was funktioniert, bevor ich es bei Ihnen einsetze.</p>
+        <p style="color:var(--body)">In der Praxis bei 365&nbsp;Grundbesitz setze ich diese Arbeitsweise bereits selbst ein — von strukturierter Anfragenbearbeitung bis zu dokumentierten Abläufen. Deshalb verkaufe ich keinen theoretischen KI-Hype, sondern eine Arbeitsweise, die ich im Immobilienalltag selbst nutze.</p>
       </div>
       <div class="proof-tiles reveal">
         <div class="tile">
@@ -361,7 +370,43 @@ export const HOME_HTML = `
         </div>
       </div>
     </div>
-    <p class="proof-note reveal">Konkrete, anonymisierte Vorher/Nachher-Zahlen ergänzen wir hier, sobald die ersten Kundenprojekte abgeschlossen sind.</p>
+    <div class="mockups reveal">
+      <!-- TODO: Später echte/anonymisierte Software- oder Workflow-Beispielbilder einfügen → /images/software-example-1.jpg -->
+      <figure class="mock">
+        <div class="mock-top"><i></i><i></i><i></i><span>Posteingang</span></div>
+        <div class="mock-body">
+          <div class="mock-row">
+            <div class="mock-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></div>
+            <div class="mock-lines"><div class="mock-subject">Nebenkostenabrechnung 2024 – Whg. 12</div><div class="mock-line" style="width:72%"></div></div>
+          </div>
+          <span class="mock-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Erkannt: Nebenkosten</span>
+          <div class="mock-row" style="opacity:.55">
+            <div class="mock-avatar"></div>
+            <div class="mock-lines"><div class="mock-line dark" style="width:52%"></div><div class="mock-line" style="width:84%"></div></div>
+          </div>
+          <span class="mock-badge ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vorsortiert &amp; zugeordnet</span>
+        </div>
+        <figcaption>Anfrage wird erkannt und vorsortiert</figcaption>
+      </figure>
+      <!-- TODO: Später echte/anonymisierte Software- oder Workflow-Beispielbilder einfügen → /images/software-example-2.jpg -->
+      <figure class="mock">
+        <div class="mock-top"><i></i><i></i><i></i><span>Antwortentwurf</span></div>
+        <div class="mock-body">
+          <span class="mock-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>KI-Entwurf · von Mensch zu prüfen</span>
+          <div class="mock-lines">
+            <div class="mock-line dark" style="width:92%"></div>
+            <div class="mock-line" style="width:100%"></div>
+            <div class="mock-line" style="width:96%"></div>
+            <div class="mock-line" style="width:58%"></div>
+          </div>
+          <div class="mock-actions">
+            <span class="mock-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Freigeben</span>
+            <span class="mock-btn ghost">Bearbeiten</span>
+          </div>
+        </div>
+        <figcaption>Antwortentwurf liegt zur Freigabe bereit</figcaption>
+      </figure>
+    </div>
     <div class="cta-wrap center reveal">
       <a href="#buchung" class="btn btn-primary">Kostenlose Analyse sichern <span class="arrow">→</span></a>
       <p class="micro">Was bei Ihnen konkret drin ist, sehen wir in 30 Minuten.</p>
@@ -442,7 +487,7 @@ export const HOME_HTML = `
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
       <p class="cal-head">Wählen Sie einen Termin, der Ihnen passt</p>
       <p style="font-size:.92rem">30&nbsp;Minuten · online · kostenlos · ohne Verpflichtung</p>
-      <a href="https://zcal.co/i/1v-apJ3U" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:6px">Kostenlose Analyse sichern <span class="arrow">→</span></a>
+      <a href="https://zcal.co/i/1v-apJ3U" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:6px">Termin jetzt auswählen <span class="arrow">→</span></a>
     </div>
 
     <div class="reassure reveal">
