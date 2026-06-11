@@ -103,6 +103,33 @@ p{max-width:var(--measure)}
 .trust-item{display:flex;align-items:center;gap:9px;font-size:.9rem;color:var(--muted);font-weight:500}
 .trust-item svg{color:var(--action);flex:0 0 auto}
 .hero-visual{display:flex;justify-content:center}
+/* Hero-Workflow-Grafik (Anfrage → vorbereitet → Freigabe) — ersetzt die frühere Balkengrafik */
+.hero-flow{display:flex;align-items:stretch;justify-content:center;gap:6px;width:100%;max-width:520px;margin-inline:auto}
+.hero-flow .flow-card{flex:1 1 0;min-width:0;background:var(--surface);border:1px solid var(--border-warm);
+  border-radius:14px;box-shadow:var(--shadow-md);padding:18px 12px;display:flex;flex-direction:column;
+  align-items:center;text-align:center;gap:8px}
+.hero-flow .f-ic{position:relative;width:52px;height:52px;border-radius:50%;background:var(--tint-cool);
+  display:flex;align-items:center;justify-content:center;color:var(--action);flex:0 0 auto}
+.hero-flow .f-dot{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 4px;border-radius:99px;
+  display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:700;color:#fff;border:2px solid var(--surface)}
+.hero-flow .f-dot.amber{background:var(--accent-amber)}
+.hero-flow .f-dot.blue{background:var(--action)}
+.hero-flow .f-title{font-size:.9rem;font-weight:700;color:var(--ink);line-height:1.2}
+.hero-flow .f-uline{width:22px;height:3px;border-radius:2px;background:var(--accent-amber)}
+.hero-flow .f-desc{font-size:.76rem;color:var(--body);line-height:1.35}
+.hero-flow .f-list{display:flex;flex-direction:column;gap:6px;width:100%}
+.hero-flow .f-li{display:flex;align-items:center;gap:6px;font-size:.74rem;color:var(--body);text-align:left;line-height:1.25}
+.hero-flow .f-li svg{flex:0 0 auto;color:var(--action)}
+.hero-flow .f-pill{display:inline-flex;align-items:center;gap:6px;font-size:.73rem;font-weight:600;padding:6px 11px;border-radius:99px;margin-top:2px}
+.hero-flow .f-pill.blue{color:var(--action);background:var(--tint-cool)}
+.hero-flow .f-pill.amber{color:#8A6220;background:#F7ECD7}
+.hero-flow .f-btn{margin-top:2px;width:100%;background:var(--action);color:#fff;font-size:.78rem;font-weight:600;padding:9px 8px;border-radius:8px}
+.hero-flow .f-arrow{flex:0 0 auto;color:var(--action);display:flex;align-items:center;align-self:center}
+@media (max-width:980px){
+  .hero-flow{flex-direction:column;max-width:340px;gap:4px}
+  .hero-flow .f-arrow{transform:rotate(90deg)}
+  .hero-flow .flow-card{width:100%}
+}
 
 /* ============ Cards grid (Problem / generic) ============ */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -217,7 +244,7 @@ p{max-width:var(--measure)}
 /* ============ Warum Tim ============ */
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,60px);align-items:center}
 .about-media{display:flex;flex-direction:column;gap:16px}
-.about-photo-img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;
+.about-photo-img{display:block;width:100%;height:auto;
   border-radius:var(--r-lg);border:1px solid var(--border-cool);box-shadow:var(--shadow-md)}
 .about-linkedin{align-self:flex-start}
 .about-linkedin svg{flex:0 0 auto}
@@ -225,7 +252,7 @@ p{max-width:var(--measure)}
 .speaker-strip{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(24px,4vw,44px);
   align-items:center;margin-top:clamp(40px,6vw,64px);padding-top:clamp(32px,5vw,48px);
   border-top:1px solid var(--border-warm)}
-.speaker-photo{width:100%;border-radius:var(--r-lg);border:1px solid var(--border-cool);box-shadow:var(--shadow-md)}
+.speaker-photo{display:block;width:100%;height:auto;border-radius:var(--r-lg);border:1px solid var(--border-cool);box-shadow:var(--shadow-md)}
 .speaker-text .eyebrow{margin-bottom:10px}
 .speaker-text p{font-size:1.05rem;color:var(--body);max-width:none}
 .speaker-text b{color:var(--ink);font-weight:600}
@@ -349,7 +376,7 @@ p{max-width:var(--measure)}
    ================================================================= */
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr}
-  .hero-visual{order:-1;max-width:360px}
+  .hero-visual{max-width:520px;margin-inline:auto}
   .cost-grid,.about-grid,.proof-grid{grid-template-columns:1fr}
   .pillars-line{display:none}
   .loop{grid-template-columns:1fr 1fr;gap:30px 0}

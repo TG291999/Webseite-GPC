@@ -66,21 +66,46 @@ export const HOME_HTML = `
       </div>
     </div>
     <div class="hero-visual reveal">
-      <!-- Eigenes, ruhiges Motiv: die 3-Säulen-Sequenz (kein Stockfoto, kein KI-Roboter) -->
-      <svg viewBox="0 0 340 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Drei aufsteigende Säulen: Struktur, Automatisierung, KI">
-        <rect x="20" y="20" width="300" height="320" rx="18" fill="#fff" stroke="#E7E1D6"/>
-        <line x1="70" y1="270" x2="270" y2="270" stroke="#E2E8F0" stroke-width="1.5"/>
-        <rect x="74" y="196" width="46" height="74" rx="6" fill="#DDEAF8"/>
-        <rect x="147" y="150" width="46" height="120" rx="6" fill="#749FDD"/>
-        <rect x="220" y="104" width="46" height="166" rx="6" fill="#2C5896"/>
-        <circle cx="97" cy="180" r="6" fill="#749FDD"/>
-        <circle cx="170" cy="134" r="6" fill="#2C5896"/>
-        <circle cx="243" cy="88" r="6" fill="#15273F"/>
-        <path d="M97 180 L170 134 L243 88" stroke="#15273F" stroke-width="1.5" stroke-dasharray="4 5" opacity=".5"/>
-        <text x="97" y="296" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7785">Struktur</text>
-        <text x="170" y="296" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7785">Tempo</text>
-        <text x="243" y="296" text-anchor="middle" font-size="11" font-weight="600" fill="#6B7785">KI</text>
-      </svg>
+      <!-- Workflow-Grafik (Anfrage → vorbereitet → Freigabe). Falls gewünscht, lässt sich dies
+           1:1 durch ein Bild ersetzen: <img src="/images/hero-workflow-gpc.png" style="width:100%;max-width:520px"
+           alt="Workflow-Grafik: Neue Anfrage wird vorsortiert, vorbereitet und vom Mitarbeiter freigegeben" /> -->
+      <div class="hero-flow" role="img" aria-label="Workflow-Grafik: Neue Anfrage wird vorsortiert, vorbereitet und vom Mitarbeiter freigegeben">
+        <div class="flow-card">
+          <div class="f-ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+            <span class="f-dot amber">1</span>
+          </div>
+          <div class="f-title">Neue Anfrage</div>
+          <div class="f-uline"></div>
+          <div class="f-desc">Mieter fragt zur Nebenkostenabrechnung</div>
+          <span class="f-pill blue"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 18.6l-5.91 3.06 1.13-6.57L2.45 9.44l6.6-.96z"/></svg>Standardanfrage</span>
+        </div>
+        <div class="f-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
+        <div class="flow-card">
+          <div class="f-ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6a1 1 0 0 1 1 1v0a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v0a1 1 0 0 1 1-1Z"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+            <span class="f-dot blue"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          </div>
+          <div class="f-title">Vorsortiert &amp; vorbereitet</div>
+          <div class="f-uline"></div>
+          <div class="f-list">
+            <span class="f-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Antwortentwurf erstellt</span>
+            <span class="f-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Vorgang zugeordnet</span>
+          </div>
+          <span class="f-pill amber"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mensch prüft</span>
+        </div>
+        <div class="f-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
+        <div class="flow-card">
+          <div class="f-ic">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="f-dot amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          </div>
+          <div class="f-title">Freigabe</div>
+          <div class="f-uline"></div>
+          <div class="f-desc">Ihr Mitarbeiter prüft und gibt frei</div>
+          <span class="f-btn">Freigeben</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
