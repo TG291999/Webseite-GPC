@@ -65,46 +65,47 @@ export const HOME_HTML = `
         <span class="trust-item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Domus · Immoware24 · GFAD · casavi</span>
       </div>
     </div>
-    <div class="hero-visual reveal">
-      <!-- Workflow-Grafik (Anfrage → vorbereitet → Freigabe). Falls gewünscht, lässt sich dies
-           1:1 durch ein Bild ersetzen: <img src="/images/hero-workflow-gpc.png" style="width:100%;max-width:520px"
-           alt="Workflow-Grafik: Neue Anfrage wird vorsortiert, vorbereitet und vom Mitarbeiter freigegeben" /> -->
-      <div class="hero-flow" role="img" aria-label="Workflow-Grafik: Neue Anfrage wird vorsortiert, vorbereitet und vom Mitarbeiter freigegeben">
-        <div class="flow-card">
-          <div class="f-ic">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-            <span class="f-dot amber">1</span>
+    <div class="hero-visual">
+      <div class="hero-demo reveal" role="group" aria-label="Interaktive Demo: Eine Mieteranfrage wird automatisch vorsortiert, ein Antwortentwurf vorbereitet und vom Mitarbeiter per Klick freigegeben.">
+        <div class="hw">
+          <div class="hw-top"><i></i><i></i><i></i><span>Mieteranfrage · Posteingang</span></div>
+          <div class="hw-prog" aria-hidden="true">
+            <span class="s done"><span class="n"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Anfrage</span>
+            <span class="s done"><span class="n"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Vorbereitet</span>
+            <span class="s s3"><span class="n">3</span>Freigabe</span>
           </div>
-          <div class="f-title">Neue Anfrage</div>
-          <div class="f-uline"></div>
-          <div class="f-desc">Mieter fragt zur Nebenkostenabrechnung</div>
-          <span class="f-pill blue"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 18.6l-5.91 3.06 1.13-6.57L2.45 9.44l6.6-.96z"/></svg>Standardanfrage</span>
+          <div class="hw-body">
+            <div class="hw-mail">
+              <div class="hw-ava"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></div>
+              <div class="hw-lines"><div class="hw-subj">Nebenkostenabrechnung 2024 – Whg. 12</div><div class="hw-bar" style="width:78%"></div></div>
+            </div>
+            <div class="hw-badges">
+              <span class="hw-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Erkannt: Nebenkosten</span>
+              <span class="hw-badge ok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Vorsortiert &amp; zugeordnet</span>
+            </div>
+            <div class="hw-draft">
+              <span class="hw-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>KI-Entwurf · von Mensch zu prüfen</span>
+              <div class="hw-bar" style="width:94%"></div>
+              <div class="hw-bar" style="width:100%"></div>
+              <div class="hw-bar" style="width:88%"></div>
+              <div class="hw-bar" style="width:60%"></div>
+            </div>
+          </div>
+          <div class="hw-foot">
+            <button class="hw-approve" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Freigeben</button>
+            <button class="hw-edit" type="button">Bearbeiten</button>
+            <span class="hw-hint">Sie sind dran</span>
+          </div>
+          <div class="hw-sent">
+            <div class="hw-sent-row">
+              <span class="hw-sent-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div><b>Antwort gesendet &amp; dokumentiert</b><span>Im System hinterlegt — freigegeben von einem Menschen.</span></div>
+            </div>
+            <div class="hw-metric"><b>~8 Sekunden</b> statt ~6 Minuten Handarbeit — so bekommt Ihr Team Stunden zurück.</div>
+            <button class="hw-replay" type="button"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/></svg>Nochmal ansehen</button>
+          </div>
         </div>
-        <div class="f-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
-        <div class="flow-card">
-          <div class="f-ic">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6a1 1 0 0 1 1 1v0a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v0a1 1 0 0 1 1-1Z"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
-            <span class="f-dot blue"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-          </div>
-          <div class="f-title">Vorsortiert &amp; vorbereitet</div>
-          <div class="f-uline"></div>
-          <div class="f-list">
-            <span class="f-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Antwortentwurf erstellt</span>
-            <span class="f-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Vorgang zugeordnet</span>
-          </div>
-          <span class="f-pill amber"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Mensch prüft</span>
-        </div>
-        <div class="f-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></div>
-        <div class="flow-card">
-          <div class="f-ic">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span class="f-dot amber"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-          </div>
-          <div class="f-title">Freigabe</div>
-          <div class="f-uline"></div>
-          <div class="f-desc">Ihr Mitarbeiter prüft und gibt frei</div>
-          <span class="f-btn">Freigeben</span>
-        </div>
+        <p class="hw-caption">Jede Standardanfrage kommt vorbereitet bei Ihnen an — Sie geben nur noch frei.</p>
       </div>
     </div>
   </div>

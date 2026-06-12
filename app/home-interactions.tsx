@@ -70,6 +70,9 @@ export function HomeInteractions() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("in")
+            if (entry.target.classList.contains("hero-demo")) {
+              entry.target.classList.add("play")
+            }
             io.unobserve(entry.target)
           }
         })
@@ -77,6 +80,33 @@ export function HomeInteractions() {
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     )
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el))
+
+    /* Interaktive Hero-Demo: Freigeben → Erfolgszustand, Bearbeiten, Nochmal */
+    const demo = document.querySelector(".hero-demo")
+    const approve = demo?.querySelector<HTMLButtonElement>(".hw-approve")
+    const editBtn = demo?.querySelector<HTMLButtonElement>(".hw-edit")
+    const replayBtn = demo?.querySelector<HTMLButtonElement>(".hw-replay")
+    const hint = demo?.querySelector<HTMLElement>(".hw-hint")
+    const onApprove = () => {
+      demo?.classList.remove("editing")
+      demo?.classList.add("is-sent")
+    }
+    const onEdit = () => {
+      if (!demo) return
+      const editing = demo.classList.toggle("editing")
+      if (hint) hint.textContent = editing ? "Anpassen, dann freigeben" : "Sie sind dran"
+    }
+    const onReplay = () => {
+      if (!demo) return
+      demo.classList.remove("is-sent", "editing")
+      if (hint) hint.textContent = "Sie sind dran"
+      demo.classList.remove("play")
+      void (demo as HTMLElement).offsetWidth
+      demo.classList.add("play")
+    }
+    approve?.addEventListener("click", onApprove)
+    editBtn?.addEventListener("click", onEdit)
+    replayBtn?.addEventListener("click", onReplay)
 
     /* Year */
     const year = document.getElementById("year")
@@ -88,6 +118,9 @@ export function HomeInteractions() {
       menuLinks.forEach((a) => a.removeEventListener("click", onMenuLink))
       faqBtns.forEach((btn, i) => btn.removeEventListener("click", faqHandlers[i]))
       window.removeEventListener("resize", onResize)
+      approve?.removeEventListener("click", onApprove)
+      editBtn?.removeEventListener("click", onEdit)
+      replayBtn?.removeEventListener("click", onReplay)
       io.disconnect()
     }
   }, [])

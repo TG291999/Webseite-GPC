@@ -90,7 +90,7 @@ p{max-width:var(--measure)}
 
 /* ============ Hero ============ */
 .hero{padding-block:clamp(58px,8vw,96px) var(--space)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,5vw,72px);align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(28px,4vw,56px);align-items:center}
 .hero h1{margin-bottom:22px}
 .hero .subhead{max-width:560px}
 .hero-plain{max-width:560px;margin-top:18px;color:var(--body);font-size:1.02rem}
@@ -103,33 +103,74 @@ p{max-width:var(--measure)}
 .trust-item{display:flex;align-items:center;gap:9px;font-size:.9rem;color:var(--muted);font-weight:500}
 .trust-item svg{color:var(--action);flex:0 0 auto}
 .hero-visual{display:flex;justify-content:center}
-/* Hero-Workflow-Grafik (Anfrage → vorbereitet → Freigabe) — ersetzt die frühere Balkengrafik */
-.hero-flow{display:flex;align-items:stretch;justify-content:center;gap:6px;width:100%;max-width:520px;margin-inline:auto}
-.hero-flow .flow-card{flex:1 1 0;min-width:0;background:var(--surface);border:1px solid var(--border-warm);
-  border-radius:14px;box-shadow:var(--shadow-md);padding:18px 12px;display:flex;flex-direction:column;
-  align-items:center;text-align:center;gap:8px}
-.hero-flow .f-ic{position:relative;width:52px;height:52px;border-radius:50%;background:var(--tint-cool);
-  display:flex;align-items:center;justify-content:center;color:var(--action);flex:0 0 auto}
-.hero-flow .f-dot{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 4px;border-radius:99px;
-  display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:700;color:#fff;border:2px solid var(--surface)}
-.hero-flow .f-dot.amber{background:var(--accent-amber)}
-.hero-flow .f-dot.blue{background:var(--action)}
-.hero-flow .f-title{font-size:.9rem;font-weight:700;color:var(--ink);line-height:1.2}
-.hero-flow .f-uline{width:22px;height:3px;border-radius:2px;background:var(--accent-amber)}
-.hero-flow .f-desc{font-size:.76rem;color:var(--body);line-height:1.35}
-.hero-flow .f-list{display:flex;flex-direction:column;gap:6px;width:100%}
-.hero-flow .f-li{display:flex;align-items:center;gap:6px;font-size:.74rem;color:var(--body);text-align:left;line-height:1.25}
-.hero-flow .f-li svg{flex:0 0 auto;color:var(--action)}
-.hero-flow .f-pill{display:inline-flex;align-items:center;gap:6px;font-size:.73rem;font-weight:600;padding:6px 11px;border-radius:99px;margin-top:2px}
-.hero-flow .f-pill.blue{color:var(--action);background:var(--tint-cool)}
-.hero-flow .f-pill.amber{color:#8A6220;background:#F7ECD7}
-.hero-flow .f-btn{margin-top:2px;width:100%;background:var(--action);color:#fff;font-size:.78rem;font-weight:600;padding:9px 8px;border-radius:8px}
-.hero-flow .f-arrow{flex:0 0 auto;color:var(--action);display:flex;align-items:center;align-self:center}
-@media (max-width:980px){
-  .hero-flow{flex-direction:column;max-width:340px;gap:4px}
-  .hero-flow .f-arrow{transform:rotate(90deg)}
-  .hero-flow .flow-card{width:100%}
+/* ====== Interaktive Hero-Demo (Posteingang → Freigabe) ====== */
+.hero-demo{width:100%;max-width:500px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+.hw{background:var(--surface);border:1px solid var(--border-warm);border-radius:var(--r-lg);
+  box-shadow:var(--shadow-md);overflow:hidden;display:flex;flex-direction:column}
+.hw-top{display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid var(--border-warm);background:var(--off-white)}
+.hw-top i{width:10px;height:10px;border-radius:50%;background:var(--border-warm)}
+.hw-top span{margin-left:8px;font-size:.82rem;color:var(--muted);font-weight:600}
+.hw-prog{display:flex;gap:6px;padding:15px 18px 3px}
+.hw-prog .s{flex:1;display:flex;align-items:center;gap:7px;font-size:.72rem;font-weight:600;color:var(--muted);min-width:0}
+.hw-prog .s .n{width:19px;height:19px;border-radius:50%;border:1.5px solid var(--border-cool);background:var(--surface);
+  display:flex;align-items:center;justify-content:center;font-size:.62rem;color:var(--muted);flex:0 0 auto}
+.hw-prog .s.done{color:var(--action)}
+.hw-prog .s.done .n{background:var(--action);border-color:var(--action);color:#fff}
+.hw-prog .s.s3{color:var(--muted)}
+.hero-demo.is-sent .hw-prog .s.s3{color:var(--action)}
+.hero-demo.is-sent .hw-prog .s.s3 .n{background:var(--action);border-color:var(--action);color:#fff}
+.hw-body{padding:18px;display:flex;flex-direction:column;gap:13px;flex:1}
+.hw-mail{display:flex;align-items:flex-start;gap:12px}
+.hw-ava{width:38px;height:38px;border-radius:10px;background:var(--tint-cool);display:flex;align-items:center;justify-content:center;color:var(--action);flex:0 0 auto}
+.hw-lines{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.hw-subj{font-size:.95rem;color:var(--ink);font-weight:600;line-height:1.3}
+.hw-bar{height:9px;border-radius:5px;background:var(--border-cool)}
+.hw-bar.sig{background:var(--sig-soft)}
+.hw-badges{display:flex;flex-wrap:wrap;gap:8px}
+.hw-badge{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:99px;
+  background:var(--tint-cool);color:var(--action);border:1px solid var(--sig-soft)}
+.hw-badge svg{flex:0 0 auto}
+.hw-badge.ok{background:#E4F1EB;color:var(--success);border-color:#CDE7DC}
+.hw-draft{border:1px solid var(--border-cool);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:9px;
+  background:#FCFDFE;transition:opacity .3s ease,outline-color .2s ease;outline:2px solid transparent;outline-offset:2px}
+.hero-demo.editing .hw-draft{outline-color:var(--action);background:var(--tint-cool)}
+.hero-demo.is-sent .hw-draft{opacity:.5}
+.hw-foot{display:flex;align-items:center;gap:10px;padding:0 18px 18px;flex-wrap:wrap}
+.hw-approve{display:inline-flex;align-items:center;gap:8px;background:var(--action);color:#fff;border:0;cursor:pointer;
+  font-family:inherit;font-size:.92rem;font-weight:600;padding:13px 22px;border-radius:9px;min-height:48px;
+  transition:background .18s ease,transform .12s ease}
+.hw-approve:hover{background:var(--action-hover)}
+.hw-approve:active{transform:scale(.97)}
+.hw-approve svg{flex:0 0 auto}
+.hw-edit{background:none;border:0;cursor:pointer;font-family:inherit;font-size:.9rem;font-weight:600;color:var(--muted);padding:8px 6px}
+.hw-edit:hover{color:var(--ink)}
+.hw-hint{margin-left:auto;font-size:.8rem;font-weight:600;color:var(--action);white-space:nowrap}
+.hw-sent{display:none;padding:2px 18px 18px;flex-direction:column;gap:12px}
+.hero-demo.is-sent .hw-foot{display:none}
+.hero-demo.is-sent .hw-sent{display:flex;animation:hwIn .4s ease both}
+.hw-sent-row{display:flex;align-items:flex-start;gap:11px}
+.hw-sent-ic{width:40px;height:40px;border-radius:50%;background:#E4F1EB;color:var(--success);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.hw-sent-row b{display:block;color:var(--ink);font-size:.98rem;line-height:1.3}
+.hw-sent-row span{font-size:.84rem;color:var(--muted);line-height:1.4}
+.hw-metric{background:var(--tint-cool);border:1px solid var(--sig-soft);border-radius:10px;padding:12px 14px;font-size:.9rem;color:var(--body);max-width:none}
+.hw-metric b{color:var(--action);font-size:1.05rem;font-weight:700}
+.hw-replay{align-self:flex-start;background:none;border:0;cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:600;
+  color:var(--action);padding:4px 0;display:inline-flex;align-items:center;gap:7px}
+.hw-replay:hover{text-decoration:underline}
+.hw-caption{font-size:.86rem;color:var(--muted);text-align:center;max-width:none;margin-inline:auto;line-height:1.5}
+/* Entrance-Stagger (nur mit JS via .play) + Puls am Freigeben-Button */
+@keyframes hwIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes hwPulse{0%,100%{box-shadow:0 0 0 0 rgba(44,88,150,0)}55%{box-shadow:0 0 0 7px rgba(44,88,150,.13)}}
+.hero-demo.play .hw-mail{animation:hwIn .5s ease both .1s}
+.hero-demo.play .hw-badges{animation:hwIn .5s ease both .55s}
+.hero-demo.play .hw-draft{animation:hwIn .55s ease both 1s}
+.hero-demo.play .hw-foot{animation:hwIn .5s ease both 1.55s}
+.hero-demo.play:not(.is-sent) .hw-approve{animation:hwPulse 2.4s ease-in-out 2.5s infinite}
+@media (prefers-reduced-motion:reduce){
+  .hero-demo.play .hw-mail,.hero-demo.play .hw-badges,.hero-demo.play .hw-draft,
+  .hero-demo.play .hw-foot,.hero-demo.play .hw-approve,.hero-demo.is-sent .hw-sent{animation:none}
 }
+@media (max-width:980px){.hero-demo{max-width:440px}}
 
 /* ============ Cards grid (Problem / generic) ============ */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
