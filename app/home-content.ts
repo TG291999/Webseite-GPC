@@ -10,6 +10,7 @@
  * (Menü, FAQ-Akkordeon, Scroll-Reveal, Jahreszahl) liegt in app/home-interactions.tsx.
  */
 export const HOME_HTML = `
+<a href="#hauptinhalt" class="skip-link">Zum Inhalt springen</a>
 <!-- ======================= HEADER / NAV ======================= -->
 <header class="header" id="top">
   <div class="container nav">
@@ -44,7 +45,7 @@ export const HOME_HTML = `
   </div>
 </header>
 
-<main>
+<main id="hauptinhalt">
 
 <!-- ======================= 1 · HERO ======================= -->
 <section class="section hero bg-canvas">
@@ -241,7 +242,7 @@ export const HOME_HTML = `
     </div>
 
     <!-- Showcase 01 -->
-    <div class="sc-card reveal" data-sc="01" data-state="before">
+    <div class="sc-card reveal" data-sc="01" data-state="before" role="group" aria-label="Beispiel 1: KI-Anfragen-Triage – Vorher/Nachher">
       <div class="sc-card-head">
         <div class="sc-card-meta">
           <span class="sc-num">01</span>
@@ -290,7 +291,7 @@ export const HOME_HTML = `
     </div>
 
     <!-- Showcase 02 -->
-    <div class="sc-card reveal" data-sc="02" data-state="before">
+    <div class="sc-card reveal" data-sc="02" data-state="before" role="group" aria-label="Beispiel 2: Schadensmeldung zu Handwerker-Auftrag – Vorher/Nachher">
       <div class="sc-card-head">
         <div class="sc-card-meta">
           <span class="sc-num">02</span>
@@ -341,7 +342,7 @@ export const HOME_HTML = `
       </div>
     </div>
 
-    <p class="sc-footnote center reveal">Diese Abläufe setze ich in der eigenen Praxis bei 365&nbsp;Grundbesitz selbst ein.</p>
+    <p class="sc-footnote center reveal">Das sind keine Theorie-Beispiele. Diese Abläufe stammen direkt aus dem Verwaltungsalltag, den ich aus über 8&nbsp;Jahren in der Branche kenne.</p>
   </div>
 </section>
 
@@ -392,23 +393,20 @@ export const HOME_HTML = `
     </div>
     <div class="stair">
       <div class="step-card reveal">
-        <div class="step-n">Schritt 1</div>
-        <h3>Kostenlose Automatisierungs-Analyse</h3>
-        <p>30 Minuten, kostenlos. Sie gehen raus mit einer schriftlichen Liste Ihrer 3 größten Zeitfresser und einer Einschätzung, wie viel Zeit realistisch zurückzuholen ist — ganz gleich, ob Sie danach mit mir arbeiten.</p>
-        <div class="price-free">0 €</div>
+        <div class="step-n">01</div>
+        <h3>Kostenlose Analyse</h3>
+        <p>In 30 Minuten finden wir gemeinsam, wo bei Ihnen die meiste Zeit verloren geht. Unverbindlich, ohne Vorbereitung.</p>
       </div>
       <div class="step-card featured reveal">
         <span class="badge">Empfohlen</span>
-        <div class="step-n">Schritt 2</div>
+        <div class="step-n">02</div>
         <h3>Quick-Win-Audit</h3>
-        <p>Ich analysiere Prozesse und Anfragen im Detail: Wo geht die Zeit hin, was ist automatisierbar, was bringt das in Euro. Sie bekommen eine klare Liste — was sich lohnt, in welcher Reihenfolge.</p>
-        <div class="price"><span class="note">Wird bei anschließender Umsetzung angerechnet.</span></div>
+        <p>Ich nehme Ihren größten Engpass im Detail auf und liefere einen konkreten Umsetzungsplan mit Zahlen. Die Kosten werden voll auf die Umsetzung angerechnet.</p>
       </div>
       <div class="step-card reveal">
-        <div class="step-n">Schritt 3</div>
-        <h3>Umsetzung &amp; laufende Entlastung</h3>
-        <p>5–6 Wochen Aufbau in Ihrer bestehenden Software, dann laufende Pflege. Ihr Team bekommt dauerhaft Stunden zurück.</p>
-        <div class="price"><span class="note">Festpreis nach Audit + monatliche Betreuung.</span></div>
+        <div class="step-n">03</div>
+        <h3>Umsetzung &amp; Schulung</h3>
+        <p>Ich baue die Automatisierung in Ihre bestehende Software, teste sie mit echten Daten und schule Ihr Team. Ohne Systemwechsel.</p>
       </div>
     </div>
     <div class="cta-wrap center reveal">
@@ -423,27 +421,25 @@ export const HOME_HTML = `
   <div class="container">
     <div class="section-head reveal">
       <h2>Ich arbeite nicht mit jeder Verwaltung. Das ist Absicht.</h2>
-      <p class="subhead">Damit es wirklich passt, sage ich auch ehrlich, wann es das nicht tut.</p>
+      <p class="subhead" style="font-style:italic">Automatisierung wirkt nur, wenn sie zu Ihrer Verwaltung passt. Deshalb sage ich vorab ehrlich, für wen ich der Richtige bin — und für wen nicht.</p>
     </div>
     <div class="fit">
       <div class="fit-col yes reveal">
-        <h3>Passt, wenn Sie…</h3>
+        <h3>Passt, wenn Sie sich hier wiedererkennen:</h3>
         <ul class="fit-list">
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>8–25 Mitarbeiter und 3.000–12.000 Einheiten verwalten</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>inhabergeführt sind und Entscheidungen selbst treffen</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>eine bestehende Verwaltungssoftware nutzen — egal welche</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>spüren, dass Ihre Sachbearbeiter unter der Anfragen-Flut zusammenbrechen</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>eine offene Stelle nicht besetzt bekommen</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>wachsen wollen, aber mit dem aktuellen Team nicht können</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ihre besten Leute arbeiten den halben Tag Anfragen ab, statt zu verwalten — und abends ist der Berg trotzdem nicht kleiner.</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sie finden kaum neue Mitarbeiter — und wollen die, die Sie haben, nicht an stumpfe Routine verlieren.</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sie wollen Ihre Software behalten — nicht schon wieder ein System einführen, das Monate kostet und am Ende keiner nutzt.</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ob Miet-, WEG- oder gemischte Verwaltung, ob 3 oder 30 Köpfe: Bei Ihnen wiederholen sich täglich dieselben Anfragen.</li>
         </ul>
       </div>
       <div class="fit-col no reveal">
         <h3>Passt (noch) nicht, wenn Sie…</h3>
         <ul class="fit-list">
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>unter 5 Mitarbeiter sind</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>bereits eine eigene IT-/Digitalisierungs-Abteilung haben, die das selbst löst</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>ein neues ERP suchen — das verkaufe ich bewusst nicht</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>nur Mietverwaltung ohne WEG-Last machen</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>mit Ihren Abläufen zufrieden sind und eigentlich keine Veränderung suchen.</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>das billigste Tool suchen statt den größten Hebel.</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>erwarten, dass eine KI Ihre Mitarbeiter ersetzt — bei mir bleibt der Mensch in der Entscheidung.</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>kaum wiederkehrende Routine haben — dann lohnt sich Automatisierung schlicht nicht, und das sage ich Ihnen lieber vorher.</li>
         </ul>
       </div>
     </div>
@@ -474,7 +470,13 @@ export const HOME_HTML = `
       <img class="speaker-photo" src="/images/tim-goebel-speaker.jpg" width="800" height="533" loading="lazy" alt="Tim Goebel als Speaker auf der Bühne vor Publikum" />
       <div class="speaker-text">
         <div class="eyebrow">Auf der Bühne</div>
-        <p>Speaker bei der <b>BuildinX</b>-Messe in der Dortmunder Westfalenhalle und 2× bei der <b>Founder Fight Night</b>.</p>
+        <p>Ich rede nicht nur über Digitalisierung in der Immobilienbranche — ich habe selbst ein Proptech-Startup gegründet und auf die Bühne gebracht: als Sprecher auf der <b>BuildinX-Messe</b> (Westfalenhalle Dortmund) und als Gründer bei Pitch-Events wie der <b>Founder Fight Night</b> (2×) und der <b>Start-up Night der Wirtschaftsjunioren</b>. Diese Praxis bringe ich heute in jede Automatisierung ein.</p>
+        <div class="about-logos">
+          <span class="ll-label">u.&nbsp;a. auf der Bühne bei:</span>
+          <img src="/images/buildinx-logo.png" width="600" height="79" alt="BuildinX" loading="lazy" />
+          <img src="/images/founder-fight-night-logo.png" width="200" height="200" alt="Founder Fight Night" loading="lazy" />
+          <img src="/images/wirtschaftsjunioren-logo.png" width="259" height="195" alt="Wirtschaftsjunioren" loading="lazy" />
+        </div>
       </div>
     </div>
   </div>
@@ -548,9 +550,10 @@ export const HOME_HTML = `
     </div>
 
     <!-- zcal Inline-Kalender — embed.js wird in app/page.tsx via <Script> geladen.
-         Der Link bleibt als Fallback, falls JavaScript deaktiviert ist. -->
-    <div class="cal-embed-wrap reveal">
+         Der Link im Widget ist der Fallback, falls das Script/JS nicht lädt. -->
+    <div class="cal-embed-wrap reveal" role="region" aria-label="Online-Terminkalender — kostenlose Analyse buchen">
       <div class="zcal-inline-widget"><a href="https://zcal.co/i/1v-apJ3U">Automatisierungs-Analyse — Termin auswählen</a></div>
+      <p class="cal-fallback-note">Kalender lädt nicht? <a href="https://zcal.co/i/1v-apJ3U" target="_blank" rel="noopener">Termin direkt buchen →</a></p>
     </div>
 
     <div class="reassure reveal">

@@ -14,7 +14,7 @@
 
   --maxw:1180px; --measure:720px;
   --r:12px; --r-lg:16px;
-  --space:clamp(80px,9vw,128px);
+  --space:clamp(64px,6.6vw,96px);
   --shadow-sm:0 1px 2px rgba(21,39,63,.04),0 2px 8px rgba(21,39,63,.05);
   --shadow-md:0 4px 14px rgba(21,39,63,.07),0 10px 30px rgba(21,39,63,.06);
   /* Schriftfamilien werden über next/font gesetzt (siehe app/layout.tsx) */
@@ -558,3 +558,19 @@ p{max-width:var(--measure)}
 .zcal-inline-widget iframe{width:100%;border:0;border-radius:var(--r-lg)}
 .zcal-inline-widget > a{display:inline-flex;align-items:center;gap:.5em;background:var(--action);color:#fff;
   font-weight:600;padding:14px 24px;border-radius:10px;min-height:52px}
+.cal-fallback-note{text-align:center;margin-top:16px;font-size:.86rem;color:var(--muted)}
+
+/* ===== A11y: Skip-Link ===== */
+.skip-link{position:fixed;left:12px;top:-64px;z-index:200;background:var(--action);color:#fff;
+  padding:11px 18px;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;transition:top .15s ease}
+.skip-link:focus{top:12px;outline:3px solid var(--ink);outline-offset:2px}
+
+/* ===== Mobile Tap-Targets: Footer-Links ≥44px ===== */
+.footer ul{gap:2px}
+.footer ul a{display:inline-flex;align-items:center;min-height:44px}
+
+/* ===== Über-mich: Logo-Leiste „auf der Bühne bei" ===== */
+.about-logos{display:flex;flex-wrap:wrap;align-items:center;gap:16px 34px;margin-top:24px;padding-top:20px;border-top:1px solid var(--border-warm)}
+.about-logos .ll-label{width:100%;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:-2px}
+.about-logos img{height:30px;width:auto;filter:grayscale(1);opacity:.55;mix-blend-mode:multiply;transition:opacity .25s ease,filter .25s ease}
+.about-logos img:hover{filter:grayscale(0);opacity:1}
