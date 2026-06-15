@@ -36,7 +36,7 @@ const jsonLd = {
           name: "Müssen wir unsere Software wechseln?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Nein. Wir bauen die Automatisierung in Ihr bestehendes System. Kein Datenumzug, keine neue Oberfläche, keine Migration — auch wenn Ihr ERP in die Jahre gekommen ist.",
+            text: "Nein — das ist der Kern. Ich baue die Automatisierung in Ihr bestehendes System. Kein Datenumzug, keine neue Oberfläche, keine Migration.",
           },
         },
         {

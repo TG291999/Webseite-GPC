@@ -108,6 +108,73 @@ export function HomeInteractions() {
     editBtn?.addEventListener("click", onEdit)
     replayBtn?.addEventListener("click", onReplay)
 
+    /* Vorher/Nachher-Showcase: eigener State pro Karte (kein Auto-Play) */
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const scCleanups: Array<() => void> = []
+    document.querySelectorAll<HTMLElement>(".sc-card").forEach((card) => {
+      const runBtn = card.querySelector<HTMLButtonElement>(".sc-run")
+      const segs = Array.from(card.querySelectorAll<HTMLButtonElement>(".sc-seg"))
+      const approveBtn = card.querySelector<HTMLButtonElement>(".sc-approve")
+      const approveHTML = approveBtn?.innerHTML
+      let runTimer: number | undefined
+      const apply = (state: string) => {
+        card.dataset.state = state
+        segs.forEach((s) => s.setAttribute("aria-pressed", String(s.dataset.state === state)))
+        if (runBtn) {
+          runBtn.innerHTML =
+            state === "after"
+              ? "Zurücksetzen ↺"
+              : 'Automatisierung ausführen <span class="arrow">→</span>'
+          runBtn.classList.toggle("is-reset", state === "after")
+        }
+        if (approveBtn && state === "before") {
+          if (approveHTML !== undefined) approveBtn.innerHTML = approveHTML
+          approveBtn.classList.remove("sc-done")
+          approveBtn.disabled = false
+        }
+      }
+      const onRun = () => {
+        if (card.dataset.state === "after") {
+          window.clearTimeout(runTimer)
+          card.classList.remove("running")
+          apply("before")
+          return
+        }
+        if (prefersReduced) {
+          apply("after")
+          return
+        }
+        card.classList.add("running")
+        apply("after")
+        window.clearTimeout(runTimer)
+        runTimer = window.setTimeout(() => card.classList.remove("running"), 1500)
+      }
+      const segHandlers = segs.map((s) => {
+        const h = () => {
+          window.clearTimeout(runTimer)
+          card.classList.remove("running")
+          apply(s.dataset.state || "before")
+        }
+        s.addEventListener("click", h)
+        return [s, h] as const
+      })
+      const onApproveSc = () => {
+        if (!approveBtn) return
+        approveBtn.innerHTML = 'Gesendet &amp; dokumentiert <span class="arrow">✓</span>'
+        approveBtn.classList.add("sc-done")
+        approveBtn.disabled = true
+      }
+      runBtn?.addEventListener("click", onRun)
+      approveBtn?.addEventListener("click", onApproveSc)
+      apply("before")
+      scCleanups.push(() => {
+        window.clearTimeout(runTimer)
+        runBtn?.removeEventListener("click", onRun)
+        segHandlers.forEach(([s, h]) => s.removeEventListener("click", h))
+        approveBtn?.removeEventListener("click", onApproveSc)
+      })
+    })
+
     /* Year */
     const year = document.getElementById("year")
     if (year) year.textContent = String(new Date().getFullYear())
@@ -121,6 +188,7 @@ export function HomeInteractions() {
       approve?.removeEventListener("click", onApprove)
       editBtn?.removeEventListener("click", onEdit)
       replayBtn?.removeEventListener("click", onReplay)
+      scCleanups.forEach((fn) => fn())
       io.disconnect()
     }
   }, [])
