@@ -12,10 +12,10 @@ export function Footer() {
         <div className="footer-grid">
           <div>
             <Link href="/" className="brand">
-              <svg className="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                <rect x="3" y="13" width="5" height="16" rx="1.5" fill="#749FDD" />
-                <rect x="13.5" y="8" width="5" height="21" rx="1.5" fill="#9BC0EB" />
-                <rect x="24" y="3" width="5" height="26" rx="1.5" fill="#fff" />
+              <svg className="mark" viewBox="0 0 32 32" fill="#fff" aria-hidden="true">
+                <rect x="3" y="13" width="5" height="16" rx="1.5" opacity=".55" />
+                <rect x="13.5" y="8" width="5" height="21" rx="1.5" opacity=".8" />
+                <rect x="24" y="3" width="5" height="26" rx="1.5" />
               </svg>
               <span>Goebel & Partner</span>
             </Link>
@@ -40,8 +40,6 @@ export function Footer() {
             <h4>Kontakt & Recht</h4>
             <ul>
               <li>Goebel & Partner Consulting</li>
-              <li>Inhaber Tim Goebel</li>
-              <li>Hilgenloh 19 · 44379 Dortmund</li>
               <li><a href="mailto:tim@goebel-partner.de">tim@goebel-partner.de</a></li>
               <li><a href="tel:+491726932222">0172 - 693 22 22</a></li>
               <li><Link href="/impressum">Impressum</Link></li>

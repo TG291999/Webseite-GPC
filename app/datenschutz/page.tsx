@@ -105,12 +105,13 @@ export default function DatenschutzPage() {
 
           <h2>6. Terminbuchung (zcal)</h2>
           <p>
-            Für die Vereinbarung der kostenlosen Analyse nutze ich den Dienst <strong>zcal</strong>{" "}
-            (zcal.co). Wenn Sie auf den Buchungs-Button klicken, werden Sie auf eine Seite von zcal
-            weitergeleitet. Erst dort von Ihnen eingegebene Daten (z. B. Name, E-Mail-Adresse,
-            gewünschter Termin) werden zur Vereinbarung und Durchführung des Termins verarbeitet.
-            Dabei können Daten auch in Drittländer übertragen werden; eine Absicherung erfolgt über
-            die EU-Standardvertragsklauseln.
+            Für die Vereinbarung der kostenlosen Analyse ist im Buchungsbereich der Kalender des
+            Dienstes <strong>zcal</strong> (zcal.co) eingebunden. Beim Laden dieses Bereichs wird
+            Inhalt von zcal nachgeladen; dabei wird Ihre IP-Adresse an zcal übertragen. Die von Ihnen
+            für einen Termin eingegebenen Daten (z. B. Name, E-Mail-Adresse, gewünschter Termin)
+            werden zur Vereinbarung und Durchführung des Termins verarbeitet. Dabei können Daten auch
+            in Drittländer übertragen werden; eine Absicherung erfolgt über die
+            EU-Standardvertragsklauseln.
           </p>
           <p>
             <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Durchführung

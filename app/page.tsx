@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import { HOME_HTML } from "./home-content"
 import { HomeInteractions } from "./home-interactions"
 
@@ -109,6 +110,8 @@ export default function HomePage() {
       />
       <div dangerouslySetInnerHTML={{ __html: HOME_HTML }} />
       <HomeInteractions />
+      {/* zcal Inline-Kalender: lädt das Embed-Script, das .zcal-inline-widget rendert */}
+      <Script src="https://static.zcal.co/embed/v1/embed.js" strategy="afterInteractive" />
     </>
   )
 }

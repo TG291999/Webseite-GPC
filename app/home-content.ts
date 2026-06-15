@@ -547,13 +547,10 @@ export const HOME_HTML = `
       </ul>
     </div>
 
-    <!-- Buchung: Button öffnet den zcal-Terminkalender in neuem Tab.
-         Optional später: zcal-/Cal.com-Inline-Embed-Snippet einsetzen und diese Karte ersetzen. -->
-    <div class="cal-embed reveal" id="cal-inline">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-      <p class="cal-head">Wählen Sie einen Termin, der Ihnen passt</p>
-      <p style="font-size:.92rem">30&nbsp;Minuten · online · kostenlos · ohne Verpflichtung</p>
-      <a href="https://zcal.co/i/1v-apJ3U" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:6px">Termin jetzt auswählen <span class="arrow">→</span></a>
+    <!-- zcal Inline-Kalender — embed.js wird in app/page.tsx via <Script> geladen.
+         Der Link bleibt als Fallback, falls JavaScript deaktiviert ist. -->
+    <div class="cal-embed-wrap reveal">
+      <div class="zcal-inline-widget"><a href="https://zcal.co/i/1v-apJ3U">Automatisierungs-Analyse — Termin auswählen</a></div>
     </div>
 
     <div class="reassure reveal">
@@ -572,7 +569,7 @@ export const HOME_HTML = `
     <div class="footer-grid">
       <div>
         <a href="#top" class="brand">
-          <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="3" y="13" width="5" height="16" rx="1.5" fill="#749FDD"/><rect x="13.5" y="8" width="5" height="21" rx="1.5" fill="#9BC0EB"/><rect x="24" y="3" width="5" height="26" rx="1.5" fill="#fff"/></svg>
+          <svg class="mark" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><rect x="3" y="13" width="5" height="16" rx="1.5" opacity=".55"/><rect x="13.5" y="8" width="5" height="21" rx="1.5" opacity=".8"/><rect x="24" y="3" width="5" height="26" rx="1.5"/></svg>
           <span>Goebel&nbsp;&amp;&nbsp;Partner</span>
         </a>
         <p class="footer-claim">Struktur, Automatisierung und KI für Hausverwaltungen — innerhalb der Software, die Sie bereits nutzen. Ohne Systemwechsel.</p>
@@ -591,8 +588,6 @@ export const HOME_HTML = `
         <h4>Kontakt &amp; Recht</h4>
         <ul>
           <li>Goebel &amp; Partner Consulting</li>
-          <li>Inhaber Tim Goebel</li>
-          <li>Hilgenloh 19 · 44379 Dortmund</li>
           <li><a href="mailto:tim@goebel-partner.de">tim@goebel-partner.de</a></li>
           <li><a href="tel:+491726932222">0172 - 693 22 22</a></li>
           <li><a href="/impressum">Impressum</a></li>

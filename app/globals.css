@@ -551,3 +551,10 @@ p{max-width:var(--measure)}
   .sc-card.running .sc-after .sc-mail2,.sc-card.running .sc-after .sc-row,.sc-card.running .sc-after .sc-approve,
   .sc-card[data-state="after"] .sc-m-rest{animation:none}
 }
+
+/* ===== zcal Inline-Kalender ===== */
+.cal-embed-wrap{max-width:940px;margin:42px auto 0}
+.zcal-inline-widget{min-height:600px;border-radius:var(--r-lg);overflow:hidden}
+.zcal-inline-widget iframe{width:100%;border:0;border-radius:var(--r-lg)}
+.zcal-inline-widget > a{display:inline-flex;align-items:center;gap:.5em;background:var(--action);color:#fff;
+  font-weight:600;padding:14px 24px;border-radius:10px;min-height:52px}
