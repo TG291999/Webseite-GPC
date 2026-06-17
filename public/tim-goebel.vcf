@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Goebel;Tim;;;
+FN:Tim Goebel
+ORG:Goebel & Partner Consulting
+TITLE:Gründer
+TEL;TYPE=CELL,VOICE:+491726932222
+EMAIL;TYPE=INTERNET:tim@goebel-partner.de
+URL:https://www.goebel-partner.de/
+item1.URL:https://www.linkedin.com/in/tim-goebel-gpc/
+item1.X-ABLabel:LinkedIn
+ADR;TYPE=WORK:;;Hilgenloh 19;Dortmund;;44379;Deutschland
+NOTE:Hausverwaltungen ihre Zeit zurückgeben – ohne Systemwechsel.
+END:VCARD

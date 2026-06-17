@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Tim Goebel · Goebel &amp; Partner Consulting</title>
+<meta name="description" content="Hausverwaltungen ihre Zeit zurückgeben – ohne Systemwechsel." />
+<meta name="theme-color" content="#FAF7F1" />
+
+<!-- Favicon (nutzt die Marken-Icons der Hauptseite) -->
+<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Tim Goebel · Goebel & Partner Consulting" />
+<meta property="og:description" content="Hausverwaltungen ihre Zeit zurückgeben – ohne Systemwechsel." />
+<meta property="og:url" content="https://www.goebel-partner.de/tim" />
+<!-- PLATZHALTER FOTO (auch og:image): zeigt aktuell das vorhandene Portrait. -->
+<meta property="og:image" content="https://www.goebel-partner.de/images/tim-goebel-portrait.jpg" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tim Goebel · Goebel & Partner Consulting" />
+<meta name="twitter:description" content="Hausverwaltungen ihre Zeit zurückgeben – ohne Systemwechsel." />
+<meta name="twitter:image" content="https://www.goebel-partner.de/images/tim-goebel-portrait.jpg" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+
+<style>
+  /* ===== Brand Tokens (exakt) ===== */
+  :root{
+    --cream:#FAF7F1; --corn:#749FDD; --navy:#1B3A63; --gold:#D49A2A;
+    --navy-hover:#16304E; --body:#3A4654; --muted:#6B7785; --line:#E7E1D6; --paper:#FFFFFF;
+    --font-display:'Fraunces',Georgia,'Times New Roman',serif;
+    --font-body:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--font-body);background:var(--cream);color:var(--body);
+    min-height:100svh;display:flex;flex-direction:column;line-height:1.5;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .card{
+    width:100%;max-width:480px;margin:auto;text-align:center;
+    padding:36px 22px calc(28px + env(safe-area-inset-bottom));
+  }
+  .photo{
+    width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center 20%;
+    display:block;margin:0 auto 22px;border:3px solid var(--paper);background:var(--corn);
+    box-shadow:0 8px 26px rgba(27,58,99,.18);
+  }
+  h1{
+    font-family:var(--font-display);font-weight:600;font-size:clamp(1.85rem,7vw,2.2rem);
+    color:var(--navy);letter-spacing:-.01em;line-height:1.08;
+  }
+  h1 .dot{color:var(--gold)} /* Gold-Punkt nach dem Schlüsselwort */
+  .rule{width:46px;height:3px;background:var(--gold);border-radius:2px;margin:14px auto 16px} /* Gold-Unterstreichung */
+  .role{font-size:1.02rem;color:var(--navy);font-weight:500}
+  .tagline{
+    font-family:var(--font-mono);font-size:.76rem;color:var(--gold);letter-spacing:.01em;
+    line-height:1.55;max-width:330px;margin:14px auto 28px;
+  }
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:.55em;text-decoration:none;
+    font-family:inherit;font-weight:600;border-radius:13px;
+    transition:transform .12s ease,background .15s ease,border-color .15s ease,box-shadow .15s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-primary{
+    background:var(--navy);color:#fff;width:100%;min-height:56px;font-size:1.05rem;
+    box-shadow:0 6px 18px rgba(27,58,99,.22);
+  }
+  .btn-primary:hover{background:var(--navy-hover)}
+  .btn-primary svg{flex:0 0 auto}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:13px}
+  .btn-outline{
+    background:var(--paper);color:var(--navy);border:1.5px solid var(--line);
+    min-height:54px;font-size:.96rem; /* ≥48px Tap-Target */
+  }
+  .btn-outline:hover{border-color:var(--corn)}
+  .btn-outline svg{color:var(--corn);flex:0 0 auto}
+  footer{margin-top:30px;font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
+  footer a{color:var(--muted);text-decoration:none;padding:6px 4px}
+  footer a:hover{color:var(--navy)}
+  footer .sep{opacity:.5;margin:0 2px}
+
+  /* ===== Dezente Fade-in-Animation (CSS only) ===== */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .card > *{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+  .card > *:nth-child(1){animation-delay:.04s}
+  .card > *:nth-child(2){animation-delay:.10s}
+  .card > *:nth-child(3){animation-delay:.16s}
+  .card > *:nth-child(4){animation-delay:.22s}
+  .card > *:nth-child(5){animation-delay:.30s}
+  .card > *:nth-child(6){animation-delay:.40s}
+  .card > *:nth-child(7){animation-delay:.50s}
+  @media (prefers-reduced-motion:reduce){
+    .card > *{animation:none}
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+
+    <!-- PLATZHALTER FOTO: aktuell das vorhandene Portrait. Eigenes Karten-Foto?
+         Datei z. B. als /public/tim/tim-foto.jpg ablegen und src unten auf "./tim-foto.jpg" ändern. -->
+    <img class="photo" src="/images/tim-goebel-portrait.jpg" width="130" height="130"
+         alt="Tim Goebel, Gründer von Goebel & Partner Consulting" loading="lazy" decoding="async" />
+
+    <h1>Tim Goebel<span class="dot">.</span></h1>
+    <div class="rule"></div>
+    <p class="role">Gründer · Goebel &amp; Partner Consulting</p>
+    <p class="tagline">Hausverwaltungen ihre Zeit zurückgeben – ohne Systemwechsel.</p>
+
+    <!-- Primär: vCard speichern -->
+    <a class="btn btn-primary" href="/tim-goebel.vcf">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      Kontakt speichern
+    </a>
+
+    <!-- Sekundäre Actions (alle mit echten Daten gefüllt) -->
+    <div class="actions">
+      <a class="btn btn-outline" href="tel:+491726932222">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Anrufen
+      </a>
+      <a class="btn btn-outline" href="mailto:tim@goebel-partner.de">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+        E-Mail
+      </a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/tim-goebel-gpc/" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn btn-outline" href="https://zcal.co/i/1v-apJ3U" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Termin buchen
+      </a>
+    </div>
+
+    <footer>
+      <a href="/impressum">Impressum</a><span class="sep">·</span><a href="/datenschutz">Datenschutz</a>
+    </footer>
+  </main>
+</body>
+</html>
