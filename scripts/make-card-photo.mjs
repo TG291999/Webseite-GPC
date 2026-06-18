@@ -5,7 +5,7 @@ import sharp from "sharp"
 const SRC = `${process.env.HOME}/Desktop/HQ4A3715 Kopie.jpg`
 
 await sharp(SRC)
-  .extract({ left: 1000, top: 850, width: 2000, height: 2000 })
+  .extract({ left: 500, top: 600, width: 3000, height: 3000 })
   .resize(640, 640)
   .jpeg({ quality: 84, mozjpeg: true })
   .toFile("public/tim/tim-foto.jpg")
