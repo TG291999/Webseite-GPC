@@ -78,7 +78,7 @@ export default function DatenschutzPage() {
 
           <hr />
 
-          <h2>4. Reichweitenmessung (Vercel Web Analytics)</h2>
+          <h2>4. Reichweitenmessung (Vercel Web Analytics &amp; Google Analytics)</h2>
           <p>
             Zur Verbesserung der Website nutze ich <strong>Vercel Web Analytics</strong>. Dieser
             Dienst arbeitet <strong>ohne Cookies</strong> und ohne die Bildung von wiedererkennbaren
@@ -89,6 +89,34 @@ export default function DatenschutzPage() {
           <p>
             <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
             einer datensparsamen Reichweitenmessung).
+          </p>
+
+          <h3>Google Analytics (nur mit Einwilligung)</h3>
+          <p>
+            Zusätzlich nutze ich <strong>Google Analytics 4</strong>, einen Webanalysedienst der
+            Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland). Google Analytics
+            verwendet Cookies und erstellt pseudonyme Nutzungsstatistiken (z. B. aufgerufene Seiten,
+            Verweildauer, ungefähre Herkunft, Gerät und Browser).{" "}
+            <strong>
+              Google Analytics wird erst geladen und aktiv, nachdem Sie über das Cookie-Banner
+              ausdrücklich eingewilligt haben.
+            </strong>{" "}
+            Ohne Ihre Einwilligung werden keine Google-Cookies gesetzt und keine Daten an Google
+            übermittelt.
+          </p>
+          <p>
+            Dabei können Daten an die Google LLC in die USA übertragen werden; abgesichert über die
+            EU-Standardvertragsklauseln (Art. 46 DSGVO). Die von Google Analytics gesetzten Cookies
+            haben eine Speicherdauer von bis zu 24 Monaten.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) i. V. m.
+            § 25 Abs. 1 TTDSG. Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft
+            widerrufen — über den Link „Cookie-Einstellungen" im Footer. Weitere Informationen:{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              policies.google.com/privacy
+            </a>
+            .
           </p>
 
           <hr />
@@ -143,9 +171,11 @@ export default function DatenschutzPage() {
 
           <h2>8. Cookies</h2>
           <p>
-            Diese Website verwendet ausschließlich technisch notwendige Cookies, soweit sie für den
-            Betrieb erforderlich sind. Es werden keine Tracking-, Werbe- oder Analyse-Cookies
-            eingesetzt. Eine Einwilligung ist daher nicht erforderlich (Art. 6 Abs. 1 lit. f DSGVO).
+            Technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind, werden
+            ohne Einwilligung gesetzt (Art. 6 Abs. 1 lit. f DSGVO). <strong>Analyse-Cookies (Google
+            Analytics) werden ausschließlich nach Ihrer ausdrücklichen Einwilligung</strong> über das
+            Cookie-Banner gesetzt. Werbe-Cookies setze ich nicht ein. Ihre Einwilligung können Sie
+            jederzeit über den Link „Cookie-Einstellungen" im Footer ändern oder widerrufen.
           </p>
 
           <hr />

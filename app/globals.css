@@ -574,3 +574,26 @@ p{max-width:var(--measure)}
 .about-logos .ll-label{width:100%;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:-2px}
 .about-logos img{height:30px;width:auto;filter:grayscale(1);opacity:.55;mix-blend-mode:multiply;transition:opacity .25s ease,filter .25s ease}
 .about-logos img:hover{filter:grayscale(0);opacity:1}
+
+/* ===== Cookie-Consent-Banner (unten, geblurter Hintergrund) ===== */
+.cc-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:flex-end;justify-content:center;
+  padding:18px;background:rgba(21,39,63,.30);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
+  animation:ccFade .25s ease}
+@keyframes ccFade{from{opacity:0}to{opacity:1}}
+.cc-banner{width:100%;max-width:560px;background:var(--surface);border:1px solid var(--border-warm);
+  border-radius:var(--r-lg);box-shadow:var(--shadow-md);padding:22px 24px calc(22px + env(safe-area-inset-bottom));
+  animation:ccUp .3s cubic-bezier(.22,.61,.36,1) both}
+@keyframes ccUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.cc-title{font-weight:700;color:var(--ink);font-size:1.06rem;margin-bottom:8px}
+.cc-text{font-size:.92rem;color:var(--body);line-height:1.55;max-width:none}
+.cc-text a{color:var(--action);font-weight:600}
+.cc-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.cc-btn{flex:1 1 0;min-width:150px;min-height:48px;border-radius:10px;font-family:inherit;font-size:.95rem;
+  font-weight:600;cursor:pointer;border:1.5px solid transparent;transition:background .15s ease,border-color .15s ease}
+.cc-accept{background:var(--action);color:#fff}
+.cc-accept:hover{background:var(--action-hover)}
+.cc-decline{background:var(--surface);color:var(--ink);border-color:var(--border-warm)}
+.cc-decline:hover{border-color:var(--muted)}
+.cc-btn:focus-visible{outline:3px solid var(--action);outline-offset:2px}
+.js-cookie-settings{cursor:pointer}
+@media (prefers-reduced-motion:reduce){.cc-overlay,.cc-banner{animation:none}}

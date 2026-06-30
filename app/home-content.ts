@@ -600,7 +600,7 @@ export const HOME_HTML = `
     </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> Goebel &amp; Partner Consulting</span>
-      <span>DSGVO-konform · EU-Hosting · AVV</span>
+      <span>DSGVO-konform · EU-Hosting · AVV · <a href="#" class="js-cookie-settings">Cookie-Einstellungen</a></span>
     </div>
   </div>
 </footer>

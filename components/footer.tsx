@@ -50,7 +50,7 @@ export function Footer() {
 
         <div className="footer-bottom">
           <span>© {year} Goebel & Partner Consulting</span>
-          <span>DSGVO-konform · EU-Hosting · AVV</span>
+          <span>DSGVO-konform · EU-Hosting · AVV · <a href="#" className="js-cookie-settings">Cookie-Einstellungen</a></span>
         </div>
       </div>
     </footer>

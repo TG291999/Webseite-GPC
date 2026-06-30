@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Inter, Source_Serif_4 } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { CookieConsent } from "@/components/cookie-consent"
 import "./globals.css"
 
 const inter = Inter({
@@ -84,6 +85,7 @@ export default function RootLayout({
           <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
         </noscript>
         {children}
+        <CookieConsent />
         <Analytics />
       </body>
     </html>
