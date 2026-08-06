@@ -812,3 +812,16 @@ p{max-width:var(--measure)}
 @media(max-width:860px){.lm-card{grid-template-columns:1fr}.lm-cta{align-items:stretch}
   .lm-cta .btn{justify-content:center}}
 .booking-alt{margin-top:26px;font-size:.95rem;color:var(--muted)}
+
+/* ===== Prozess-Check: hervorgehobene Kontakt-Box + Abschluss-Mikrozeile ===== */
+.pc-nachtrag-promoted{margin:26px 0;padding:26px 24px;border:1px solid rgba(201,154,78,.45);
+  background:linear-gradient(180deg,rgba(201,154,78,.07),rgba(201,154,78,.02));
+  border-radius:var(--r-lg);box-shadow:var(--shadow-md);position:relative;overflow:hidden}
+.pc-nachtrag-promoted::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;
+  background:linear-gradient(90deg,var(--accent-amber),rgba(201,154,78,.3))}
+.pc-nachtrag-titel{font-size:1.2rem;font-weight:700;letter-spacing:-.015em;color:var(--ink);
+  margin:2px 0 10px;line-height:1.25}
+.pc-nachtrag-promoted p{color:var(--body);font-size:.93rem;max-width:54ch}
+.pc-nachtrag-cta{margin-top:2px}
+.pc-nachtrag-promoted .pc-mikro{margin-top:12px}
+.pc-abschluss-mikro{margin-top:14px;font-size:.8rem;color:rgba(255,255,255,.55);max-width:none}

@@ -14,7 +14,9 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
 const CONFIG = {
-  webhookURL: "", // Make.com-Webhook. Leer = Testbetrieb, es wird nichts gesendet.
+  // Eigene API-Route: mailt den Lead an tim@goebel-partner.de (RESEND_API_KEY nötig)
+  // und reicht ihn optional an Make/Close weiter (MAKE_WEBHOOK_URL). Siehe app/api/prozess-check/route.ts.
+  webhookURL: "/api/prozess-check",
   stundensatz: 38,
   stundensatzVerband: 65,
   automatisierbar: 0.4,
@@ -537,7 +539,7 @@ export function ProzessCheck() {
                     className={satz === CONFIG.stundensatz ? "aktiv" : ""}
                     onClick={() => setSatz(CONFIG.stundensatz)}
                   >
-                    {CONFIG.stundensatz} € · meine Rechnung
+                    {CONFIG.stundensatz} € · konservative Rechnung
                   </button>
                   <button
                     className={satz === CONFIG.stundensatzVerband ? "aktiv" : ""}
@@ -551,6 +553,48 @@ export function ProzessCheck() {
                   Objektkalkulation mit {CONFIG.stundensatzVerband} €. Nehmen Sie den Wert, den Sie
                   für richtig halten.
                 </p>
+
+                <div className="pc-nachtrag pc-nachtrag-promoted">
+                  {nachtragOk ? (
+                    <>
+                      <div className="pc-beschriftung">Notiert</div>
+                      <p style={{ margin: 0 }}>
+                        Danke. Dann wird aus meiner Rückmeldung ein kurzes Gespräch statt einer
+                        langen Mail.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <div className="pc-siegel">Freiwillig · 20 Sekunden</div>
+                      <h3 className="pc-nachtrag-titel">
+                        Machen Sie aus der Zahl ein 5-Minuten-Gespräch.
+                      </h3>
+                      <p>
+                        Ich melde mich ohnehin einmal kurz zu Ihrer Auswertung — das habe ich oben
+                        versprochen. Mit Namen und Nummer wird daraus ein kurzer Anruf statt
+                        Mail-Pingpong: Sie stellen Ihre Fragen direkt, ich ordne Ihre Zahlen ein,
+                        fertig.
+                      </p>
+                      <div className="pc-zweispalt">
+                        <label className="pc-feld">
+                          <span>Name</span>
+                          <input id="pcName" type="text" autoComplete="name" />
+                        </label>
+                        <label className="pc-feld">
+                          <span>Telefon</span>
+                          <input id="pcTelefon" type="tel" autoComplete="tel" />
+                        </label>
+                      </div>
+                      <button className="btn btn-primary pc-nachtrag-cta" onClick={nachtragSpeichern}>
+                        Rückruf statt Mail <span className="arrow">→</span>
+                      </button>
+                      <p className="pc-mikro">
+                        Ein Anruf, kein Vertriebs-Dauerfeuer. Danach entscheiden Sie, ob es
+                        weitergeht.
+                      </p>
+                    </>
+                  )}
+                </div>
 
                 <div className="pc-block pc-luecke">
                   <h3>Was dieser Check nicht weiß</h3>
@@ -583,43 +627,18 @@ export function ProzessCheck() {
                   </p>
                 </div>
 
-                <div className="pc-nachtrag">
-                  {nachtragOk ? (
-                    <>
-                      <div className="pc-beschriftung">Notiert</div>
-                      <p style={{ margin: 0 }}>Danke. Ich spreche Sie richtig an, wenn ich mich melde.</p>
-                    </>
-                  ) : (
-                    <>
-                      <div className="pc-beschriftung">Freiwillig</div>
-                      <p>Wie darf ich Sie ansprechen, wenn ich mich melde?</p>
-                      <div className="pc-zweispalt">
-                        <label className="pc-feld">
-                          <span>Name</span>
-                          <input id="pcName" type="text" autoComplete="name" />
-                        </label>
-                        <label className="pc-feld">
-                          <span>Telefon</span>
-                          <input id="pcTelefon" type="tel" autoComplete="tel" />
-                        </label>
-                      </div>
-                      <button className="pc-nachtrag-btn" onClick={nachtragSpeichern}>
-                        Speichern
-                      </button>
-                    </>
-                  )}
-                </div>
-
                 <div className="pc-abschluss">
-                  <h3>Fünfzehn Minuten, dann wissen Sie mehr</h3>
+                  <h3>Machen Sie aus dem Verdacht einen Befund — kostenlos.</h3>
                   <p>
-                    Wir gehen Ihre Antworten kurz gemeinsam durch. Ich sage Ihnen ehrlich, ob sich
-                    der Prozess bei Ihrer Größe rechnet – oder ob ein anderer der bessere Einstieg
-                    wäre.
+                    In der kostenlosen Automatisierungs-Analyse prüfen wir Ihre Zahlen gegen Ihre
+                    echten Abläufe. Sie gehen mit Ihren drei größten Zeitfressern raus — auch wenn
+                    wir danach nie wieder sprechen. Und ich sage Ihnen ehrlich, wenn sich der
+                    Prozess bei Ihrer Größe nicht rechnet.
                   </p>
                   <a href={CONFIG.terminLink} target="_blank" rel="noopener">
-                    Termin aussuchen <span className="arrow">→</span>
+                    Kostenlose Analyse sichern <span className="arrow">→</span>
                   </a>
+                  <p className="pc-abschluss-mikro">Kein Verkaufsgespräch · Sie entscheiden danach</p>
                 </div>
 
                 <p className="pc-notiz">
