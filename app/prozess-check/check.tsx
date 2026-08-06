@@ -662,7 +662,7 @@ export function ProzessCheck() {
                     <>
                       <div className="pc-siegel">Freiwillig · 20 Sekunden</div>
                       <h3 className="pc-nachtrag-titel">
-                        Lieber ein kurzer Rückruf zu Ihren Zahlen?
+                        Lieber ein persönlicher Rückruf zu Ihren Zahlen?
                       </h3>
                       <div className="pc-zweispalt">
                         <label className="pc-feld">
