@@ -65,8 +65,11 @@ export function HomeInteractions() {
     }
     window.addEventListener("resize", onResize)
 
-    /* Scroll reveal — kritisch gedämpfte Feder statt CSS-Transition */
+    /* Scroll reveal — kritisch gedämpfte Feder statt CSS-Transition.
+       In Karten-Grids mit leichtem Stagger, damit die Reihenfolge lesbar wird
+       (01 → 02 → 03); gedeckelt, damit niemand auf Inhalte wartet. */
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const STAGGER_PARENTS = ".grid-3,.grid-2,.pillars-grid,.stair,.loop,.fit"
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -77,10 +80,15 @@ export function HomeInteractions() {
               el.style.opacity = "1"
               el.style.transform = "none"
             } else {
+              const parent = el.parentElement
+              const delay =
+                parent && parent.matches(STAGGER_PARENTS)
+                  ? Math.min(Array.prototype.indexOf.call(parent.children, el), 4) * 0.07
+                  : 0
               animate(
                 el,
                 { opacity: 1, transform: "translateY(0px)" },
-                { type: "spring", bounce: 0, duration: 0.75 }
+                { type: "spring", bounce: 0, duration: 0.75, delay }
               )
             }
             if (el.classList.contains("hero-demo")) {
@@ -243,6 +251,42 @@ export function HomeInteractions() {
         calcCleanups.push(() => input.removeEventListener("input", update))
       })
       calcCleanups.push(() => controls?.stop())
+
+      /* Count-up beim ersten Sichtbarwerden: Summe federt von 0 auf den
+         Startwert. Unterbrechbar — greift der Nutzer währenddessen zum
+         Slider, zielt dieselbe Feder einfach auf den neuen Wert um. */
+      const calcCard = calcTotal.closest(".calc-card")
+      if (calcCard) {
+        const countIo = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return
+              countIo.disconnect()
+              const target =
+                Number(calcN.value) * Number(calcH.value) * Number(calcR.value) * 46
+              if (reduceMotion) {
+                shown = target
+                render(target)
+                return
+              }
+              controls?.stop()
+              shown = 0
+              controls = animate(0, target, {
+                type: "spring",
+                bounce: 0,
+                duration: 1.2,
+                onUpdate: (v) => {
+                  shown = v
+                  render(v)
+                },
+              })
+            })
+          },
+          { threshold: 0.35 }
+        )
+        countIo.observe(calcCard)
+        calcCleanups.push(() => countIo.disconnect())
+      }
     }
 
     /* Year */
