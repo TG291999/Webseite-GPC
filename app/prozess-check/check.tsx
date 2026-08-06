@@ -180,6 +180,43 @@ const GESAMT = 8 // 7 Auswahlfragen + Betriebsgrößen
 const zahl = (n: number, d = 0) =>
   n.toLocaleString("de-DE", { minimumFractionDigits: d, maximumFractionDigits: d })
 
+/* Tippfehler-Vorschlag für gängige Mail-Domains — wird nur gezeigt, wenn die
+   DNS-Prüfung die eingegebene Domain bereits abgelehnt hat (keine falschen
+   Alarme bei echten Firmen-Domains). */
+const BEKANNTE_DOMAINS = [
+  "gmail.com", "googlemail.com", "web.de", "gmx.de", "gmx.net", "t-online.de",
+  "outlook.com", "outlook.de", "hotmail.com", "hotmail.de", "yahoo.com",
+  "yahoo.de", "icloud.com", "freenet.de", "aol.com", "magenta.de",
+]
+
+function editierDistanz(a: string, b: string): number {
+  const m = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)])
+  for (let j = 1; j <= b.length; j++) m[0][j] = j
+  for (let i = 1; i <= a.length; i++)
+    for (let j = 1; j <= b.length; j++)
+      m[i][j] = Math.min(
+        m[i - 1][j] + 1,
+        m[i][j - 1] + 1,
+        m[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+      )
+  return m[a.length][b.length]
+}
+
+function tippfehlerVorschlag(email: string): string | null {
+  const [lokal, domain] = email.toLowerCase().split("@")
+  if (!lokal || !domain || BEKANNTE_DOMAINS.includes(domain)) return null
+  let bester: string | null = null
+  let besteDistanz = 3
+  for (const kandidat of BEKANNTE_DOMAINS) {
+    const d = editierDistanz(domain, kandidat)
+    if (d < besteDistanz) {
+      besteDistanz = d
+      bester = kandidat
+    }
+  }
+  return bester ? `${lokal}@${bester}` : null
+}
+
 function rechnen(antworten: Record<string, string>, satz: number) {
   const A = parseFloat(antworten.haeufigkeit)
   const B = parseFloat(antworten.dauer)
@@ -204,6 +241,8 @@ export function ProzessCheck() {
   const [freigegeben, setFreigegeben] = useState(false)
   const [satz, setSatz] = useState(CONFIG.stundensatz)
   const [nachtragOk, setNachtragOk] = useState(false)
+  const [prueft, setPrueft] = useState(false)
+  const [vorschlag, setVorschlag] = useState("")
   const emailRef = useRef<HTMLInputElement>(null)
   const calRef = useRef<HTMLDivElement>(null)
 
@@ -284,7 +323,7 @@ export function ProzessCheck() {
     setStep(9)
   }
 
-  const freischalten = () => {
+  const freischalten = async () => {
     const wert = emailRef.current?.value.trim() ?? ""
     if (!/.+@.+\..+/.test(wert)) {
       setWarnung("Bitte eine gültige E-Mail-Adresse eintragen – sonst kommt die Rechnung nicht an.")
@@ -292,9 +331,46 @@ export function ProzessCheck() {
       return
     }
     setWarnung("")
+    setVorschlag("")
+    setPrueft(true)
+    /* Stille Echtheitsprüfung (DNS/MX). Bei Infrastrukturfehlern: durchlassen —
+       lieber ein zweifelhafter Lead als ein verlorener echter. */
+    let ok = true
+    let grund = ""
+    try {
+      const antwort = await fetch("/api/prozess-check/mail-pruefung", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: wert }),
+      })
+      const d = await antwort.json()
+      ok = d.ok !== false
+      grund = d.grund ?? ""
+    } catch {
+      ok = true
+    }
+    setPrueft(false)
+    if (!ok) {
+      if (grund === "wegwerf") {
+        setWarnung("Wegwerf-Adressen funktionieren hier nicht — Ihre Auswertung ginge ins Leere.")
+      } else {
+        const v = tippfehlerVorschlag(wert)
+        if (v) setVorschlag(v)
+        setWarnung("Diese Adresse scheint es nicht zu geben — bitte prüfen Sie die Schreibweise.")
+      }
+      emailRef.current?.focus()
+      return
+    }
     setAntworten((a) => ({ ...a, email: wert }))
     setFreigegeben(true)
     senden("freigabe", { email: wert })
+  }
+
+  const vorschlagUebernehmen = () => {
+    if (emailRef.current) emailRef.current.value = vorschlag
+    setVorschlag("")
+    setWarnung("")
+    void freischalten()
   }
 
   const nachtragSpeichern = () => {
@@ -532,14 +608,19 @@ export function ProzessCheck() {
                       autoComplete="email"
                       inputMode="email"
                       onKeyDown={(e) => {
-                        if (e.key === "Enter") freischalten()
+                        if (e.key === "Enter") void freischalten()
                       }}
                     />
-                    <button className="btn btn-primary" onClick={freischalten}>
-                      Summe anzeigen
+                    <button className="btn btn-primary" onClick={() => void freischalten()} disabled={prueft}>
+                      {prueft ? "Einen Moment …" : "Summe anzeigen"}
                     </button>
                   </div>
                   {warnung && <p className="pc-warn">{warnung}</p>}
+                  {vorschlag && (
+                    <button type="button" className="pc-vorschlag" onClick={vorschlagUebernehmen}>
+                      Meinten Sie <b>{vorschlag}</b>? — übernehmen
+                    </button>
+                  )}
                   <p className="pc-mikro">
                     Kein Newsletter, keine Weitergabe an Dritte. Ich melde mich einmal dazu – wenn
                     Sie das nicht möchten, genügt ein Wort zurück.{" "}
