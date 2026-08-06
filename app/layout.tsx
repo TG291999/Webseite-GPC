@@ -1,19 +1,13 @@
 import type { Metadata, Viewport } from "next"
-import { Inter, Source_Serif_4 } from "next/font/google"
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { CookieConsent } from "@/components/cookie-consent"
 import "./globals.css"
 
+// System-Font zuerst (SF auf Apple-Geräten); Inter ist der gleichwertige Fallback.
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
-})
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-source-serif",
   display: "swap",
 })
 
@@ -75,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${inter.variable} ${sourceSerif.variable}`}
+      className={inter.variable}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >

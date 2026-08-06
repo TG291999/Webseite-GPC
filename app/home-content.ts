@@ -54,7 +54,7 @@ export const HOME_HTML = `
   <div class="container hero-grid">
     <div class="reveal">
       <h1>Ich gebe Ihrer Verwaltung Zeit zurück.</h1>
-      <p class="subhead">Bis&nbsp;zu 10&nbsp;Stunden pro Woche weniger Routine für Ihre Sachbearbeiter — durch Struktur, Automatisierung und gezielte KI, direkt in Ihrer bestehenden Software. Egal welche. Kein Systemwechsel, kein IT-Projekt.</p>
+      <p class="subhead"><strong>Bis&nbsp;zu 10&nbsp;Stunden pro Woche</strong> weniger Routine für Ihre Sachbearbeiter — durch Struktur, Automatisierung und gezielte KI, direkt in Ihrer bestehenden Software. Egal welche. <strong>Kein Systemwechsel, kein IT-Projekt.</strong></p>
       <div class="cta-wrap">
         <a href="#buchung" class="btn btn-primary">Kostenlose Analyse sichern <span class="arrow">→</span></a>
         <p class="micro">Kostenlos · 30&nbsp;Minuten · kein Verkaufsgespräch.<br>Sie gehen mit Ihren 3 größten Zeitfressern raus — auch ohne Zusammenarbeit.</p>
@@ -152,15 +152,24 @@ export const HOME_HTML = `
         </div>
         <p style="color:var(--body)">Das Problem ist nicht, dass Ihr Team zu langsam ist — sondern dass Menschen Arbeit machen, die kein Mensch mehr machen müsste. Diese Zeit fehlt dort, wo sie Ihre Verwaltung wirklich weiterbringt.</p>
       </div>
-      <div class="calc-card reveal">
-        <div class="label">Ein Rechenbeispiel</div>
-        <div class="calc-row"><span>Sachbearbeiter</span><span>4</span></div>
-        <div class="calc-row"><span>Std./Woche für Standardanfragen</span><span>je 10</span></div>
-        <div class="calc-row"><span>Interner Stundensatz</span><span>25&nbsp;€</span></div>
+      <div class="calc-card reveal" role="group" aria-label="Interaktives Rechenbeispiel: Stellen Sie Ihre eigenen Zahlen ein">
+        <div class="label">Ihr Rechenbeispiel — stellen Sie Ihre Zahlen ein</div>
+        <div class="calc-slider">
+          <div class="cs-head"><span>Sachbearbeiter</span><output id="calcOutN">4</output></div>
+          <input type="range" id="calcN" min="1" max="20" step="1" value="4" aria-label="Anzahl Sachbearbeiter" />
+        </div>
+        <div class="calc-slider">
+          <div class="cs-head"><span>Std./Woche für Standardanfragen</span><output id="calcOutH">je 10</output></div>
+          <input type="range" id="calcH" min="2" max="20" step="1" value="10" aria-label="Stunden pro Woche für Standardanfragen" />
+        </div>
+        <div class="calc-slider">
+          <div class="cs-head"><span>Interner Stundensatz</span><output id="calcOutR">25&nbsp;€</output></div>
+          <input type="range" id="calcR" min="20" max="60" step="5" value="25" aria-label="Interner Stundensatz in Euro" />
+        </div>
         <div class="calc-row"><span>Arbeitswochen pro Jahr</span><span>46</span></div>
         <div class="calc-result">
           <span class="muted" style="font-size:.85rem">Beispielhafte gebundene Arbeitszeit pro Jahr</span>
-          <div class="big" style="font-size:clamp(2.1rem,4vw,2.7rem);font-weight:600">46.000&nbsp;€</div>
+          <div class="big" id="calcTotal" aria-live="polite">46.000&nbsp;€</div>
         </div>
         <p class="calc-note">Das ist keine garantierte Ersparnis, sondern ein transparentes Rechenbeispiel. Ihre echten Zahlen prüfen wir in der kostenlosen Analyse.</p>
       </div>
