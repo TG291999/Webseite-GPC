@@ -581,7 +581,7 @@ export function ProzessCheck() {
                     <>
                       <div className="pc-siegel">Freiwillig · 20 Sekunden</div>
                       <h3 className="pc-nachtrag-titel">
-                        Lieber ein kurzer Rückruf zu Ihren Zahlen? Name und Nummer genügen.
+                        Lieber ein kurzer Rückruf zu Ihren Zahlen?
                       </h3>
                       <div className="pc-zweispalt">
                         <label className="pc-feld">
@@ -631,17 +631,18 @@ export function ProzessCheck() {
                   </p>
                 </div>
 
-                <h3 className="pc-cal-titel">Machen Sie jetzt aus dem Verdacht einen Befund.</h3>
-
-                {/* zcal-Inline-Kalender direkt auf der Seite — niedrigste Hürde.
-                    Wird im Effekt oben imperativ befüllt (außerhalb von React). */}
-                <div className="pc-cal" ref={calRef} />
-                <p className="pc-cal-fallback">
-                  Kalender lädt nicht?{" "}
-                  <a href={CONFIG.terminLink} target="_blank" rel="noopener">
-                    Termin direkt buchen →
-                  </a>
-                </p>
+                <div className="pc-cal-card">
+                  <h3 className="pc-cal-titel">Machen Sie jetzt aus dem Verdacht einen Befund.</h3>
+                  {/* zcal-Inline-Kalender direkt auf der Seite — niedrigste Hürde.
+                      Wird im Effekt oben imperativ befüllt (außerhalb von React). */}
+                  <div className="pc-cal" ref={calRef} />
+                  <p className="pc-cal-fallback">
+                    Kalender lädt nicht?{" "}
+                    <a href={CONFIG.terminLink} target="_blank" rel="noopener">
+                      Termin direkt buchen →
+                    </a>
+                  </p>
+                </div>
 
                 <p className="pc-notiz">
                   Ein Hinweis zur Ehrlichkeit: In dieser Rechnung stecken keine fremden
