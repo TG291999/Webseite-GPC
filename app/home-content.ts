@@ -29,6 +29,7 @@ export const HOME_HTML = `
       <a href="#loesung">Lösung</a>
       <a href="#ablauf">Ablauf</a>
       <a href="#ueber-mich">Über mich</a>
+      <a href="/prozess-check">Prozess-Check</a>
     </nav>
     <div class="nav-cta">
       <a href="#buchung" class="btn btn-primary">Kostenlose Analyse <span class="arrow">→</span></a>
@@ -43,6 +44,7 @@ export const HOME_HTML = `
       <a href="#loesung">Lösung</a>
       <a href="#ablauf">Ablauf</a>
       <a href="#ueber-mich">Über mich</a>
+      <a href="/prozess-check">Prozess-Check</a>
     </nav>
   </div>
 </header>
@@ -172,6 +174,17 @@ export const HOME_HTML = `
           <div class="big" id="calcTotal" aria-live="polite">46.000&nbsp;€</div>
         </div>
         <p class="calc-note">Das ist keine garantierte Ersparnis, sondern ein transparentes Rechenbeispiel. Ihre echten Zahlen prüfen wir in der kostenlosen Analyse.</p>
+      </div>
+    </div>
+    <div class="lm-card reveal">
+      <div>
+        <div class="eyebrow">Prozess-Check · kostenlos</div>
+        <h3>Wollen Sie es genauer wissen — für einen konkreten Ablauf aus Ihrem Alltag?</h3>
+        <p>Acht Fragen zu Mahnwesen, Anfragen, Belegen oder Schäden. Daraus entsteht eine Rechnung mit jeder Zeile offen — auf Basis Ihrer eigenen Angaben, nicht irgendeines Durchschnitts.</p>
+      </div>
+      <div class="lm-cta">
+        <a href="/prozess-check" class="btn">Prozess-Check starten <span class="arrow">→</span></a>
+        <p class="micro">4 Minuten · Ergebnis sofort · keine Registrierung</p>
       </div>
     </div>
   </div>
@@ -572,6 +585,7 @@ export const HOME_HTML = `
       <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kein Verkaufsdruck</span>
       <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Konkrete Erkenntnisse garantiert</span>
     </div>
+    <p class="booking-alt center reveal">Noch nicht bereit für ein Gespräch? <a href="/prozess-check" class="textlink">Starten Sie mit dem 4-Minuten-Prozess-Check →</a></p>
   </div>
 </section>
 
