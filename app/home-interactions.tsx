@@ -16,6 +16,15 @@ export function HomeInteractions() {
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
 
+    /* Logo → sanft zurück zum Seitenanfang (Hero) */
+    const brandLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('a.brand[href="#top"]'))
+    const onBrand = (e: Event) => {
+      e.preventDefault()
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" })
+    }
+    brandLinks.forEach((a) => a.addEventListener("click", onBrand))
+
     /* Mobile menu */
     const burger = document.getElementById("burger")
     const menu = document.getElementById("mobileMenu")
@@ -295,6 +304,7 @@ export function HomeInteractions() {
 
     return () => {
       window.removeEventListener("scroll", onScroll)
+      brandLinks.forEach((a) => a.removeEventListener("click", onBrand))
       burger?.removeEventListener("click", onBurger)
       menuLinks.forEach((a) => a.removeEventListener("click", onMenuLink))
       faqBtns.forEach((btn, i) => btn.removeEventListener("click", faqHandlers[i]))

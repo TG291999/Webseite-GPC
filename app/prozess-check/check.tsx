@@ -656,7 +656,7 @@ export function ProzessCheck() {
                   {nachtragOk ? (
                     <>
                       <div className="pc-beschriftung">Notiert</div>
-                      <p style={{ margin: 0 }}>Danke — ich melde mich kurz bei Ihnen.</p>
+                      <p style={{ margin: 0 }}>Danke — ich melde mich in Kürze bei Ihnen.</p>
                     </>
                   ) : (
                     <>
