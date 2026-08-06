@@ -66,13 +66,19 @@ export async function POST(request: Request) {
       ? `Prozess-Check: ${daten.name || daten.email} hat Kontaktdaten ergänzt`
       : `Neuer Prozess-Check-Lead: ${daten.email} · ${euro(daten.euro)}/Jahr (${daten.bereich_lang ?? "?"})`
     aufgaben.push(
-      resend.emails.send({
-        from: process.env.RESEND_FROM || "Prozess-Check <onboarding@resend.dev>",
-        to: LEAD_EMPFAENGER,
-        replyTo: typeof daten.email === "string" ? daten.email : undefined,
-        subject: betreff,
-        text: leadText(daten),
-      })
+      resend.emails
+        .send({
+          from: process.env.RESEND_FROM || "Prozess-Check <onboarding@resend.dev>",
+          to: LEAD_EMPFAENGER,
+          replyTo: typeof daten.email === "string" ? daten.email : undefined,
+          subject: betreff,
+          text: leadText(daten),
+        })
+        .then((antwort) => {
+          // Der Resend-SDK wirft bei API-Fehlern nicht, sondern liefert { error }.
+          if (antwort.error) console.error("[prozess-check] Resend-Fehler:", antwort.error)
+          else console.log("[prozess-check] Mail zugestellt, id:", antwort.data?.id)
+        })
     )
   }
 
