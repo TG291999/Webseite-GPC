@@ -813,15 +813,25 @@ p{max-width:var(--measure)}
   .lm-cta .btn{justify-content:center}}
 .booking-alt{margin-top:26px;font-size:.95rem;color:var(--muted)}
 
-/* ===== Prozess-Check: hervorgehobene Kontakt-Box + Abschluss-Mikrozeile ===== */
-.pc-nachtrag-promoted{margin:26px 0;padding:26px 24px;border:1px solid rgba(201,154,78,.45);
+/* ===== Prozess-Check: hervorgehobene Kontakt-Box + Abschluss + Kalender ===== */
+.pc-nachtrag-promoted{margin:26px 0;padding:20px 22px 18px;border:1px solid rgba(201,154,78,.45);
   background:linear-gradient(180deg,rgba(201,154,78,.07),rgba(201,154,78,.02));
-  border-radius:var(--r-lg);box-shadow:var(--shadow-md);position:relative;overflow:hidden}
+  border-radius:var(--r-lg);box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
 .pc-nachtrag-promoted::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;
   background:linear-gradient(90deg,var(--accent-amber),rgba(201,154,78,.3))}
-.pc-nachtrag-titel{font-size:1.2rem;font-weight:700;letter-spacing:-.015em;color:var(--ink);
-  margin:2px 0 10px;line-height:1.25}
+.pc-nachtrag-promoted .pc-siegel{margin-bottom:8px}
+.pc-nachtrag-titel{font-size:1.05rem;font-weight:600;letter-spacing:-.012em;color:var(--ink);
+  margin:0 0 14px;line-height:1.35}
 .pc-nachtrag-promoted p{color:var(--body);font-size:.93rem;max-width:54ch}
 .pc-nachtrag-cta{margin-top:2px}
-.pc-nachtrag-promoted .pc-mikro{margin-top:12px}
 .pc-abschluss-mikro{margin-top:14px;font-size:.8rem;color:rgba(255,255,255,.55);max-width:none}
+.pc-abschluss-slim{margin-bottom:0}
+.pc-abschluss-slim p{margin-bottom:0}
+.pc-abschluss-slim .pc-abschluss-mikro{margin-top:12px}
+.pc-cal{margin-top:16px}
+.pc-cal .zcal-inline-widget{min-height:600px;border-radius:var(--r-lg);overflow:hidden;
+  background:var(--surface);border:1px solid var(--hairline);box-shadow:var(--shadow-md)}
+.pc-cal .zcal-inline-widget iframe{width:100%;border:0;border-radius:var(--r-lg)}
+.pc-cal .zcal-inline-widget>a{display:inline-flex;align-items:center;gap:.5em;margin:24px;
+  background:var(--action);color:#fff;font-weight:600;padding:14px 26px;border-radius:980px;min-height:52px}
+.pc-cal-fallback{text-align:center;margin-top:12px;font-size:.82rem;color:var(--muted);max-width:none}

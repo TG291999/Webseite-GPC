@@ -205,6 +205,7 @@ export function ProzessCheck() {
   const [satz, setSatz] = useState(CONFIG.stundensatz)
   const [nachtragOk, setNachtragOk] = useState(false)
   const emailRef = useRef<HTMLInputElement>(null)
+  const calRef = useRef<HTMLDivElement>(null)
 
   const bereich = antworten.bereich ? BEREICHE[antworten.bereich] : null
 
@@ -216,6 +217,22 @@ export function ProzessCheck() {
       return () => clearTimeout(t)
     }
   }, [step, freigegeben])
+
+  /* zcal-Kalender erst nach der Freischaltung aufbauen. Das Widget-Markup wird
+     imperativ in ein leeres, von React nicht verwaltetes Div gesetzt — sonst
+     räumt Reacts Re-Render (z. B. beim Stundensatz-Wechsel) das vom
+     Embed-Script injizierte iframe wieder weg. */
+  useEffect(() => {
+    if (!freigegeben || !calRef.current) return
+    calRef.current.innerHTML = `<div class="zcal-inline-widget"><a href="${CONFIG.terminLink}">Automatisierungs-Analyse — Termin auswählen</a></div>`
+    const script = document.createElement("script")
+    script.src = "https://static.zcal.co/embed/v1/embed.js"
+    script.async = true
+    document.body.appendChild(script)
+    return () => {
+      script.remove()
+    }
+  }, [freigegeben])
 
   const senden = (anlass: string, extra: Record<string, string> = {}) => {
     const r = rechnen(antworten, CONFIG.stundensatz)
@@ -558,23 +575,14 @@ export function ProzessCheck() {
                   {nachtragOk ? (
                     <>
                       <div className="pc-beschriftung">Notiert</div>
-                      <p style={{ margin: 0 }}>
-                        Danke. Dann wird aus meiner Rückmeldung ein kurzes Gespräch statt einer
-                        langen Mail.
-                      </p>
+                      <p style={{ margin: 0 }}>Danke — ich melde mich kurz bei Ihnen.</p>
                     </>
                   ) : (
                     <>
                       <div className="pc-siegel">Freiwillig · 20 Sekunden</div>
                       <h3 className="pc-nachtrag-titel">
-                        Machen Sie aus der Zahl ein 5-Minuten-Gespräch.
+                        Lieber ein kurzer Rückruf zu Ihren Zahlen? Name und Nummer genügen.
                       </h3>
-                      <p>
-                        Ich melde mich ohnehin einmal kurz zu Ihrer Auswertung — das habe ich oben
-                        versprochen. Mit Namen und Nummer wird daraus ein kurzer Anruf statt
-                        Mail-Pingpong: Sie stellen Ihre Fragen direkt, ich ordne Ihre Zahlen ein,
-                        fertig.
-                      </p>
                       <div className="pc-zweispalt">
                         <label className="pc-feld">
                           <span>Name</span>
@@ -588,10 +596,6 @@ export function ProzessCheck() {
                       <button className="btn btn-primary pc-nachtrag-cta" onClick={nachtragSpeichern}>
                         Rückruf statt Mail <span className="arrow">→</span>
                       </button>
-                      <p className="pc-mikro">
-                        Ein Anruf, kein Vertriebs-Dauerfeuer. Danach entscheiden Sie, ob es
-                        weitergeht.
-                      </p>
                     </>
                   )}
                 </div>
@@ -627,19 +631,25 @@ export function ProzessCheck() {
                   </p>
                 </div>
 
-                <div className="pc-abschluss">
+                <div className="pc-abschluss pc-abschluss-slim">
                   <h3>Machen Sie aus dem Verdacht einen Befund — kostenlos.</h3>
                   <p>
                     In der kostenlosen Automatisierungs-Analyse prüfen wir Ihre Zahlen gegen Ihre
                     echten Abläufe. Sie gehen mit Ihren drei größten Zeitfressern raus — auch wenn
-                    wir danach nie wieder sprechen. Und ich sage Ihnen ehrlich, wenn sich der
-                    Prozess bei Ihrer Größe nicht rechnet.
+                    wir danach nie wieder sprechen. Suchen Sie sich direkt hier einen Termin aus:
                   </p>
-                  <a href={CONFIG.terminLink} target="_blank" rel="noopener">
-                    Kostenlose Analyse sichern <span className="arrow">→</span>
-                  </a>
                   <p className="pc-abschluss-mikro">Kein Verkaufsgespräch · Sie entscheiden danach</p>
                 </div>
+
+                {/* zcal-Inline-Kalender direkt auf der Seite — niedrigste Hürde.
+                    Wird im Effekt oben imperativ befüllt (außerhalb von React). */}
+                <div className="pc-cal" ref={calRef} />
+                <p className="pc-cal-fallback">
+                  Kalender lädt nicht?{" "}
+                  <a href={CONFIG.terminLink} target="_blank" rel="noopener">
+                    Termin direkt buchen →
+                  </a>
+                </p>
 
                 <p className="pc-notiz">
                   Ein Hinweis zur Ehrlichkeit: In dieser Rechnung stecken keine fremden
