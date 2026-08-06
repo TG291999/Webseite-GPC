@@ -828,7 +828,9 @@ p{max-width:var(--measure)}
 .pc-abschluss-slim{margin-bottom:0}
 .pc-abschluss-slim p{margin-bottom:0}
 .pc-abschluss-slim .pc-abschluss-mikro{margin-top:12px}
-.pc-cal{margin-top:16px}
+.pc-cal-titel{margin:38px 0 16px;font-size:clamp(1.25rem,3.4vw,1.55rem);font-weight:700;
+  letter-spacing:-.018em;color:var(--ink);line-height:1.25}
+.pc-cal{margin-top:0}
 .pc-cal .zcal-inline-widget{min-height:600px;border-radius:var(--r-lg);overflow:hidden;
   background:var(--surface);border:1px solid var(--hairline);box-shadow:var(--shadow-md)}
 .pc-cal .zcal-inline-widget iframe{width:100%;border:0;border-radius:var(--r-lg)}

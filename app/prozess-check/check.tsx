@@ -397,8 +397,8 @@ export function ProzessCheck() {
             <div className="pc-eyebrow">Frage 8</div>
             <h2 className="pc-h2">Zum Schluss kurz zu Ihrer Verwaltung.</h2>
             <p className="pc-hilfe">
-              Damit die Rechnung zu Ihrer Größe passt und nicht zu einer gedachten
-              Durchschnittsverwaltung.
+              Damit ich Ihre Zahlen richtig einordnen kann — eine Verwaltung mit 800 Einheiten
+              braucht andere Antworten als eine mit 5.000.
             </p>
             <div className="pc-zweispalt">
               <label className="pc-feld">
@@ -631,15 +631,7 @@ export function ProzessCheck() {
                   </p>
                 </div>
 
-                <div className="pc-abschluss pc-abschluss-slim">
-                  <h3>Machen Sie aus dem Verdacht einen Befund — kostenlos.</h3>
-                  <p>
-                    In der kostenlosen Automatisierungs-Analyse prüfen wir Ihre Zahlen gegen Ihre
-                    echten Abläufe. Sie gehen mit Ihren drei größten Zeitfressern raus — auch wenn
-                    wir danach nie wieder sprechen. Suchen Sie sich direkt hier einen Termin aus:
-                  </p>
-                  <p className="pc-abschluss-mikro">Kein Verkaufsgespräch · Sie entscheiden danach</p>
-                </div>
+                <h3 className="pc-cal-titel">Machen Sie jetzt aus dem Verdacht einen Befund.</h3>
 
                 {/* zcal-Inline-Kalender direkt auf der Seite — niedrigste Hürde.
                     Wird im Effekt oben imperativ befüllt (außerhalb von React). */}
