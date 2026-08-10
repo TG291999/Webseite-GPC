@@ -80,6 +80,55 @@ async function inSupabase(ereignis: Record<string, unknown>) {
   }
 }
 
+/**
+ * Selbstauskunft zur Diagnose: Ist die Dauerspeicherung verdrahtet und
+ * erreichbar? Der POST-Pfad antwortet bewusst immer mit 204 — eine
+ * gescheiterte Supabase-Zustellung darf den Check nicht stören —, deshalb
+ * wäre er als Beweis wertlos. Diese Route macht den Zustand prüfbar.
+ *
+ * Gibt ausschließlich Zustandswerte zurück: niemals Schlüssel, URL oder
+ * Inhalte einzelner Ereignisse.
+ */
+export async function GET() {
+  const basis = process.env.FUNNEL_SUPABASE_URL
+  const schluessel = process.env.FUNNEL_SUPABASE_KEY
+  const konfiguriert = Boolean(basis && schluessel)
+
+  const zustand: Record<string, unknown> = {
+    log: true,
+    supabase: { konfiguriert, erreichbar: false, status: null, zeilen: null },
+  }
+  if (!konfiguriert) return NextResponse.json(zustand)
+
+  try {
+    /* HEAD mit count=exact liefert die Zeilenzahl im Content-Range-Header,
+       ohne auch nur eine Zeile zu übertragen. */
+    const antwort = await fetch(
+      `${basis!.replace(/\/$/, "")}/rest/v1/prozess_check_events?select=id`,
+      {
+        method: "HEAD",
+        headers: {
+          apikey: schluessel!,
+          Authorization: `Bearer ${schluessel!}`,
+          Prefer: "count=exact",
+          Range: "0-0",
+        },
+      }
+    )
+    const bereich = antwort.headers.get("content-range")
+    zustand.supabase = {
+      konfiguriert,
+      erreichbar: antwort.ok,
+      status: antwort.status,
+      zeilen: bereich ? Number(bereich.split("/")[1]) : null,
+    }
+  } catch {
+    zustand.supabase = { konfiguriert, erreichbar: false, status: null, zeilen: null }
+  }
+
+  return NextResponse.json(zustand)
+}
+
 export async function POST(request: Request) {
   let roh: Record<string, unknown>
   try {
