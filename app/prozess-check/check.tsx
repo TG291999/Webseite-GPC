@@ -11,7 +11,7 @@
  */
 
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
 const CONFIG = {
   // Eigene API-Route: mailt den Lead an tim@goebel-partner.de (RESEND_API_KEY nötig)
@@ -232,6 +232,24 @@ function rechnen(antworten: Record<string, string>, satz: number) {
   }
 }
 
+/* ---------- Funnel-Messung ----------
+   Macht sichtbar, an welcher Frage jemand aussteigt — ohne URL-Wechsel sieht
+   das sonst kein Analytics-Werkzeug. Die Sitzungs-ID lebt ausschließlich im
+   Arbeitsspeicher: kein Cookie, kein localStorage, damit keine Einwilligung
+   nach § 25 TTDSG nötig ist. Ein Reload zählt deshalb als neue Sitzung — das
+   ist der Preis für die Einwilligungsfreiheit. Übertragen werden Schritt,
+   Antwortoption und Zeiten, niemals E-Mail-Adresse, Name oder Telefonnummer. */
+
+const FUNNEL_URL = "/api/prozess-check/ereignis"
+
+function neueSitzungsId(): string {
+  try {
+    return crypto.randomUUID()
+  } catch {
+    return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`
+  }
+}
+
 export function ProzessCheck() {
   // step: 0 = Start, 1–7 = Auswahlfragen, 8 = Betrieb, 9 = Ergebnis
   const [step, setStep] = useState(0)
@@ -246,7 +264,70 @@ export function ProzessCheck() {
   const emailRef = useRef<HTMLInputElement>(null)
   const calRef = useRef<HTMLDivElement>(null)
 
+  const sitzung = useRef("")
+  const startZeit = useRef(0)
+  const frageZeit = useRef(0)
+  const schrittRef = useRef(0)
+
   const bereich = antworten.bereich ? BEREICHE[antworten.bereich] : null
+
+  const melden = useCallback(
+    (typ: string, felder: Record<string, unknown> = {}, beimVerlassen = false) => {
+      if (!sitzung.current) return
+      const nutzlast = JSON.stringify({
+        sitzung: sitzung.current,
+        typ,
+        schritt: schrittRef.current,
+        ms_gesamt: Date.now() - startZeit.current,
+        ...felder,
+      })
+      if (beimVerlassen && typeof navigator.sendBeacon === "function") {
+        navigator.sendBeacon(FUNNEL_URL, new Blob([nutzlast], { type: "application/json" }))
+        return
+      }
+      /* keepalive lässt die Übertragung einen sofortigen Seitenwechsel
+         überleben. Fehler werden geschluckt: Die Messung darf den Check unter
+         keinen Umständen stören. */
+      fetch(FUNNEL_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: nutzlast,
+        keepalive: true,
+      }).catch(() => {})
+    },
+    []
+  )
+
+  useEffect(() => {
+    sitzung.current = neueSitzungsId()
+    startZeit.current = Date.now()
+    frageZeit.current = Date.now()
+
+    const parameter = new URLSearchParams(window.location.search)
+    let verweis = ""
+    try {
+      verweis = document.referrer ? new URL(document.referrer).hostname : ""
+    } catch {
+      verweis = ""
+    }
+    melden("aufruf", {
+      quelle: parameter.get("q") ?? parameter.get("utm_source") ?? "",
+      kampagne: parameter.get("utm_campaign") ?? "",
+      verweis,
+      geraet: window.matchMedia("(max-width: 760px)").matches ? "mobil" : "desktop",
+    })
+
+    /* pagehide statt beforeunload — feuert zuverlässig auch auf iOS. */
+    const beimVerlassen = () => melden("verlassen", {}, true)
+    window.addEventListener("pagehide", beimVerlassen)
+    return () => window.removeEventListener("pagehide", beimVerlassen)
+  }, [melden])
+
+  useEffect(() => {
+    schrittRef.current = step
+    frageZeit.current = Date.now()
+    if (step > 0) melden("schritt")
+  }, [step, melden])
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior })
@@ -300,12 +381,22 @@ export function ProzessCheck() {
   }
 
   const waehlen = (frage: Frage, wert: string) => {
+    const gewaehlt = frage.optionen.find((o) => o[1] === wert)
+    melden("antwort", {
+      frage: frage.schluessel,
+      frage_nr: frage.nr,
+      antwort: wert,
+      antwort_text: gewaehlt?.[0] ?? "",
+      ms_frage: Date.now() - frageZeit.current,
+    })
     setAntworten((a) => ({ ...a, [frage.schluessel]: wert }))
     setEcho(frage.echoNach ? frage.echoNach(wert) : "")
     setStep((s) => s + 1)
   }
 
   const zurueck = () => {
+    // Ein Rücksprung ist ein Zweifel-Signal — genauso interessant wie ein Abbruch.
+    melden("zurueck")
     setEcho("")
     setStep((s) => Math.max(0, s - 1))
   }
@@ -315,9 +406,16 @@ export function ProzessCheck() {
     const mitarbeiter = (document.getElementById("pcMitarbeiter") as HTMLSelectElement).value
     const software = (document.getElementById("pcSoftware") as HTMLInputElement).value.trim()
     if (!einheiten || !mitarbeiter) {
+      melden("betrieb_unvollstaendig")
       setWarnung("Bitte Einheiten und Mitarbeitende auswählen.")
       return
     }
+    melden("betrieb", {
+      einheiten,
+      mitarbeiter,
+      software,
+      ms_frage: Date.now() - frageZeit.current,
+    })
     setAntworten((a) => ({ ...a, einheiten, mitarbeiter, software }))
     setEcho("")
     setStep(9)
@@ -326,10 +424,12 @@ export function ProzessCheck() {
   const freischalten = async () => {
     const wert = emailRef.current?.value.trim() ?? ""
     if (!/.+@.+\..+/.test(wert)) {
+      melden("mail_ungueltig")
       setWarnung("Bitte eine gültige E-Mail-Adresse eintragen – sonst kommt die Rechnung nicht an.")
       emailRef.current?.focus()
       return
     }
+    melden("mail_versuch", { ms_frage: Date.now() - frageZeit.current })
     setWarnung("")
     setVorschlag("")
     setPrueft(true)
@@ -351,6 +451,7 @@ export function ProzessCheck() {
     }
     setPrueft(false)
     if (!ok) {
+      melden("mail_abgelehnt", { grund: grund || "unbekannt" })
       if (grund === "wegwerf") {
         setWarnung("Wegwerf-Adressen funktionieren hier nicht — Ihre Auswertung ginge ins Leere.")
       } else {
@@ -363,6 +464,7 @@ export function ProzessCheck() {
     }
     setAntworten((a) => ({ ...a, email: wert }))
     setFreigegeben(true)
+    melden("freigabe")
     senden("freigabe", { email: wert })
   }
 
@@ -377,6 +479,8 @@ export function ProzessCheck() {
     const name = (document.getElementById("pcName") as HTMLInputElement).value.trim()
     const telefon = (document.getElementById("pcTelefon") as HTMLInputElement).value.trim()
     setAntworten((a) => ({ ...a, name, telefon }))
+    // Nur ob eine Nummer da ist, nie die Nummer selbst.
+    melden("nachtrag", { zusatz: telefon ? "mit-telefon" : "ohne-telefon" })
     senden("nachtrag", { name, telefon })
     setNachtragOk(true)
   }
@@ -635,13 +739,19 @@ export function ProzessCheck() {
                 <div className="pc-schalter" role="group" aria-label="Stundensatz wählen">
                   <button
                     className={satz === CONFIG.stundensatz ? "aktiv" : ""}
-                    onClick={() => setSatz(CONFIG.stundensatz)}
+                    onClick={() => {
+                      melden("stundensatz", { zusatz: String(CONFIG.stundensatz) })
+                      setSatz(CONFIG.stundensatz)
+                    }}
                   >
                     {CONFIG.stundensatz} € · konservative Rechnung
                   </button>
                   <button
                     className={satz === CONFIG.stundensatzVerband ? "aktiv" : ""}
-                    onClick={() => setSatz(CONFIG.stundensatzVerband)}
+                    onClick={() => {
+                      melden("stundensatz", { zusatz: String(CONFIG.stundensatzVerband) })
+                      setSatz(CONFIG.stundensatzVerband)
+                    }}
                   >
                     {CONFIG.stundensatzVerband} € · VDIV-Kalkulation
                   </button>
@@ -719,7 +829,12 @@ export function ProzessCheck() {
                   <div className="pc-cal" ref={calRef} />
                   <p className="pc-cal-fallback">
                     Kalender lädt nicht?{" "}
-                    <a href={CONFIG.terminLink} target="_blank" rel="noopener">
+                    <a
+                      href={CONFIG.terminLink}
+                      target="_blank"
+                      rel="noopener"
+                      onClick={() => melden("kalender_fallback")}
+                    >
                       Termin direkt buchen →
                     </a>
                   </p>

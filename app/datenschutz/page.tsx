@@ -16,7 +16,7 @@ export default function DatenschutzPage() {
         <div className="container legal-wrap">
           <p className="eyebrow">Rechtliches</p>
           <h1>Datenschutzerklärung</h1>
-          <p className="legal-date">Stand: Juni 2026</p>
+          <p className="legal-date">Stand: August 2026</p>
 
           <p>
             Der Schutz Ihrer personenbezogenen Daten ist mir wichtig. Nachfolgend informiere ich Sie
@@ -169,7 +169,57 @@ export default function DatenschutzPage() {
 
           <hr />
 
-          <h2>8. Cookies</h2>
+          <h2>8. Prozess-Check</h2>
+          <p>
+            Unter <strong>/prozess-check</strong> können Sie in acht Fragen berechnen lassen, wie
+            viel Arbeitszeit ein Routineprozess in Ihrer Verwaltung im Jahr bindet. Die Berechnung
+            findet in Ihrem Browser statt; eine Registrierung ist nicht erforderlich.
+          </p>
+          <p>
+            <strong>Wenn Sie Ihre E-Mail-Adresse angeben</strong>, um die Summe freizuschalten,
+            verarbeite ich diese Adresse gemeinsam mit Ihren Angaben aus dem Check (gewählter
+            Ablauf, Häufigkeit, Bearbeitungszeit, Betriebsgröße, optional Verwaltungssoftware), um
+            Ihnen die Auswertung zuzusenden und mich einmalig dazu bei Ihnen zu melden. Ergänzen Sie
+            freiwillig Name und Telefonnummer für einen Rückruf, verarbeite ich zusätzlich diese
+            Angaben. Zur Prüfung, ob die angegebene Adresse überhaupt existiert, wird die Domain der
+            E-Mail-Adresse technisch abgefragt (DNS/MX); die Adresse selbst wird dabei nicht an
+            Dritte übermittelt.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Durchführung
+            vorvertraglicher Maßnahmen auf Ihre Anfrage). Die Daten werden gelöscht, sobald sie für
+            diesen Zweck nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten
+            entgegenstehen.
+          </p>
+
+          <h3>Nutzungsmessung im Prozess-Check (ohne Cookies)</h3>
+          <p>
+            Um zu erkennen, an welcher Stelle der Check unverständlich ist oder abgebrochen wird,
+            erfasse ich pseudonym den Verlauf innerhalb des Checks: den erreichten Schritt, die
+            jeweils gewählte Antwortoption, die Verweildauer je Frage sowie grobe Angaben zu
+            Herkunft (z. B. Kampagnenkennung, Referrer-Domain) und Gerätetyp. Zur Zusammenführung
+            der Ereignisse eines Besuchs dient eine zufällige Sitzungskennung, die{" "}
+            <strong>ausschließlich im Arbeitsspeicher Ihres Browsers</strong> besteht: Es wird kein
+            Cookie gesetzt und nichts auf Ihrem Endgerät gespeichert oder ausgelesen. Mit dem
+            Schließen der Seite ist die Kennung verloren; ein Wiedererkennen bei einem späteren
+            Besuch ist dadurch nicht möglich.
+          </p>
+          <p>
+            <strong>Nicht erfasst</strong> werden dabei Ihre IP-Adresse, Ihre E-Mail-Adresse, Ihr
+            Name und Ihre Telefonnummer. Eine Zuordnung dieser Nutzungsdaten zu Ihrer Person ist mir
+            damit nicht möglich, und es findet keine seitenübergreifende Verfolgung statt.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+            einer datensparsamen Verbesserung des eigenen Angebots). Da weder Informationen auf
+            Ihrem Endgerät gespeichert noch von dort ausgelesen werden, ist eine Einwilligung nach
+            § 25 TTDSG nicht erforderlich. Sie können dieser Verarbeitung jederzeit unter{" "}
+            <a href="mailto:tim@goebel-partner.de">tim@goebel-partner.de</a> widersprechen.
+          </p>
+
+          <hr />
+
+          <h2>9. Cookies</h2>
           <p>
             Technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind, werden
             ohne Einwilligung gesetzt (Art. 6 Abs. 1 lit. f DSGVO). <strong>Analyse-Cookies (Google
@@ -180,7 +230,7 @@ export default function DatenschutzPage() {
 
           <hr />
 
-          <h2>9. Ihre Rechte</h2>
+          <h2>10. Ihre Rechte</h2>
           <p>Sie haben im Rahmen der gesetzlichen Vorgaben jederzeit das Recht auf:</p>
           <ul>
             <li>Auskunft über Ihre verarbeiteten Daten (Art. 15 DSGVO)</li>
@@ -199,7 +249,7 @@ export default function DatenschutzPage() {
 
           <hr />
 
-          <h2>10. Beschwerderecht</h2>
+          <h2>11. Beschwerderecht</h2>
           <p>
             Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für
             mich zuständige Behörde ist:
@@ -219,7 +269,7 @@ export default function DatenschutzPage() {
 
           <hr />
 
-          <h2>11. Datensicherheit</h2>
+          <h2>12. Datensicherheit</h2>
           <p>
             Diese Website nutzt eine TLS-Verschlüsselung (erkennbar am „https" in der Adresszeile),
             um die Übertragung Ihrer Daten zu schützen.
@@ -227,9 +277,9 @@ export default function DatenschutzPage() {
 
           <hr />
 
-          <h2>12. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+          <h2>13. Aktualität und Änderung dieser Datenschutzerklärung</h2>
           <p>
-            Diese Datenschutzerklärung hat den Stand Juni 2026. Durch die Weiterentwicklung der
+            Diese Datenschutzerklärung hat den Stand August 2026. Durch die Weiterentwicklung der
             Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es
             notwendig werden, sie anzupassen. Die jeweils aktuelle Fassung kann jederzeit auf dieser
             Seite abgerufen werden.
