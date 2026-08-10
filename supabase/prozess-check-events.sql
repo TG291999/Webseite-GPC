@@ -48,6 +48,14 @@ comment on table public.prozess_check_events is
 
 
 -- ---------------------------------------------------------------------------
+-- Kommt überhaupt etwas an? (nach dem Setzen der Variablen + Redeploy)
+-- ---------------------------------------------------------------------------
+-- select zeitpunkt, sitzung, typ, schritt, antwort_text, quelle
+-- from public.prozess_check_events
+-- order by zeitpunkt desc
+-- limit 20;
+
+-- ---------------------------------------------------------------------------
 -- Auswertung: Trichter je Schritt
 -- ---------------------------------------------------------------------------
 -- with sitzungen as (
