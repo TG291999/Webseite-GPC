@@ -89,44 +89,87 @@ async function inSupabase(ereignis: Record<string, unknown>) {
  * Gibt ausschließlich Zustandswerte zurück: niemals Schlüssel, URL oder
  * Inhalte einzelner Ereignisse.
  */
+/* Schlüsselereignisse, an denen sich ablesen lässt, ob der Trichter bis zum
+   Ende trägt — nicht nur, dass irgendetwas ankommt. */
+const SCHLUESSELEREIGNISSE = [
+  "aufruf",
+  "mail_versuch",
+  "mail_abgelehnt",
+  "freigabe",
+  "nachtrag",
+  "verlassen",
+] as const
+
+/**
+ * Zählt Zeilen über den Content-Range-Header. HEAD überträgt dabei keine
+ * einzige Zeile — es geht ausschließlich die Anzahl über die Leitung, nie
+ * ein Inhalt.
+ */
+async function zaehle(basis: string, schluessel: string, filter = "") {
+  const antwort = await fetch(
+    `${basis.replace(/\/$/, "")}/rest/v1/prozess_check_events?select=id${filter}`,
+    {
+      method: "HEAD",
+      headers: {
+        apikey: schluessel,
+        Authorization: `Bearer ${schluessel}`,
+        Prefer: "count=exact",
+        Range: "0-0",
+      },
+    }
+  )
+  const bereich = antwort.headers.get("content-range")
+  return {
+    ok: antwort.ok,
+    status: antwort.status,
+    anzahl: bereich ? Number(bereich.split("/")[1]) : null,
+  }
+}
+
 export async function GET() {
   const basis = process.env.FUNNEL_SUPABASE_URL
   const schluessel = process.env.FUNNEL_SUPABASE_KEY
   const konfiguriert = Boolean(basis && schluessel)
 
-  const zustand: Record<string, unknown> = {
-    log: true,
-    supabase: { konfiguriert, erreichbar: false, status: null, zeilen: null },
+  if (!konfiguriert) {
+    return NextResponse.json({
+      log: true,
+      supabase: { konfiguriert, erreichbar: false, status: null, zeilen: null },
+    })
   }
-  if (!konfiguriert) return NextResponse.json(zustand)
 
   try {
-    /* HEAD mit count=exact liefert die Zeilenzahl im Content-Range-Header,
-       ohne auch nur eine Zeile zu übertragen. */
-    const antwort = await fetch(
-      `${basis!.replace(/\/$/, "")}/rest/v1/prozess_check_events?select=id`,
-      {
-        method: "HEAD",
-        headers: {
-          apikey: schluessel!,
-          Authorization: `Bearer ${schluessel!}`,
-          Prefer: "count=exact",
-          Range: "0-0",
-        },
-      }
-    )
-    const bereich = antwort.headers.get("content-range")
-    zustand.supabase = {
-      konfiguriert,
-      erreichbar: antwort.ok,
-      status: antwort.status,
-      zeilen: bereich ? Number(bereich.split("/")[1]) : null,
+    const gesamt = await zaehle(basis!, schluessel!)
+    if (!gesamt.ok) {
+      return NextResponse.json({
+        log: true,
+        supabase: { konfiguriert, erreichbar: false, status: gesamt.status, zeilen: null },
+      })
     }
-  } catch {
-    zustand.supabase = { konfiguriert, erreichbar: false, status: null, zeilen: null }
-  }
 
-  return NextResponse.json(zustand)
+    const paare = await Promise.all(
+      SCHLUESSELEREIGNISSE.map(async (typ) => {
+        const treffer = await zaehle(basis!, schluessel!, `&typ=eq.${typ}`)
+        return [typ, treffer.anzahl] as const
+      })
+    )
+
+    return NextResponse.json({
+      log: true,
+      supabase: {
+        konfiguriert,
+        erreichbar: true,
+        status: gesamt.status,
+        zeilen: gesamt.anzahl,
+        ereignisse: Object.fromEntries(paare),
+      },
+    })
+  } catch {
+    return NextResponse.json({
+      log: true,
+      supabase: { konfiguriert, erreichbar: false, status: null, zeilen: null },
+    })
+  }
 }
 
 export async function POST(request: Request) {
