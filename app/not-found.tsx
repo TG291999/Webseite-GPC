@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
+import { Header } from "@/components/site/header"
+import { Footer } from "@/components/site/footer"
 
 export const metadata = {
   title: "Seite nicht gefunden – Goebel & Partner Consulting",
@@ -10,9 +10,9 @@ export const metadata = {
 export default function NotFound() {
   return (
     <>
-      <Navigation />
+      <Header />
 
-      <main className="legal bg-canvas" style={{ textAlign: "center" }}>
+      <main className="legal" style={{ textAlign: "center" }}>
         <div className="legal-wrap" style={{ maxWidth: 620 }}>
           <p className="eyebrow" style={{ marginInline: "auto" }}>Fehler 404</p>
           <h1>Diese Seite gibt es nicht (mehr).</h1>
@@ -29,7 +29,7 @@ export default function NotFound() {
               flexWrap: "wrap",
             }}
           >
-            <Link href="/" className="btn btn-primary">
+            <Link href="/" className="btn">
               Zur Startseite <span className="arrow">→</span>
             </Link>
             <Link href="/#buchung" className="textlink">

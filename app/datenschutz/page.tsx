@@ -1,5 +1,5 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
+import { Header } from "@/components/site/header"
+import { Footer } from "@/components/site/footer"
 
 export const metadata = {
   title: "Datenschutzerklärung – Goebel & Partner Consulting",
@@ -10,9 +10,9 @@ export const metadata = {
 export default function DatenschutzPage() {
   return (
     <>
-      <Navigation />
+      <Header />
 
-      <main className="legal bg-canvas">
+      <main className="legal">
         <div className="container legal-wrap">
           <p className="eyebrow">Rechtliches</p>
           <h1>Datenschutzerklärung</h1>

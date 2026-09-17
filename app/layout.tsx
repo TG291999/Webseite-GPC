@@ -1,21 +1,40 @@
 import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
+import { Fraunces, Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { CookieConsent } from "@/components/cookie-consent"
 import "./globals.css"
 
-// System-Font zuerst (SF auf Apple-Geräten); Inter ist der gleichwertige Fallback.
-const inter = Inter({
+/*
+ * Schriftwelt „Die Akte": dieselben drei Familien wie auf der digitalen
+ * Visitenkarte (/tim) — Fraunces für Überschriften, Hanken Grotesk im Text,
+ * IBM Plex Mono für Zahlen, Kapitelnummern und Beschriftungen.
+ */
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-inter",
+  axes: ["opsz", "SOFT", "WONK"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
+  display: "swap",
+})
+
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-hanken",
+  display: "swap",
+})
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-mono",
   display: "swap",
 })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.goebel-partner.de"),
-  title: "Automatisierung für Hausverwaltungen – ohne Systemwechsel | Goebel & Partner",
+  title: "Struktur und Automatisierung für Hausverwaltungen – vor Ort, ohne Systemwechsel | Goebel & Partner",
   description:
-    "Wir geben Hausverwaltungen ihre Sachbearbeiter zurück — durch strukturierte Prozesse, Automatisierung und KI in Ihrer bestehenden Software. Jetzt kostenlose Analyse sichern.",
+    "Ich bringe Struktur in Hausverwaltungen — vor Ort, mit Ihrem Team, in der Software, die Sie schon haben. Dann Automatisierung und KI. Kostenlose 45-Minuten-Analyse.",
   keywords: [
     "Hausverwaltung Automatisierung",
     "Prozesse digitalisieren Hausverwaltung",
@@ -33,10 +52,9 @@ export const metadata: Metadata = {
     locale: "de_DE",
     siteName: "Goebel & Partner Consulting",
     url: "https://www.goebel-partner.de/",
-    title: "Die meisten starten mit KI. Wir starten mit Struktur.",
+    title: "Die meisten starten mit KI. Ich starte mit Struktur.",
     description:
-      "Weniger E-Mail-Flut, weniger Telefon-Stress, entlastete Sachbearbeiter — ohne neues ERP und ohne IT-Projekt. Kostenlose 30-Minuten-Analyse für Hausverwaltungen mit 8–25 Mitarbeitern.",
-    // TODO: OG-Bild unter /public/og-image.png ablegen (1200×630, eigenes Motiv in Markenfarben, kein Stockfoto).
+      "Klare Abläufe, entlastete Sachbearbeiter, Wissen, das im Haus bleibt — vor Ort, in Ihrer Software, ohne IT-Projekt. Kostenlose 45-Minuten-Analyse für Hausverwaltungen.",
     images: [
       {
         url: "/og-image.png",
@@ -48,15 +66,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Die meisten starten mit KI. Wir starten mit Struktur.",
+    title: "Die meisten starten mit KI. Ich starte mit Struktur.",
     description:
-      "Kostenlose 30-Minuten-Automatisierungs-Analyse für Hausverwaltungen — ohne Systemwechsel.",
+      "Kostenlose 45-Minuten-Automatisierungs-Analyse für Hausverwaltungen — ohne Systemwechsel.",
     images: ["/og-image.png"],
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: "#FAF7F1",
+  themeColor: "#F4F0E8",
   width: "device-width",
   initialScale: 1,
 }
@@ -69,15 +87,11 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={inter.variable}
+      className={`${fraunces.variable} ${hanken.variable} ${plexMono.variable}`}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
       <body>
-        {/* Ohne JavaScript bleiben Reveal-Elemente sichtbar */}
-        <noscript>
-          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
-        </noscript>
         {children}
         <CookieConsent />
         <Analytics />

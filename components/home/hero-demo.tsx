@@ -1,0 +1,125 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react"
+import { Check, Pen, Replay } from "@/components/site/icons"
+
+/**
+ * Die Hero-Demo als Vorgang auf Papier: Anfrage erkannt, Entwurf liegt bereit,
+ * ein Klick auf „Freigeben" setzt den Stempel. Genau das ist das Versprechen:
+ * Die Technik bereitet vor, ein Mensch entscheidet.
+ */
+export function HeroDemo() {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true, amount: 0.35 })
+  const reduce = useReducedMotion()
+  const [play, setPlay] = useState(false)
+  const [editing, setEditing] = useState(false)
+  const [sent, setSent] = useState(false)
+  const [time, setTime] = useState("")
+
+  useEffect(() => {
+    if (inView) setPlay(true)
+  }, [inView])
+
+  const approve = () => {
+    setEditing(false)
+    setTime(new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" }))
+    setSent(true)
+  }
+  const replay = () => {
+    setSent(false)
+    setEditing(false)
+    setPlay(false)
+    requestAnimationFrame(() => setPlay(true))
+  }
+
+  return (
+    <div
+      ref={ref}
+      className={`vg-wrap${play ? " play" : ""}`}
+      role="group"
+      aria-label="Interaktive Demo: Eine Mieteranfrage wird automatisch vorsortiert, ein Antwortentwurf vorbereitet und vom Mitarbeiter per Klick freigegeben."
+    >
+      <div className={`vg${editing ? " editing" : ""}${sent ? " sent" : ""}`}>
+        <div className="vg-head">
+          <span>Mieteranfrage · Posteingang</span>
+          <b>Vorgang 2026-0412</b>
+        </div>
+
+        <ol className="vg-prog" aria-hidden="true">
+          <li className="done"><i><Check size={10} /></i>Anfrage</li>
+          <li className="done"><i><Check size={10} /></i>Vorbereitet</li>
+          <li className={sent ? "done" : ""}><i>{sent ? <Check size={10} /> : "3"}</i>Freigabe</li>
+        </ol>
+
+        <div className="vg-body">
+          <dl className="vg-meta">
+            <dt>Betreff</dt>
+            <dd>Nebenkostenabrechnung 2024 – Whg. 12</dd>
+            <dt>Absender</dt>
+            <dd>Mieter · Lindenstr. 14</dd>
+          </dl>
+
+          <div className="vg-chips">
+            <span className="vg-chip"><Check size={11} />Erkannt: Nebenkosten</span>
+            <span className="vg-chip ok"><Check size={11} />Vorsortiert &amp; zugeordnet</span>
+          </div>
+
+          <div className="vg-draft">
+            <span className="vg-draft-label"><Pen />KI-Entwurf · von Mensch zu prüfen</span>
+            <i className="vg-line" style={{ "--w": "94%" } as React.CSSProperties} />
+            <i className="vg-line" style={{ "--w": "100%" } as React.CSSProperties} />
+            <i className="vg-line" style={{ "--w": "88%" } as React.CSSProperties} />
+            <i className="vg-line" style={{ "--w": "60%" } as React.CSSProperties} />
+
+            <AnimatePresence>
+              {sent && (
+                <motion.div
+                  className="stamp"
+                  aria-hidden="true"
+                  initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.8, rotate: -2 }}
+                  animate={{ opacity: 1, scale: 1, rotate: -9 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ type: "spring", bounce: 0.38, duration: 0.55 }}
+                >
+                  Freigegeben
+                  <small>von Mensch · {time}</small>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {!sent ? (
+          <div className="vg-foot">
+            <button type="button" className="btn vg-approve" onClick={approve}>
+              <Check size={16} />Freigeben
+            </button>
+            <button type="button" className="vg-edit" onClick={() => setEditing((e) => !e)}>
+              Bearbeiten
+            </button>
+            <span className="vg-hint">{editing ? "Anpassen, dann freigeben" : "Sie sind dran"}</span>
+          </div>
+        ) : (
+          <div className="vg-sent" aria-live="polite">
+            <div className="vg-sent-row">
+              <i><Check size={18} /></i>
+              <div>
+                <b>Antwort gesendet &amp; dokumentiert</b>
+                <span>Im System hinterlegt — freigegeben von einem Menschen.</span>
+              </div>
+            </div>
+            <div className="vg-metric">
+              <b>~8 Sekunden</b> statt ~6 Minuten Handarbeit — so bekommt Ihr Team Stunden zurück.
+            </div>
+            <button type="button" className="vg-replay" onClick={replay}>
+              <Replay />Nochmal ansehen
+            </button>
+          </div>
+        )}
+      </div>
+      <p className="vg-caption">Jede Standardanfrage kommt vorbereitet bei Ihnen an — Sie geben nur noch frei.</p>
+    </div>
+  )
+}
