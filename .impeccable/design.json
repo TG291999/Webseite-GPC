@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T15:21:01+00:00",
+  "title": "Design System: Goebel & Partner Consulting",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Handlungsblau",
+        "canonical": "#276AE8",
+        "tonalRamp": [
+          "#000728",
+          "#021E57",
+          "#013594",
+          "#0B51CD",
+          "#3174F3",
+          "#699DFA",
+          "#A5C5FD",
+          "#E6EFFE"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Handlungsblau gedrückt",
+        "canonical": "#1F5AD0",
+        "tonalRamp": [
+          "#00072A",
+          "#021D5A",
+          "#003399",
+          "#1752C8",
+          "#3875ED",
+          "#689CFE",
+          "#A7C5FB",
+          "#E6EFFF"
+        ]
+      },
+      "accent-ink": {
+        "role": "primary",
+        "displayName": "Linkblau",
+        "canonical": "#1F56C4",
+        "tonalRamp": [
+          "#000728",
+          "#011C5C",
+          "#053594",
+          "#1D54C2",
+          "#3D77E7",
+          "#6B9CF9",
+          "#A6C5FD",
+          "#E7EFFE"
+        ]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Blauhauch",
+        "canonical": "rgba(39,106,232,.09)",
+        "tonalRamp": [
+          "#000728",
+          "#021E57",
+          "#013594",
+          "#0B51CD",
+          "#3174F3",
+          "#699DFA",
+          "#A5C5FD",
+          "#E6EFFE"
+        ],
+        "note": "Transparente Mischung auf Basis #276AE8; der Ton ergibt sich aus dem Grund."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Navy-Tinte",
+        "canonical": "#0F1E33",
+        "tonalRamp": [
+          "#010B1E",
+          "#15243A",
+          "#304158",
+          "#4D5F78",
+          "#6C7F99",
+          "#8DA0BB",
+          "#B2C6E2",
+          "#E5EFFE"
+        ]
+      },
+      "ink-hover": {
+        "role": "neutral",
+        "displayName": "Navy gehoben",
+        "canonical": "#1B3050",
+        "tonalRamp": [
+          "#000923",
+          "#0F2442",
+          "#2A4061",
+          "#475E82",
+          "#667EA4",
+          "#86A0C7",
+          "#ABC6EE",
+          "#E6EFFE"
+        ]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Schiefer-Text",
+        "canonical": "#3B4658",
+        "tonalRamp": [
+          "#040B19",
+          "#1A2435",
+          "#354052",
+          "#535E71",
+          "#727E92",
+          "#929FB4",
+          "#B8C5DB",
+          "#E6EFFE"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Grauschiefer",
+        "canonical": "#5A6577",
+        "tonalRamp": [
+          "#040B18",
+          "#1B2434",
+          "#364051",
+          "#535E70",
+          "#727E91",
+          "#939FB3",
+          "#B8C5D9",
+          "#E6EFFF"
+        ]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Reinweiß",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#7D7D7D",
+          "#9E9E9E",
+          "#C4C4C4",
+          "#EEEEEE"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Nebelgrau",
+        "canonical": "#F3F5F8",
+        "tonalRamp": [
+          "#0A0B0D",
+          "#232426",
+          "#3E4042",
+          "#5C5E60",
+          "#7C7D80",
+          "#9D9EA1",
+          "#C2C4C7",
+          "#EDEFF1"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Nebelgrau tief",
+        "canonical": "#E9EDF2",
+        "tonalRamp": [
+          "#090B0F",
+          "#212428",
+          "#3D4044",
+          "#5B5E62",
+          "#7A7E82",
+          "#9B9FA3",
+          "#C1C4C9",
+          "#EBEFF4"
+        ]
+      },
+      "on-ink-body": {
+        "role": "neutral",
+        "displayName": "Stahlblau-Grau",
+        "canonical": "#B9C4D6",
+        "tonalRamp": [
+          "#050B17",
+          "#1C2432",
+          "#37404F",
+          "#555E6E",
+          "#747E8E",
+          "#959FB0",
+          "#BAC5D7",
+          "#E6EFFE"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Linie",
+        "canonical": "rgba(15,30,51,.10)",
+        "tonalRamp": [
+          "#010B1E",
+          "#15243A",
+          "#304158",
+          "#4D5F78",
+          "#6C7F99",
+          "#8DA0BB",
+          "#B2C6E2",
+          "#E5EFFE"
+        ],
+        "note": "Transparente Mischung auf Basis #0F1E33; der Ton ergibt sich aus dem Grund."
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Linie kräftig",
+        "canonical": "rgba(15,30,51,.20)",
+        "tonalRamp": [
+          "#010B1E",
+          "#15243A",
+          "#304158",
+          "#4D5F78",
+          "#6C7F99",
+          "#8DA0BB",
+          "#B2C6E2",
+          "#E5EFFE"
+        ],
+        "note": "Transparente Mischung auf Basis #0F1E33; der Ton ergibt sich aus dem Grund."
+      },
+      "line-on-ink": {
+        "role": "neutral",
+        "displayName": "Linie auf Navy",
+        "canonical": "rgba(255,255,255,.14)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#7D7D7D",
+          "#9E9E9E",
+          "#C4C4C4",
+          "#EEEEEE"
+        ],
+        "note": "Transparente Mischung auf Basis #FFFFFF; der Ton ergibt sich aus dem Grund."
+      },
+      "danger": {
+        "role": "error",
+        "displayName": "Warnrot",
+        "canonical": "#B42318",
+        "tonalRamp": [
+          "#1E0100",
+          "#480603",
+          "#7B0602",
+          "#AD1A10",
+          "#D44536",
+          "#FB6957",
+          "#FDADA0",
+          "#FFE9E5"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Nur der Hero-Titel; Desktop dreizeilig, Handy fließend."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Abschnittsüberschriften, max. 22ch, balanciert."
+      },
+      "numeral": {
+        "displayName": "Ziffer",
+        "purpose": "Stufen- und Schrittnummern über den Linien-Spalten; tabellarische Ziffern."
+      },
+      "quote": {
+        "displayName": "Zitat",
+        "purpose": "Zentriertes Kundenzitat; kleinere Stufe als Pullquote."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Spaltenüberschriften, FAQ-Fragen, Paneel-Titel."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Unterzeile unter Abschnittsüberschriften, max. 58ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Fließtext, max. 64ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Knöpfe, Links, Navigation (Navigation in 500)."
+      },
+      "fine": {
+        "displayName": "Kleingedrucktes",
+        "purpose": "Hinweise unter Knöpfen, Quellen, Bildunterschriften in muted."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow",
+        "value": "0 1px 2px rgba(15,30,51,.05), 0 12px 32px -14px rgba(15,30,51,.18)",
+        "purpose": "Werkzeug-Schatten: nur bedienbare, eingebettete Objekte (Rechenbeispiel, Demo-Vorgang, Kalender)."
+      },
+      {
+        "name": "segment-selected",
+        "value": "0 1px 3px rgba(15,30,51,.14)",
+        "purpose": "Gewählte Fläche im Vorher/Nachher-Umschalter."
+      },
+      {
+        "name": "range-thumb",
+        "value": "0 0 0 1px rgba(15,30,51,.20), 0 2px 6px rgba(15,30,51,.2)",
+        "purpose": "Daumen der Schieberegler im Rechenbeispiel."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid #276AE8; outline-offset: 3px",
+        "purpose": "Sichtbarer Tastaturfokus auf allen bedienbaren Elementen."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.22,1,.36,1)",
+        "purpose": "Einzige weiche Kurve: Pfeil-Schub, Akkordeon, Einblendungen, mobile Buchungsleiste."
+      },
+      {
+        "name": "color-change",
+        "value": "0.15s–0.2s ease",
+        "purpose": "Farb- und Randwechsel bei Hover."
+      },
+      {
+        "name": "arrow-nudge",
+        "value": "translateX(3px) 0.2s ease-token",
+        "purpose": "Pfeil in Termin-Tasten rückt beim Hover vor."
+      },
+      {
+        "name": "press",
+        "value": "translateY(1px) 0.16s",
+        "purpose": "Taste sinkt beim Drücken."
+      },
+      {
+        "name": "reveal",
+        "value": "0.3s–0.35s, 6–8px Weg, gestaffelt 0.06s",
+        "purpose": "Nachher-Zustand der Demonstrationen."
+      },
+      {
+        "name": "accordion",
+        "value": "öffnen 0.3s / schließen 0.22s",
+        "purpose": "FAQ-Antworten; entfällt bei prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "lg",
+        "value": "1080px",
+        "purpose": "Split-Raster einspaltig, nichts klebt mehr."
+      },
+      {
+        "name": "md",
+        "value": "900px",
+        "purpose": "Menü-Knopf statt Navigation, Drei-Spalten stapeln, feste Buchungsleiste."
+      },
+      {
+        "name": "sm",
+        "value": "560px",
+        "purpose": "Hero-Titel fließt, Hero-Taste vollbreit, Logos 80%."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Termin-Taste (Primary)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Blaue Taste für jede Buchungshandlung, mit gezeichnetem Pfeil.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Kostenlose Analyse sichern <span class=\"ds-arrow\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m13 6 6 6-6 6\"/></svg></span></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:14px 24px;border-radius:var(--r-sm,10px);border:1px solid transparent;font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif);font-size:1rem;font-weight:600;line-height:1.1;white-space:nowrap;cursor:pointer;text-decoration:none;transition:background .18s ease,border-color .18s ease,color .18s ease,transform .16s cubic-bezier(.22,1,.36,1);background:var(--accent,#276AE8);color:#fff} .ds-btn-primary:hover{background:var(--accent-hover,#1F5AD0)} .ds-btn-primary:active{transform:translateY(1px)} .ds-btn-primary:focus-visible{outline:2px solid var(--accent,#276AE8);outline-offset:3px;} .ds-btn-primary .ds-arrow{display:inline-flex;transition:transform .2s cubic-bezier(.22,1,.36,1)} .ds-btn-primary:hover .ds-arrow{transform:translateX(3px)}"
+    },
+    {
+      "name": "Navy-Taste (Kopfzeile)",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Termin-Taste in der Kopfzeile; Navy, damit das Blau des Hero nicht doppelt.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\">Kostenlose Analyse</a>",
+      "css": ".ds-btn-ink{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:14px 24px;border-radius:var(--r-sm,10px);border:1px solid transparent;font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif);font-size:1rem;font-weight:600;line-height:1.1;white-space:nowrap;cursor:pointer;text-decoration:none;transition:background .18s ease,border-color .18s ease,color .18s ease,transform .16s cubic-bezier(.22,1,.36,1);min-height:46px;padding:12px 26px;font-size:.98rem;background:var(--ink,#0F1E33);color:#fff} .ds-btn-ink:hover{background:#1B3050} .ds-btn-ink:active{transform:translateY(1px)} .ds-btn-ink:focus-visible{outline:2px solid var(--accent,#276AE8);outline-offset:3px;}"
+    },
+    {
+      "name": "Stille Taste",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Neben- und Zurücksetz-Aktionen; transparent mit kräftiger Linie.",
+      "html": "<button class=\"ds-btn-quiet\" type=\"button\">Zurücksetzen</button>",
+      "css": ".ds-btn-quiet{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:14px 24px;border-radius:var(--r-sm,10px);border:1px solid transparent;font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif);font-size:1rem;font-weight:600;line-height:1.1;white-space:nowrap;cursor:pointer;text-decoration:none;transition:background .18s ease,border-color .18s ease,color .18s ease,transform .16s cubic-bezier(.22,1,.36,1);background:transparent;color:var(--ink,#0F1E33);border-color:var(--line-strong,rgba(15,30,51,.20))} .ds-btn-quiet:hover{background:var(--surface,#F3F5F8);border-color:var(--ink,#0F1E33)} .ds-btn-quiet:focus-visible{outline:2px solid var(--accent,#276AE8);outline-offset:3px;}"
+    },
+    {
+      "name": "Textlink mit Pfeil",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "Nebenweg (Prozess-Check) als Link, nie als zweite Taste.",
+      "html": "<a class=\"ds-link\" href=\"#\">4-Minuten-Prozess-Check <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m13 6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:.4em;min-height:44px;font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif);font-weight:600;color:var(--accent-ink,#1F56C4);text-decoration:none} .ds-link:hover{text-decoration:underline;text-underline-offset:.2em} .ds-link:focus-visible{outline:2px solid var(--accent,#276AE8);outline-offset:3px;border-radius:4px}"
+    },
+    {
+      "name": "Kopfzeile",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Wortmarke links, vier Wege mittig, Navy-Taste rechts; Linie erst nach dem Scrollen.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">Goebel &amp; Partner</a><nav class=\"ds-nav-links\"><a href=\"#\">Methode</a><a href=\"#\">Ablauf</a><a href=\"#\">Über mich</a><a href=\"#\">Prozess-Check</a></nav><a class=\"ds-nav-cta\" href=\"#\">Kostenlose Analyse</a></header>",
+      "css": ".ds-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px;gap:24px;padding:0 24px;background:#fff;border-bottom:1px solid var(--line,rgba(15,30,51,.10));font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif)} .ds-brand{justify-self:start;color:var(--ink,#0F1E33);font-weight:700;font-size:1.5rem;letter-spacing:-.02em;text-decoration:none;white-space:nowrap} .ds-nav-links{display:flex;gap:36px} .ds-nav-links a{color:var(--ink,#0F1E33);font-weight:500;font-size:1rem;text-decoration:none} .ds-nav-links a:hover{color:var(--accent-ink,#1F56C4)} .ds-nav-links a:focus-visible,.ds-brand:focus-visible,.ds-nav-cta:focus-visible{outline:2px solid var(--accent,#276AE8);outline-offset:3px;border-radius:4px} .ds-nav-cta{justify-self:end;display:inline-flex;align-items:center;min-height:46px;padding:12px 26px;border-radius:10px;background:var(--ink,#0F1E33);color:#fff;font-weight:600;font-size:.98rem;text-decoration:none;transition:background .18s ease} .ds-nav-cta:hover{background:#1B3050}"
+    },
+    {
+      "name": "Linien-Spalten",
+      "kind": "custom",
+      "description": "Signatur: drei Spalten unter 2px-Navy-Linie mit großer Ziffer statt Karten-Raster.",
+      "html": "<ol class=\"ds-rows\"><li><span class=\"ds-n\">1</span><h3>Kostenlose Analyse</h3><p>45 Minuten am Telefon oder per Video.</p></li><li><span class=\"ds-n\">2</span><h3>Quick-Win-Audit</h3><p>1–2 Tage vor Ort, Plan mit Zahlen.</p></li><li><span class=\"ds-n\">3</span><h3>Umsetzung</h3><p>4–6 Wochen, vor Ort, ohne Systemwechsel.</p></li></ol>",
+      "css": ".ds-rows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px);font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif);color:var(--body,#3B4658)} .ds-rows li{padding-top:24px;border-top:2px solid var(--ink,#0F1E33)} .ds-n{display:block;font-size:clamp(2.4rem,3.6vw,3.2rem);font-weight:700;line-height:1;letter-spacing:-.04em;color:var(--ink,#0F1E33);margin-bottom:22px;font-variant-numeric:tabular-nums} .ds-rows h3{margin:0 0 12px;font-size:1.35rem;font-weight:700;line-height:1.25;letter-spacing:-.012em;color:var(--ink,#0F1E33)} .ds-rows p{margin:0;font-size:1rem;line-height:1.6}"
+    },
+    {
+      "name": "Häkchen-Liste",
+      "kind": "custom",
+      "description": "Blaues Häkchen vor positiven, grauer Strich vor negativen Aussagen.",
+      "html": "<ul class=\"ds-checks\"><li class=\"ds-yes\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Ihre Software bleibt</li><li class=\"ds-yes\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Vor Ort bei Ihnen</li><li class=\"ds-no\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/></svg>Wissen geht mit jeder Kündigung verloren</li></ul>",
+      "css": ".ds-checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif);font-size:1rem;color:var(--ink,#0F1E33)} .ds-checks li{display:flex;align-items:flex-start;gap:12px} .ds-checks svg{flex:0 0 auto;margin-top:3px} .ds-yes svg{color:var(--accent,#276AE8)} .ds-no svg{color:var(--muted,#5A6577)}"
+    },
+    {
+      "name": "Vergleichs-Paneele",
+      "kind": "card",
+      "refersTo": "panel-surface",
+      "description": "Heute (Nebelgrau) gegen Mit mir (Navy); 22px Radius, flach.",
+      "html": "<div class=\"ds-compare\"><div class=\"ds-col ds-without\"><div class=\"ds-ch\">Heute</div><div class=\"ds-cr\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/></svg>Jede Mail wird von Hand gelesen.</div></div><div class=\"ds-col ds-with\"><div class=\"ds-ch\">Mit mir</div><div class=\"ds-cr\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Ein Postfach, eine Regel – Entwurf liegt bereit.</div></div></div>",
+      "css": ".ds-compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif)} .ds-col{border-radius:var(--r-lg,22px);padding:clamp(26px,3vw,40px)} .ds-without{background:var(--surface,#F3F5F8);color:var(--body,#3B4658)} .ds-with{background:var(--ink,#0F1E33);color:#fff} .ds-ch{font-size:1.1rem;font-weight:700;margin-bottom:12px} .ds-without .ds-ch{color:var(--ink,#0F1E33)} .ds-cr{display:flex;gap:12px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line,rgba(15,30,51,.10))} .ds-with .ds-cr{border-top-color:rgba(255,255,255,.14)} .ds-cr svg{flex:0 0 auto;margin-top:3px} .ds-without svg{color:var(--muted,#5A6577)} .ds-with svg{color:#fff}"
+    },
+    {
+      "name": "Vertrauens-Badge",
+      "kind": "chip",
+      "refersTo": "badge-trust",
+      "description": "Weiße Pille auf Nebelgrau mit blauem Häkchen.",
+      "html": "<div class=\"ds-badges-wrap\"><span class=\"ds-badge\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Jede Antwort gibt ein Mensch frei</span></div>",
+      "css": ".ds-badges-wrap{background:var(--surface,#F3F5F8);padding:20px;border-radius:16px} .ds-badge{display:inline-flex;align-items:center;gap:9px;border-radius:999px;background:#fff;padding:10px 16px;font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif);font-size:.93rem;font-weight:600;color:var(--ink,#0F1E33)} .ds-badge svg{color:var(--accent,#276AE8);width:16px;height:16px}"
+    },
+    {
+      "name": "FAQ-Eintrag",
+      "kind": "custom",
+      "description": "Frage zwischen kräftigen Linien, Plus-Kreis dreht beim Öffnen um 45°.",
+      "html": "<div class=\"ds-faq\"><button class=\"ds-faq-q\" type=\"button\" aria-expanded=\"false\" onclick=\"this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')!=='true')\">Muss ich meine Software wechseln?<span class=\"ds-pm\"></span></button></div>",
+      "css": ".ds-faq{border-top:1px solid var(--line-strong,rgba(15,30,51,.20));border-bottom:1px solid var(--line-strong,rgba(15,30,51,.20))} .ds-faq-q{width:100%;background:none;border:0;cursor:pointer;text-align:left;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:24px 0;font-family:var(--font, 'Wix Madefor Text', 'Helvetica Neue', Arial, sans-serif);font-size:1.2rem;font-weight:700;color:var(--ink,#0F1E33);line-height:1.36;letter-spacing:-.01em} .ds-faq-q:hover{color:var(--accent-ink,#1F56C4)} .ds-faq-q:focus-visible{outline:2px solid var(--accent,#276AE8);outline-offset:3px;border-radius:4px} .ds-pm{width:32px;height:32px;border-radius:50%;background:var(--surface,#F3F5F8);position:relative;transition:transform .3s cubic-bezier(.22,1,.36,1),background .2s ease} .ds-pm::before,.ds-pm::after{content:'';position:absolute;left:50%;top:50%;background:var(--ink,#0F1E33);transform:translate(-50%,-50%)} .ds-pm::before{width:12px;height:2px} .ds-pm::after{width:2px;height:12px} .ds-faq-q[aria-expanded='true'] .ds-pm{transform:rotate(45deg);background:rgba(39,106,232,.09)} @media (prefers-reduced-motion:reduce){.ds-pm{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Das Beratungsgespräch",
+    "overview": "Die Seite verhält sich wie ein Gespräch mit einem Berater, den man sieht: eine klare Aussage, ein echtes Gesicht, ein Weg zum Termin. Das System ist bewusst Kategorie-Standard – reines Weiß, Tinte in Navy, hellgraue Flächen, ein einziges Handlungsblau – und gewinnt seine Seriosität aus handwerklicher Genauigkeit statt aus Effekten. Wer zwischen zwei Terminen am Handy prüft, ob hier jemand seriös ist, soll nichts entziffern müssen.\n\nDie Dichte ist ruhig: ein Gedanke pro Abschnitt, große Abstände zwischen den Abschnitten, Text in Zeilen von höchstens 64 Zeichen. Weiße und hellgraue Abschnitte wechseln sich ab, ein einziger Abschnitt steht in Navy und trägt die Methode. Inhalte in drei Spalten liegen unter Linien, nicht in Karten. Eine Schrift trägt alles; die Hierarchie entsteht über Gewicht, Größe und enge Laufweite.\n\nBewusst abgelehnt (vom Nutzer gewählt gegen die frühere „Akte“-Welt): Kapitel-Kicker und Mono-Beschriftungen, Papierton, Bernstein-Akzent, Karten-Raster als Seitengerüst.",
+    "keyCharacteristics": [
+      "Weiß als Grund, Navy als Tinte, genau ein Blau für Handlung.",
+      "Eine Schrift (Wix Madefor Text), fett und eng in Überschriften, ruhig im Text.",
+      "Flächen mit großem Radius, Knöpfe mit kleinem.",
+      "Linien statt Karten: Drei-Spalten-Reihen unter einer 2px-Navy-Linie.",
+      "Häkchen als einziges Icon-Motiv, dazu ein gezeichneter Pfeil in Handlungen.",
+      "Flach; ein einziger weicher Schatten für eingebettete, bedienbare Objekte."
+    ],
+    "rules": [
+      {
+        "name": "The Ein-Blau-Regel",
+        "body": "Blau heißt „hier handeln“ oder „das ist erledigt“: Knöpfe, Links, Häkchen, Fokus, Fortschritt und Freigabe. Überschriften, Zahlen, Punkte und Schmuck bleiben Navy oder Grau.",
+        "section": "colors"
+      },
+      {
+        "name": "The Navy-Anker-Regel",
+        "body": "Navy als Fläche gibt es genau einmal als Inhaltsabschnitt (Methode) und einmal als Fußzeile. Innerhalb heller Abschnitte darf Navy nur die positive Seite eines Vergleichs tragen.",
+        "section": "colors"
+      },
+      {
+        "name": "The Kein-Schwarz-Regel",
+        "body": "Tinte ist immer Navy (ink), nie #000.",
+        "section": "colors"
+      },
+      {
+        "name": "The Eine-Stimme-Regel",
+        "body": "Eine Familie für alles. Hierarchie entsteht über Gewicht und Größe, nie über Versalien mit Sperrung, Mono-Schnitte oder eine Zierschrift.",
+        "section": "typography"
+      },
+      {
+        "name": "The Eng-oben-Regel",
+        "body": "Je größer die Zeile, desto enger die Laufweite: -0.012em bei Titeln bis -0.04em bei Ziffern. Fließtext bleibt ungesperrt.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tonwechsel-Regel",
+        "body": "Ein Paneel kehrt den Ton seines Abschnitts um: auf Weiß liegt Nebelgrau, auf Nebelgrau liegt Weiß. Kein Rahmen, kein Schatten nötig.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Werkzeug-Schatten-Regel",
+        "body": "Schatten nur für Dinge, mit denen man etwas tut. Text-Paneele bleiben flach.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do jede Termin-Handlung als blaue Taste (10px Radius, ≥52px hoch) mit gezeichnetem Pfeil setzen.",
+      "Do Überschriften in Navy 700 mit negativer Laufweite setzen und Fließtext auf 64ch begrenzen.",
+      "Do Inhalte in drei Spalten unter eine 2px-Navy-Linie legen statt in Karten.",
+      "Do Paneele im Gegenton ihres Abschnitts halten (Grau auf Weiß, Weiß auf Grau) mit 22px Radius.",
+      "Do positive Aussagen mit dem blauen Häkchen, negative mit dem grauen Strich markieren.",
+      "Do Tippflächen von mindestens 44px und den sichtbaren 2px-Fokusring erhalten; `prefers-contrast: more` verstärkt Linien und Grautöne.",
+      "Do Logos in Graustufen (Deckkraft ~0.72, multiply) zeigen."
+    ],
+    "donts": [
+      "Don't Blau für Überschriften, Nummern, Zierpunkte oder Flächen verwenden.",
+      "Don't Kicker, Eyebrows oder Mono-Beschriftungen über Überschriften setzen.",
+      "Don't Versalien mit Sperrung, Kursive oder eine zweite Schriftfamilie einführen.",
+      "Don't Bernstein, Papierton oder eine zweite Akzentfarbe zurückholen.",
+      "Don't Knöpfe als Pille oder mit großem Radius formen; Pillen gehören Badges.",
+      "Don't Karten-Raster mit Icons als Seitengerüst bauen; Icons sind Häkchen, Strich und Pfeil.",
+      "Don't Schatten auf reine Text-Paneele legen.",
+      "Don't reines Schwarz für Text oder Flächen einsetzen."
+    ]
+  }
+}

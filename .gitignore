@@ -26,3 +26,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Impeccable: Arbeitsdateien lokal lassen (Entwurfsbilder, Aufnahmen, Messungen)
+/.impeccable/review/
+/.impeccable/build/
+/.impeccable/mocks/**/*.png
+/.impeccable/config.local.json

@@ -2,23 +2,19 @@
 
 import * as Accordion from "@radix-ui/react-accordion"
 import Link from "next/link"
-import { Reveal } from "@/components/site/reveal"
 import { SectionHead } from "@/components/site/section-head"
 import { FAQ_ITEMS } from "./faq-data"
+import { Arrow } from "@/components/site/icons"
 
 export function Faq() {
   return (
     <section className="section" id="faq">
       <div className="container faq-grid">
-        <Reveal>
-          <SectionHead
-            n="10"
-            kicker="Fragen"
+        <SectionHead
             title="Was Verwalter mich vor dem ersten Gespräch fragen."
             sub="Die ehrlichen Antworten — ohne Marketing-Sprech."
           />
-        </Reveal>
-        <Reveal>
+        <div>
           <Accordion.Root type="single" collapsible defaultValue="f0" className="faq-list">
             {FAQ_ITEMS.map((item, i) => (
               <Accordion.Item key={i} value={`f${i}`} className="faq-item">
@@ -37,9 +33,9 @@ export function Faq() {
             ))}
           </Accordion.Root>
           <p className="faq-more">
-            <Link href="#buchung" className="textlink">Offene Frage? Klären wir im 45-Minuten-Gespräch →</Link>
+            <Link href="#buchung" className="link">Offene Frage? Klären wir im 45-Minuten-Gespräch <Arrow /></Link>
           </p>
-        </Reveal>
+        </div>
       </div>
     </section>
   )

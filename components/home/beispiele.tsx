@@ -1,16 +1,14 @@
 "use client"
 
 import { useEffect, useId, useRef, useState } from "react"
-import { Check, Replay } from "@/components/site/icons"
+import { Check, Replay, Arrow } from "@/components/site/icons"
 import { useReducedMotion } from "motion/react"
-import { Reveal } from "@/components/site/reveal"
 import { SectionHead } from "@/components/site/section-head"
 
 type State = "before" | "after"
 
 /** Eine Akte mit zwei Reitern: Vorher / Nachher. Eigener Zustand je Karte, kein Auto-Play. */
 function Akte({
-  num,
   tag,
   title,
   label,
@@ -18,7 +16,6 @@ function Akte({
   after,
   metrics,
 }: {
-  num: string
   tag: string
   title: string
   label: string
@@ -61,11 +58,8 @@ function Akte({
   return (
     <div className={`sc${running ? " running" : ""}`} data-state={state} role="group" aria-label={label}>
       <div className="sc-head">
-        <span className="sc-num" aria-hidden="true">{num}</span>
-        <div>
-          <div className="sc-tag">{tag}</div>
-          <h3 className="sc-title">{title}</h3>
-        </div>
+        <h3 className="sc-title">{title}</h3>
+        <p className="sc-tag">{tag}</p>
       </div>
       <div className="sc-bar">
         <div className="sc-tabs" role="tablist" aria-label="Ansicht wählen">
@@ -78,24 +72,23 @@ function Akte({
           ))}
         </div>
         <button type="button" className={`btn sc-run${state === "after" ? " is-reset" : ""}`} onClick={run}>
-          {state === "after" ? <>Zurücksetzen <Replay /></> : <>Automatisierung ausführen <span className="arrow" aria-hidden="true">→</span></>}
+          {state === "after" ? <>Zurücksetzen <Replay /></> : <>Automatisierung ausführen <Arrow className="arrow" /></>}
         </button>
       </div>
       <div className="sc-stage">
-        <div className="sc-sweep" aria-hidden="true" />
         <div className="sc-view sc-before" role="tabpanel" id={`${uid}-before`} aria-labelledby={`${uid}-before-tab`}>{before}</div>
         <div className="sc-view sc-after" role="tabpanel" id={`${uid}-after`} aria-labelledby={`${uid}-after-tab`}>{after(approved, () => setApproved(true))}</div>
-      </div>
-      <div className="sc-metrics">
-        {metrics.map((m) => (
-          <div className="sc-metric" key={m.label}>
-            <span className="sc-m-label">{m.label}</span>
-            <span className="sc-m-pair">
-              <span className="sc-m-before">{m.before}</span>
-              <span className="sc-m-rest"><span className="sc-m-arrow">→</span><b className="sc-m-after">{m.after}</b></span>
-            </span>
-          </div>
-        ))}
+        <dl className="sc-metrics">
+          {metrics.map((m) => (
+            <div className="sc-metric" key={m.label}>
+              <dt className="sc-m-label">{m.label}</dt>
+              <dd className="sc-m-pair">
+                <span className="sc-m-before">{m.before}</span>
+                <span className="sc-m-rest"><Arrow className="sc-m-arrow" size={14} /><b className="sc-m-after">{m.after}</b></span>
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </div>
   )
@@ -103,21 +96,15 @@ function Akte({
 
 export function Beispiele() {
   return (
-    <section className="section bg-paper-2" id="beispiele">
+    <section className="section" id="beispiele">
       <div className="container">
-        <Reveal>
-          <SectionHead
-            n="05"
-            kicker="Vorher · Nachher"
-            title="Zwei Vorgänge, die jede Verwaltung kennt."
-            sub="So sehen sie heute im Büroalltag aus — und so laufen sie mit Struktur und Automatisierung. Der erste ganz ohne KI. Beides im bestehenden System, ohne Wechsel."
-          />
-          <p className="sc-disclaimer" style={{ marginTop: -24, marginBottom: 8 }}><i />Demonstration anhand typischer Vorgänge</p>
-        </Reveal>
+        <SectionHead
+          title="Zwei Vorgänge, die jede Verwaltung kennt."
+          sub="So sehen sie heute im Büroalltag aus — und so laufen sie mit Struktur und Automatisierung. Der erste ganz ohne KI. Beides im bestehenden System, ohne Wechsel."
+        />
+        <p className="sc-disclaimer"><i aria-hidden="true" />Demonstration anhand typischer Vorgänge</p>
 
-        <Reveal>
           <Akte
-            num="01"
             tag="Rechnungseingang · ohne KI"
             title="Die Rechnung, die dreimal durchs Haus läuft"
             label="Beispiel 1: Rechnungseingang – Vorher/Nachher, ohne KI"
@@ -151,7 +138,7 @@ export function Beispiele() {
                   ))}
                 </dl>
                 <button type="button" className={`btn sc-approve${approved ? " sc-done" : ""}`} onClick={approve} disabled={approved}>
-                  {approved ? <>Geprüft &amp; freigegeben <Check size={16} /></> : <>Rechnung freigeben <span className="arrow" aria-hidden="true">→</span></>}
+                  {approved ? <>Geprüft &amp; freigegeben <Check size={16} /></> : <>Rechnung freigeben <Arrow className="arrow" /></>}
                 </button>
                 <p className="sc-note ok">Ohne KI. Ein Postfach, eine Benennungsregel und zwei Funktionen, die Ihre Software schon hat.</p>
               </>
@@ -162,11 +149,8 @@ export function Beispiele() {
               { label: "Wo liegt sie gerade?", before: "niemand weiß es", after: "im System, mit Status" },
             ]}
           />
-        </Reveal>
 
-        <Reveal>
           <Akte
-            num="02"
             tag="Schadensmeldung → Handwerker · mit KI-Entwurf"
             title="Aus drei Zeilen Freitext wird ein fertiger Auftrag"
             label="Beispiel 2: Schadensmeldung zu Handwerker-Auftrag – Vorher/Nachher"
@@ -205,7 +189,7 @@ export function Beispiele() {
                   ))}
                 </dl>
                 <button type="button" className={`btn sc-approve${approved ? " sc-done" : ""}`} onClick={approve} disabled={approved}>
-                  {approved ? <>Gesendet &amp; dokumentiert <Check size={16} /></> : <>Freigeben &amp; senden <span className="arrow" aria-hidden="true">→</span></>}
+                  {approved ? <>Gesendet &amp; dokumentiert <Check size={16} /></> : <>Freigeben &amp; senden <Arrow className="arrow" /></>}
                 </button>
               </>
             )}
@@ -215,14 +199,11 @@ export function Beispiele() {
               { label: "Zuordnung", before: "manuell gesucht", after: "automatisch" },
             ]}
           />
-        </Reveal>
 
-        <Reveal>
-          <p className="sc-footnote">
+        <p className="sc-footnote">
             Das sind keine Theorie-Beispiele. Diese Abläufe stammen direkt aus dem Verwaltungsalltag,
             den ich aus über 8&nbsp;Jahren in der Branche kenne.
-          </p>
-        </Reveal>
+        </p>
       </div>
     </section>
   )

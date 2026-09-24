@@ -1,20 +1,14 @@
 import { Check, Dash } from "@/components/site/icons"
-import { Reveal } from "@/components/site/reveal"
 import { SectionHead } from "@/components/site/section-head"
 
 export function FuerWen() {
   return (
-    <section className="section" id="fuer-wen">
+    <section className="section surface" id="fuer-wen">
       <div className="container">
-        <Reveal>
-          <SectionHead
-            n="08"
-            kicker="Für wen"
+        <SectionHead
             title="Ich arbeite nicht mit jeder Verwaltung. Das ist Absicht."
-            sub={<em>Automatisierung wirkt nur, wenn sie zu Ihrer Verwaltung passt. Deshalb sage ich vorab ehrlich, für wen ich der Richtige bin — und für wen nicht.</em>}
+            sub={<>Automatisierung wirkt nur, wenn sie zu Ihrer Verwaltung passt. Deshalb sage ich vorab ehrlich, für wen ich der Richtige bin — und für wen nicht.</>}
           />
-        </Reveal>
-        <Reveal>
           <div className="fit">
             <div className="fit-col yes">
               <h3>Passt, wenn Sie sich hier wiedererkennen:</h3>
@@ -36,7 +30,6 @@ export function FuerWen() {
               </ul>
             </div>
           </div>
-        </Reveal>
       </div>
     </section>
   )

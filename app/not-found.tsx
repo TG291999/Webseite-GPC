@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Header } from "@/components/site/header"
 import { Footer } from "@/components/site/footer"
+import { Arrow } from "@/components/site/icons"
 
 export const metadata = {
   title: "Seite nicht gefunden – Goebel & Partner Consulting",
@@ -30,10 +31,10 @@ export default function NotFound() {
             }}
           >
             <Link href="/" className="btn">
-              Zur Startseite <span className="arrow" aria-hidden="true">→</span>
+              Zur Startseite <Arrow className="arrow" />
             </Link>
             <Link href="/#buchung" className="textlink">
-              Kostenlose Analyse sichern →
+              Kostenlose Analyse sichern <Arrow />
             </Link>
           </div>
         </div>

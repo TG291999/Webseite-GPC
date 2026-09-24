@@ -12,6 +12,7 @@
 
 import Link from "next/link"
 import { useCallback, useEffect, useRef, useState } from "react"
+import { Arrow } from "@/components/site/icons"
 
 const CONFIG = {
   // Eigene API-Route: mailt den Lead an tim@goebel-partner.de (RESEND_API_KEY nötig)
@@ -522,7 +523,7 @@ export function ProzessCheck() {
             <p className="pc-hilfe">Etwa vier Minuten · kostenlos · kein Login, keine Registrierung.</p>
             <div className="pc-leiste">
               <button className="btn btn-primary" onClick={() => setStep(1)}>
-                Check starten <span className="arrow" aria-hidden="true">→</span>
+                Check starten <Arrow className="arrow" />
               </button>
             </div>
             <div className="pc-absender">
@@ -617,7 +618,7 @@ export function ProzessCheck() {
             {warnung && <p className="pc-warn">{warnung}</p>}
             <div className="pc-leiste">
               <button className="btn btn-primary" onClick={betriebWeiter}>
-                Rechnung erstellen <span className="arrow" aria-hidden="true">→</span>
+                Rechnung erstellen <Arrow className="arrow" />
               </button>
               <button className="pc-zurueck" onClick={zurueck}>
                 Zurück
@@ -785,7 +786,7 @@ export function ProzessCheck() {
                         </label>
                       </div>
                       <button className="btn btn-primary pc-nachtrag-cta" onClick={nachtragSpeichern}>
-                        Rückruf statt Mail <span className="arrow" aria-hidden="true">→</span>
+                        Rückruf statt Mail <Arrow className="arrow" />
                       </button>
                     </>
                   )}
@@ -835,7 +836,7 @@ export function ProzessCheck() {
                       rel="noopener"
                       onClick={() => melden("kalender_fallback")}
                     >
-                      Termin direkt buchen →
+                      Termin direkt buchen <Arrow size={14} />
                     </a>
                   </p>
                 </div>

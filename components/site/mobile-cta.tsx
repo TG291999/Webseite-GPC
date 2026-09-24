@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { Arrow } from "@/components/site/icons"
 
 /**
  * Feste Buchungsleiste am Handy. Sie tritt zurück, sobald der Kalender selbst
@@ -24,7 +25,7 @@ export function MobileCta() {
   return (
     <div className={`mobile-cta${hidden ? " is-hidden" : ""}`} aria-hidden={hidden || undefined}>
       <Link href="#buchung" className="btn btn-block" tabIndex={hidden ? -1 : undefined}>
-        Kostenlose Analyse sichern <span className="arrow" aria-hidden="true">→</span>
+        Kostenlose Analyse sichern <Arrow className="arrow" />
       </Link>
     </div>
   )

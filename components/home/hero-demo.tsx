@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { AnimatePresence, motion, useInView, useReducedMotion } from "motion/react"
-import { Check, Pen, Replay } from "@/components/site/icons"
+import { Check, Replay } from "@/components/site/icons"
 
 /**
  * Die Hero-Demo als Vorgang auf Papier: Anfrage erkannt, Entwurf liegt bereit,
@@ -79,11 +79,13 @@ export function HeroDemo() {
           </div>
 
           <div className="vg-draft">
-            <span className="vg-draft-label"><Pen />KI-Entwurf · von Mensch zu prüfen</span>
-            <i className="vg-line" style={{ "--w": "94%" } as React.CSSProperties} />
-            <i className="vg-line" style={{ "--w": "100%" } as React.CSSProperties} />
-            <i className="vg-line" style={{ "--w": "88%" } as React.CSSProperties} />
-            <i className="vg-line" style={{ "--w": "60%" } as React.CSSProperties} />
+            <span className="vg-draft-label">KI-Entwurf · von Mensch zu prüfen</span>
+            {/* Beispieltext der Demonstration, kein echter Vorgang */}
+            <p className="vg-draft-text">
+              Guten Tag, vielen Dank für Ihre Nachricht zur Nebenkostenabrechnung 2024 für
+              Wohnung 12. Die Positionen Heizung und Wasser finden Sie auf Seite 2. Die Belege
+              können Sie gern nach Terminabsprache bei uns einsehen. Mit freundlichen Grüßen
+            </p>
 
             <AnimatePresence>
               {sent && (

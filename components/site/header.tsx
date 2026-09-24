@@ -2,18 +2,17 @@
 
 import Link from "next/link"
 import { useEffect, useId, useState } from "react"
-import { LogoMark, Wordmark } from "./logo"
 
 const LINKS = [
   { href: "/#methode", label: "Methode" },
-  { href: "/#loesung", label: "Lösung" },
   { href: "/#ablauf", label: "Ablauf" },
   { href: "/#ueber-mich", label: "Über mich" },
+  { href: "/prozess-check", label: "Prozess-Check" },
 ]
 
 /**
- * Kopfzeile für alle Seiten. Auf der Startseite zeigt sie den Rand erst nach
- * dem ersten Scrollen; das Mobilmenü ist ein einfaches Panel unter der Leiste.
+ * Kopfzeile für alle Seiten: Wortmarke, vier Wege, ein Termin-Knopf.
+ * Die Trennlinie erscheint erst nach dem ersten Scrollen.
  */
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -39,22 +38,18 @@ export function Header() {
       <a href="#hauptinhalt" className="skip-link">Zum Inhalt springen</a>
       <header className={`header${scrolled ? " scrolled" : ""}`}>
         <div className="container nav">
-          <Link href="/" className="brand" aria-label="Goebel & Partner Consulting — Startseite">
-            <LogoMark />
-            <Wordmark />
+          <Link href="/" className="brand" aria-label="Goebel & Partner Consulting – Startseite">
+            Goebel &amp; Partner
           </Link>
 
           <nav className="nav-links" aria-label="Hauptnavigation">
             {LINKS.map((l) => (
               <Link key={l.href} href={l.href}>{l.label}</Link>
             ))}
-            <Link href="/prozess-check" className="is-tool">Prozess-Check</Link>
           </nav>
 
           <div className="nav-cta">
-            <Link href="/#buchung" className="btn">
-              Kostenlose Analyse <span className="arrow" aria-hidden="true">→</span>
-            </Link>
+            <Link href="/#buchung" className="btn btn-ink">Kostenlose Analyse</Link>
           </div>
 
           <button
@@ -78,9 +73,8 @@ export function Header() {
             {LINKS.map((l) => (
               <Link key={l.href} href={l.href}>{l.label}</Link>
             ))}
-            <Link href="/prozess-check">Prozess-Check</Link>
             <a href="tel:+491726932222">Anrufen: 0172 693 22 22</a>
-            <Link href="/#buchung" className="btn">Kostenlose Analyse <span className="arrow" aria-hidden="true">→</span></Link>
+            <Link href="/#buchung" className="btn">Kostenlose Analyse sichern</Link>
           </nav>
         </div>
       </header>

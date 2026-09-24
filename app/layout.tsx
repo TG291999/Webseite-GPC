@@ -1,32 +1,17 @@
 import type { Metadata, Viewport } from "next"
-import { Fraunces, Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google"
+import { Wix_Madefor_Text } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { CookieConsent } from "@/components/cookie-consent"
 import "./globals.css"
 
 /*
- * Schriftwelt „Die Akte": dieselben drei Familien wie auf der digitalen
- * Visitenkarte (/tim) — Fraunces für Überschriften, Hanken Grotesk im Text,
- * IBM Plex Mono für Zahlen, Kapitelnummern und Beschriftungen.
+ * Eine Schrift für alles: Wix Madefor Text, fett und eng in Überschriften,
+ * ruhig im Text. Gewählt per Formabgleich mit dem freigegebenen Entwurf.
  */
-const fraunces = Fraunces({
+const wix = Wix_Madefor_Text({
   subsets: ["latin"],
-  axes: ["opsz", "SOFT", "WONK"],
-  style: ["normal", "italic"],
-  variable: "--font-fraunces",
-  display: "swap",
-})
-
-const hanken = Hanken_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-hanken",
-  display: "swap",
-})
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-plex-mono",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-wix",
   display: "swap",
 })
 
@@ -74,7 +59,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#F4F0E8",
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
 }
@@ -87,14 +72,10 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${fraunces.variable} ${hanken.variable} ${plexMono.variable}`}
+      className={wix.variable}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <head>
-        {/* Markiert „JS verfügbar" vor dem ersten Bild: Die Titelmaske startet nur dann. */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
-      </head>
       <body>
         {children}
         <CookieConsent />

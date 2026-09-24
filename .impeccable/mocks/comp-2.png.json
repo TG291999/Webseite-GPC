@@ -1,0 +1,5 @@
+{
+ "model": "gpt-2 (high, 2k)",
+ "prompt": "Split hero with full-bleed on-site photo right (consultant with two employees), facts row below",
+ "approved": false
+}

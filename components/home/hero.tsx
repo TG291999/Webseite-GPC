@@ -1,47 +1,60 @@
 import Link from "next/link"
-import { Check } from "@/components/site/icons"
-import { Reveal } from "@/components/site/reveal"
-import { HeroTitle } from "./hero-title"
-import { HeroDemo } from "./hero-demo"
+import { Check, Arrow } from "@/components/site/icons"
 
 /**
- * Hero: Titel, ein Absatz, ein Knopf, ein Zweitweg, eine Belegzeile.
- * Bewusst wenig — alles Weitere steht in den Kapiteln darunter.
+ * Erste Ansicht: Aussage links, Gesicht rechts, ein Weg zum Termin.
+ * Darunter die Bühnen, auf denen Tim spricht. Maße aus dem freigegebenen
+ * Entwurf (.impeccable/mocks/comp-1.png).
  */
 export function Hero() {
   return (
-    <section className="section hero" aria-labelledby="hero-title">
+    <section className="hero" aria-labelledby="hero-title">
       <div className="container hero-grid">
         <div className="hero-copy">
-          <div id="hero-title">
-            <HeroTitle />
+          <h1 id="hero-title" className="hero-title">
+            <span>Ich gebe Ihrer</span> <span>Verwaltung</span> <span>Zeit zurück.</span>
+          </h1>
+          <p className="hero-lede">
+            Eine Schadensmeldung kostet 10 bis 15 Minuten. Bei 15 die Woche sind das drei bis
+            vier Stunden – nur fürs Anlegen. Diese Zeit hole ich zurück: mit klaren Abläufen, in
+            Ihrer Software, vor Ort mit Ihrem Team.
+          </p>
+          <div className="hero-actions">
+            <Link href="#buchung" className="btn">
+              Kostenlose Analyse sichern <Arrow className="arrow" />
+            </Link>
+            <Link href="/prozess-check" className="link">4-Minuten-Prozess-Check <Arrow /></Link>
           </div>
-          <Reveal delay={0.35}>
-            <p className="subhead">
-              Eine Schadensmeldung kostet 10 bis 15 Minuten. Bei 15 die Woche sind das drei bis
-              vier Stunden — nur fürs Anlegen. Diese Zeit hole ich zurück: mit klaren Abläufen, in
-              Ihrer Software, <strong>vor Ort mit Ihrem Team.</strong>
-            </p>
-            <div className="hero-actions">
-              <Link href="#buchung" className="btn">
-                Kostenlose Analyse sichern <span className="arrow" aria-hidden="true">→</span>
-              </Link>
-              <Link href="/prozess-check" className="textlink">4-Minuten-Prozess-Check →</Link>
-            </div>
-            <p className="micro">Kostenlos · 45&nbsp;Minuten · kein Verkaufsgespräch</p>
-          </Reveal>
-          <Reveal delay={0.5}>
-            <div className="trust-strip">
-              <span className="trust-item"><Check size={16} />Immobilienkaufmann, 8+&nbsp;Jahre Branche</span>
-              <span className="trust-item"><Check size={16} />Vor Ort bei Ihnen</span>
-              <span className="trust-item"><Check size={16} />Ihre Software bleibt</span>
-            </div>
-          </Reveal>
+          <ul className="hero-facts">
+            <li><Check size={18} />Immobilienkaufmann, 8+&nbsp;Jahre Branche</li>
+            <li><Check size={18} />Vor Ort bei Ihnen</li>
+            <li><Check size={18} />Ihre Software bleibt</li>
+          </ul>
         </div>
-        <div className="hero-visual">
-          <Reveal delay={0.25} style={{ width: "100%" }}>
-            <HeroDemo />
-          </Reveal>
+        <figure className="hero-portrait">
+          <img
+            src="/assets/plates/portrait.jpg"
+            width={1358}
+            height={1229}
+            alt="Tim Goebel, Inhaber von Goebel & Partner Consulting"
+            fetchPriority="high"
+          />
+        </figure>
+      </div>
+      <div className="container">
+        <div className="hero-logos">
+          <p className="sr-only">Tim Goebel spricht unter anderem bei:</p>
+          <ul>
+            <li><img src="/assets/plates/logo-buildinx.png" width={600} height={79} alt="BuildinX" style={{ "--h": "clamp(20px,1.9vw,27px)" } as React.CSSProperties} /></li>
+            <li>
+              <img src="/assets/plates/logo-ihk.png" width={444} height={222} alt="" style={{ "--h": "clamp(30px,2.9vw,42px)" } as React.CSSProperties} />
+              <span className="logo-name">IHK zu Dortmund</span>
+            </li>
+            <li>
+              <img src="/assets/plates/logo-wj.png" width={259} height={195} alt="" style={{ "--h": "clamp(40px,3.9vw,56px)" } as React.CSSProperties} />
+              <span className="logo-name">Wirtschaftsjunioren</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

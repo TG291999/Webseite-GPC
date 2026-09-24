@@ -65,11 +65,11 @@ export default function HomePage() {
         <Kosten />
         <Methode />
         <Loesung />
+        <UeberMich />
         <Beispiele />
         <Kontrolle />
         <Ablauf />
         <FuerWen />
-        <UeberMich />
         <Faq />
         <Buchung />
       </main>

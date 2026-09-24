@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { LogoMark, Wordmark } from "./logo"
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -8,10 +7,7 @@ export function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <Link href="/" className="brand">
-              <LogoMark tone="paper" />
-              <Wordmark />
-            </Link>
+            <Link href="/" className="brand">Goebel &amp; Partner</Link>
             <p className="footer-claim">
               Struktur, Prozesse und Automatisierung für Hausverwaltungen — vor Ort, in der
               Software, die Sie bereits nutzen.

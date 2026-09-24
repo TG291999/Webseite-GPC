@@ -1,0 +1,6 @@
+{
+ "source": "decision/canon.png",
+ "model": "gpt-2 (high, 2k)",
+ "prompt": "Desktop website first viewport, 1440x810, landscape, for \"Goebel & Partner Consulting\", a consultant for German property management offices. The category standard for consultant websites, executed with high craft: clean white background, deep navy #0F1E33 text, a single accent blue #2F6FEB, generous whitespace, a modern neutral sans-serif. Top navigation, headline left, portrait right, logo strip bottom (see decision payload).",
+ "approved": true
+}
