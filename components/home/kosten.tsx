@@ -39,7 +39,7 @@ export function Kosten() {
             </div>
             <div className="lm-cta">
               <Link href="/prozess-check" className="btn btn-paper">
-                Prozess-Check starten <span className="arrow">→</span>
+                Prozess-Check starten <span className="arrow" aria-hidden="true">→</span>
               </Link>
               <p className="micro">4 Minuten · Ergebnis sofort · keine Registrierung</p>
             </div>

@@ -30,7 +30,7 @@ export default function NotFound() {
             }}
           >
             <Link href="/" className="btn">
-              Zur Startseite <span className="arrow">→</span>
+              Zur Startseite <span className="arrow" aria-hidden="true">→</span>
             </Link>
             <Link href="/#buchung" className="textlink">
               Kostenlose Analyse sichern →

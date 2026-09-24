@@ -1,4 +1,4 @@
-import { Alert, Lock, Shield } from "@/components/site/icons"
+import { Alert, Check, Lock, Shield } from "@/components/site/icons"
 import { Reveal } from "@/components/site/reveal"
 import { SectionHead } from "@/components/site/section-head"
 
@@ -24,7 +24,7 @@ export function Kontrolle() {
         <div className="loop">
           {STEPS.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.08} className={`loop-step${s.human ? " human" : ""}`}>
-              <div className="n"><i>{s.human ? "✓" : ""}</i>{s.n}</div>
+              <div className="n"><i>{s.human && <Check size={12} />}</i>{s.n}</div>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
             </Reveal>

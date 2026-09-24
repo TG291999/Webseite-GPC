@@ -53,7 +53,7 @@ export function Header() {
 
           <div className="nav-cta">
             <Link href="/#buchung" className="btn">
-              Kostenlose Analyse <span className="arrow">→</span>
+              Kostenlose Analyse <span className="arrow" aria-hidden="true">→</span>
             </Link>
           </div>
 
@@ -79,7 +79,8 @@ export function Header() {
               <Link key={l.href} href={l.href}>{l.label}</Link>
             ))}
             <Link href="/prozess-check">Prozess-Check</Link>
-            <Link href="/#buchung" className="btn">Kostenlose Analyse <span className="arrow">→</span></Link>
+            <a href="tel:+491726932222">Anrufen: 0172 693 22 22</a>
+            <Link href="/#buchung" className="btn">Kostenlose Analyse <span className="arrow" aria-hidden="true">→</span></Link>
           </nav>
         </div>
       </header>

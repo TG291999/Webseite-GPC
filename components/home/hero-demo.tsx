@@ -17,6 +17,16 @@ export function HeroDemo() {
   const [editing, setEditing] = useState(false)
   const [sent, setSent] = useState(false)
   const [time, setTime] = useState("")
+  // Fokus folgt dem Vorgang: nach „Freigeben" auf „Nochmal ansehen", danach zurück.
+  const replayRef = useRef<HTMLButtonElement>(null)
+  const approveRef = useRef<HTMLButtonElement>(null)
+  const focusNext = useRef<"replay" | "approve" | null>(null)
+
+  useEffect(() => {
+    if (focusNext.current === "replay") replayRef.current?.focus()
+    if (focusNext.current === "approve") approveRef.current?.focus()
+    focusNext.current = null
+  }, [sent])
 
   useEffect(() => {
     if (inView) setPlay(true)
@@ -25,9 +35,11 @@ export function HeroDemo() {
   const approve = () => {
     setEditing(false)
     setTime(new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" }))
+    focusNext.current = "replay"
     setSent(true)
   }
   const replay = () => {
+    focusNext.current = "approve"
     setSent(false)
     setEditing(false)
     setPlay(false)
@@ -93,7 +105,7 @@ export function HeroDemo() {
 
         {!sent ? (
           <div className="vg-foot">
-            <button type="button" className="btn vg-approve" onClick={approve}>
+            <button type="button" ref={approveRef} className="btn vg-approve" onClick={approve}>
               <Check size={16} />Freigeben
             </button>
             <button type="button" className="vg-edit" onClick={() => setEditing((e) => !e)}>
@@ -113,7 +125,7 @@ export function HeroDemo() {
             <div className="vg-metric">
               <b>~8 Sekunden</b> statt ~6 Minuten Handarbeit — so bekommt Ihr Team Stunden zurück.
             </div>
-            <button type="button" className="vg-replay" onClick={replay}>
+            <button type="button" ref={replayRef} className="vg-replay" onClick={replay}>
               <Replay />Nochmal ansehen
             </button>
           </div>

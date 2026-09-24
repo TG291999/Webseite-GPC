@@ -18,7 +18,7 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h4>Navigation</h4>
+            <h2 className="footer-h">Navigation</h2>
             <ul>
               <li><Link href="/#methode">Methode</Link></li>
               <li><Link href="/#loesung">Lösung</Link></li>
@@ -29,7 +29,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Kontakt &amp; Recht</h4>
+            <h2 className="footer-h">Kontakt &amp; Recht</h2>
             <ul>
               <li>Goebel &amp; Partner Consulting</li>
               <li><a href="mailto:tim@goebel-partner.de">tim@goebel-partner.de</a></li>
@@ -43,7 +43,7 @@ export function Footer() {
           <span>© {year} Goebel &amp; Partner Consulting · Dortmund</span>
           <span>
             DSGVO-konform · Daten bleiben im Haus · AVV ·{" "}
-            <a href="#" className="js-cookie-settings">Cookie-Einstellungen</a>
+            <button type="button" className="js-cookie-settings footer-linkbtn">Cookie-Einstellungen</button>
           </span>
         </div>
       </div>

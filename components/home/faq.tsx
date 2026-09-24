@@ -25,7 +25,6 @@ export function Faq() {
                 <Accordion.Header asChild>
                   <h3 style={{ margin: 0, font: "inherit" }}>
                     <Accordion.Trigger className="faq-q">
-                      <span className="n">{String(i + 1).padStart(2, "0")}</span>
                       <span>{item.q}</span>
                       <span className="pm" aria-hidden="true" />
                     </Accordion.Trigger>

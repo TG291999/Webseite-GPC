@@ -37,7 +37,6 @@ export function Loesung() {
         <div className="ways">
           {WAYS.map((w, i) => (
             <Reveal key={w.n} delay={i * 0.08} className="way">
-              <div className="way-n">{w.n}</div>
               <h3>{w.title}</h3>
               <p>{w.text}</p>
             </Reveal>
@@ -70,7 +69,7 @@ export function Loesung() {
 
         <Reveal>
           <div className="cta-wrap center">
-            <Link href="#buchung" className="btn">Kostenlose Analyse sichern <span className="arrow">→</span></Link>
+            <Link href="#buchung" className="btn">Kostenlose Analyse sichern <span className="arrow" aria-hidden="true">→</span></Link>
             <p className="micro" style={{ marginInline: "auto" }}>Kostenlos · 45&nbsp;Minuten · Kein Verkaufsgespräch</p>
           </div>
         </Reveal>

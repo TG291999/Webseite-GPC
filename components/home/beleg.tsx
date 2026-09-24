@@ -93,7 +93,8 @@ export function Beleg() {
 
       <div className="beleg-sum">
         <span className="lbl">Beispielhafte gebundene Arbeitszeit pro Jahr</span>
-        <output aria-live="polite">{fmt.format(Math.round(shown / 500) * 500)}&nbsp;€</output>
+        <output aria-hidden="true">{fmt.format(Math.round(shown / 500) * 500)}&nbsp;€</output>
+        <span className="sr-only" aria-live="polite">{fmt.format(Math.round(target / 500) * 500)} Euro</span>
       </div>
 
       <p className="beleg-note">

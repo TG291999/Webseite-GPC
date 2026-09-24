@@ -15,7 +15,7 @@ export function Buchung() {
             sub="Kostenlose Automatisierungs-Analyse. Kein Verkaufsgespräch. Sie gehen mit Ihren 3 größten Zeitfressern raus — versprochen."
             center
           />
-          <p className="prose center" style={{ maxWidth: 680, marginInline: "auto" }}>
+          <p className="prose center" style={{ maxWidth: "60ch", marginInline: "auto" }}>
             Welche Vorgänge kommen am häufigsten, wer bearbeitet sie, was kostet das an Zeit? Am
             Ende wissen Sie, was sich strukturieren und automatisieren lässt — und was es bringt.
             Ob Sie danach mit mir arbeiten, entscheiden Sie.
@@ -54,6 +54,10 @@ export function Buchung() {
             <span><Check size={16} />Konkrete Erkenntnisse garantiert</span>
           </div>
           <p className="booking-alt center">
+            Lieber direkt sprechen?{" "}
+            <a href="tel:+491726932222" className="textlink">0172 693 22 22</a>
+          </p>
+          <p className="booking-alt center" style={{ marginTop: 4 }}>
             Noch nicht bereit für ein Gespräch?{" "}
             <Link href="/prozess-check" className="textlink">Starten Sie mit dem 4-Minuten-Prozess-Check →</Link>
           </p>

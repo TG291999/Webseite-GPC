@@ -91,6 +91,10 @@ export default function RootLayout({
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
+      <head>
+        {/* Markiert „JS verfügbar" vor dem ersten Bild: Die Titelmaske startet nur dann. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body>
         {children}
         <CookieConsent />

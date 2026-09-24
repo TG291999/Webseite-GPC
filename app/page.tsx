@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import Script from "next/script"
 import { Header } from "@/components/site/header"
 import { Footer } from "@/components/site/footer"
+import { MobileCta } from "@/components/site/mobile-cta"
 import { Hero } from "@/components/home/hero"
 import { Problem } from "@/components/home/problem"
 import { Kosten } from "@/components/home/kosten"
@@ -74,9 +74,7 @@ export default function HomePage() {
         <Buchung />
       </main>
       <Footer />
-      <div className="mobile-cta">
-        <Link href="#buchung" className="btn btn-block">Kostenlose Analyse sichern <span className="arrow">→</span></Link>
-      </div>
+      <MobileCta />
       {/* zcal Inline-Kalender: lädt das Embed-Script, das .zcal-inline-widget rendert */}
       <Script src="https://static.zcal.co/embed/v1/embed.js" strategy="afterInteractive" />
     </>

@@ -22,7 +22,7 @@ export function SectionHead({
   return (
     <div className={`section-head${center ? " center" : ""}${className ? ` ${className}` : ""}`}>
       <div className="kicker">
-        <span className="kicker-n">{n}</span>
+        <span className="kicker-n" aria-hidden="true">{n}</span>
         <span className="kicker-rule" aria-hidden="true" />
         <span className="kicker-t">{kicker}</span>
       </div>

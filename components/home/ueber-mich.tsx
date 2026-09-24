@@ -9,7 +9,7 @@ export function UeberMich() {
         <div className="about-grid">
           <Reveal className="about-media">
             <div className="about-photo">
-              <img src="/images/tim-goebel-portrait.jpg" width={1358} height={2048} loading="lazy" alt="Tim Goebel, Inhaber von Goebel & Partner Consulting" />
+              <img src="/images/tim-goebel-portrait.jpg" width={1000} height={1508} loading="lazy" alt="Tim Goebel, Inhaber von Goebel & Partner Consulting" />
             </div>
             <div className="about-cap"><span>Tim Goebel · Inhaber</span><span>Dortmund</span></div>
             <a href="https://www.linkedin.com/in/tim-goebel-gpc/" target="_blank" rel="noopener" className="textlink about-linkedin">

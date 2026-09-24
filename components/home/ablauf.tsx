@@ -35,7 +35,7 @@ export function Ablauf() {
         </div>
         <Reveal>
           <div className="cta-wrap center">
-            <Link href="#buchung" className="btn">Kostenlose Analyse sichern <span className="arrow">→</span></Link>
+            <Link href="#buchung" className="btn">Kostenlose Analyse sichern <span className="arrow" aria-hidden="true">→</span></Link>
             <p className="micro" style={{ marginInline: "auto" }}>Sie entscheiden nach Schritt 1, ob es weitergeht.</p>
           </div>
         </Reveal>

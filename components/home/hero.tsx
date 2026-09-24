@@ -24,7 +24,7 @@ export function Hero() {
             </p>
             <div className="hero-actions">
               <Link href="#buchung" className="btn">
-                Kostenlose Analyse sichern <span className="arrow">→</span>
+                Kostenlose Analyse sichern <span className="arrow" aria-hidden="true">→</span>
               </Link>
               <Link href="/prozess-check" className="textlink">4-Minuten-Prozess-Check →</Link>
             </div>

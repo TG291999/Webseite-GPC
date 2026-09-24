@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useId, useRef, useState } from "react"
+import { Check, Replay } from "@/components/site/icons"
 import { useReducedMotion } from "motion/react"
 import { Reveal } from "@/components/site/reveal"
 import { SectionHead } from "@/components/site/section-head"
@@ -48,6 +49,15 @@ function Akte({
     timer.current = window.setTimeout(() => setRunning(false), 1500)
   }
 
+  const uid = useId()
+  const onTabKey = (e: React.KeyboardEvent) => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return
+    e.preventDefault()
+    const next: State = state === "before" ? "after" : "before"
+    show(next)
+    document.getElementById(`${uid}-${next}-tab`)?.focus()
+  }
+
   return (
     <div className={`sc${running ? " running" : ""}`} data-state={state} role="group" aria-label={label}>
       <div className="sc-head">
@@ -59,17 +69,22 @@ function Akte({
       </div>
       <div className="sc-bar">
         <div className="sc-tabs" role="tablist" aria-label="Ansicht wählen">
-          <button type="button" role="tab" className="sc-tab" aria-selected={state === "before"} onClick={() => show("before")}>Vorher</button>
-          <button type="button" role="tab" className="sc-tab" aria-selected={state === "after"} onClick={() => show("after")}>Nachher</button>
+          {(["before", "after"] as const).map((t) => (
+            <button key={t} type="button" role="tab" id={`${uid}-${t}-tab`} className="sc-tab"
+              aria-selected={state === t} aria-controls={`${uid}-${t}`} tabIndex={state === t ? 0 : -1}
+              onClick={() => show(t)} onKeyDown={onTabKey}>
+              {t === "before" ? "Vorher" : "Nachher"}
+            </button>
+          ))}
         </div>
         <button type="button" className={`btn sc-run${state === "after" ? " is-reset" : ""}`} onClick={run}>
-          {state === "after" ? <>Zurücksetzen ↺</> : <>Automatisierung ausführen <span className="arrow">→</span></>}
+          {state === "after" ? <>Zurücksetzen <Replay /></> : <>Automatisierung ausführen <span className="arrow" aria-hidden="true">→</span></>}
         </button>
       </div>
-      <div className="sc-stage" aria-live="polite">
+      <div className="sc-stage">
         <div className="sc-sweep" aria-hidden="true" />
-        <div className="sc-view sc-before">{before}</div>
-        <div className="sc-view sc-after">{after(approved, () => setApproved(true))}</div>
+        <div className="sc-view sc-before" role="tabpanel" id={`${uid}-before`} aria-labelledby={`${uid}-before-tab`}>{before}</div>
+        <div className="sc-view sc-after" role="tabpanel" id={`${uid}-after`} aria-labelledby={`${uid}-after-tab`}>{after(approved, () => setApproved(true))}</div>
       </div>
       <div className="sc-metrics">
         {metrics.map((m) => (
@@ -136,7 +151,7 @@ export function Beispiele() {
                   ))}
                 </dl>
                 <button type="button" className={`btn sc-approve${approved ? " sc-done" : ""}`} onClick={approve} disabled={approved}>
-                  {approved ? <>Geprüft &amp; freigegeben <span className="arrow">✓</span></> : <>Rechnung freigeben <span className="arrow">→</span></>}
+                  {approved ? <>Geprüft &amp; freigegeben <Check size={16} /></> : <>Rechnung freigeben <span className="arrow" aria-hidden="true">→</span></>}
                 </button>
                 <p className="sc-note ok">Ohne KI. Ein Postfach, eine Benennungsregel und zwei Funktionen, die Ihre Software schon hat.</p>
               </>
@@ -173,7 +188,7 @@ export function Beispiele() {
             }
             after={(approved, approve) => (
               <>
-                <div className="sc-ticket-head"><span>Schadensvorgang #2024-0417</span><span className="sc-status">● Entwurf bereit</span></div>
+                <div className="sc-ticket-head"><span>Schadensvorgang #2026-0417</span><span className="sc-status">● Entwurf bereit</span></div>
                 <dl className="sc-ticket">
                   {[
                     ["Objekt", <>Lindenstr. 14</>],
@@ -190,7 +205,7 @@ export function Beispiele() {
                   ))}
                 </dl>
                 <button type="button" className={`btn sc-approve${approved ? " sc-done" : ""}`} onClick={approve} disabled={approved}>
-                  {approved ? <>Gesendet &amp; dokumentiert <span className="arrow">✓</span></> : <>Freigeben &amp; senden <span className="arrow">→</span></>}
+                  {approved ? <>Gesendet &amp; dokumentiert <Check size={16} /></> : <>Freigeben &amp; senden <span className="arrow" aria-hidden="true">→</span></>}
                 </button>
               </>
             )}

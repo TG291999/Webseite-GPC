@@ -45,7 +45,6 @@ export function Problem() {
         <div className="grid-3">
           {CARDS.map((c, i) => (
             <Reveal key={c.n} delay={i * 0.08} className="card">
-              <div className="card-n">{c.n}</div>
               <div className="ic">{c.icon}</div>
               <h3>{c.title}</h3>
               <p>{c.text}</p>

@@ -522,7 +522,7 @@ export function ProzessCheck() {
             <p className="pc-hilfe">Etwa vier Minuten · kostenlos · kein Login, keine Registrierung.</p>
             <div className="pc-leiste">
               <button className="btn btn-primary" onClick={() => setStep(1)}>
-                Check starten <span className="arrow">→</span>
+                Check starten <span className="arrow" aria-hidden="true">→</span>
               </button>
             </div>
             <div className="pc-absender">
@@ -617,7 +617,7 @@ export function ProzessCheck() {
             {warnung && <p className="pc-warn">{warnung}</p>}
             <div className="pc-leiste">
               <button className="btn btn-primary" onClick={betriebWeiter}>
-                Rechnung erstellen <span className="arrow">→</span>
+                Rechnung erstellen <span className="arrow" aria-hidden="true">→</span>
               </button>
               <button className="pc-zurueck" onClick={zurueck}>
                 Zurück
@@ -785,7 +785,7 @@ export function ProzessCheck() {
                         </label>
                       </div>
                       <button className="btn btn-primary pc-nachtrag-cta" onClick={nachtragSpeichern}>
-                        Rückruf statt Mail <span className="arrow">→</span>
+                        Rückruf statt Mail <span className="arrow" aria-hidden="true">→</span>
                       </button>
                     </>
                   )}
