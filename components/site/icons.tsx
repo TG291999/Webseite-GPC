@@ -12,6 +12,13 @@ export const Arrow = ({ size = 16, className }: P) => (
     <path d="m13 6 6 6-6 6" />
   </svg>
 )
+/** Blaues Verifiziert-Abzeichen (Rosette mit Häkchen), wie auf Instagram/Meta. */
+export const Verified = ({ size = 18, className }: P) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" className={className} role="img" aria-label="verifiziert" style={{ display: "inline-block", flex: "0 0 auto" }}>
+    <path fill="#276AE8" d="M12 .5Q14.59 2.34 17.75 2.04Q19.07 4.93 21.96 6.25Q21.66 9.41 23.5 12Q21.66 14.59 21.96 17.75Q19.07 19.07 17.75 21.96Q14.59 21.66 12 23.5Q9.41 21.66 6.25 21.96Q4.93 19.07 2.04 17.75Q2.34 14.59 .5 12Q2.34 9.41 2.04 6.25Q4.93 4.93 6.25 2.04Q9.41 2.34 12 .5Z" />
+    <path d="m7.6 12.3 3 3 5.8-6.2" fill="none" stroke="#fff" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
 export const Dash = ({ size = 18, className }: P) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className={className} aria-hidden="true">
     <line x1="5" y1="12" x2="19" y2="12" />

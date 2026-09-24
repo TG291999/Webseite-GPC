@@ -1,4 +1,4 @@
-import { LinkedIn, Arrow } from "@/components/site/icons"
+import { LinkedIn, Arrow, Verified } from "@/components/site/icons"
 import { SectionHead } from "@/components/site/section-head"
 
 export function UeberMich() {
@@ -34,7 +34,7 @@ export function UeberMich() {
             </p>
             <div className="about-links">
               <a href="https://www.linkedin.com/in/tim-goebel-gpc/" target="_blank" rel="noopener" className="link">
-                <LinkedIn />Tim Goebel auf LinkedIn · über 1.600 Follower <Arrow />
+                <LinkedIn />Tim Goebel auf LinkedIn · über 1.600 Follower <Verified size={16} /> <Arrow />
               </a>
             </div>
           </div>

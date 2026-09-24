@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Arrow, Check, LinkedIn } from "@/components/site/icons"
+import { Arrow, Check, LinkedIn, Verified } from "@/components/site/icons"
 
 /**
  * Erste Ansicht: Aussage links, Gesicht rechts, ein Weg zum Termin.
@@ -43,7 +43,7 @@ export function Hero() {
           <li><Check size={18} />Ihre Software bleibt</li>
           <li>
             <a href="https://www.linkedin.com/in/tim-goebel-gpc/" target="_blank" rel="noopener" className="fact-link">
-              <LinkedIn size={17} />Über 1.600 Follower auf LinkedIn
+              <LinkedIn size={17} />Über 1.600 Follower auf LinkedIn<Verified size={17} />
             </a>
           </li>
         </ul>

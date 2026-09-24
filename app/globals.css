@@ -156,6 +156,7 @@ strong,b{font-weight:700;color:var(--ink)}
 .hero-facts li{display:flex;align-items:center;gap:9px;font-size:clamp(.9rem,1.1vw,1.02rem);font-weight:500;color:var(--ink);line-height:1.35;white-space:nowrap;min-height:44px}
 .fact-link{display:inline-flex;align-items:center;gap:9px;color:var(--ink)}
 .fact-link svg{color:var(--accent)}
+.fact-link svg[role="img"]{margin-left:-3px}
 .fact-link:hover{color:var(--accent-ink)}
 
 .hero-facts svg{flex:0 0 auto;color:var(--accent);margin-top:1px}
