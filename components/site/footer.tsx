@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Brand } from "./brand"
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <Link href="/" className="brand">Goebel &amp; Partner</Link>
+            <Brand />
             <p className="footer-claim">
               Struktur, Prozesse und Automatisierung für Hausverwaltungen — vor Ort, in der
               Software, die Sie bereits nutzen.

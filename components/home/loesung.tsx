@@ -22,7 +22,8 @@ export function Loesung() {
     <section className="section" id="loesung">
       <div className="container">
         <SectionHead
-          title={<>Ich baue auf dem auf, was Sie haben — vor Ort, mit Ihrem Team.</>}
+          className="head-long"
+          title={<>Ich baue auf dem auf, was Sie haben —<br />vor&nbsp;Ort, mit Ihrem Team.</>}
           sub="Ihre Software bleibt. Ihr Team bleibt. Ich bringe die Struktur, die beides braucht — und erst dann Automatisierung und KI."
         />
 

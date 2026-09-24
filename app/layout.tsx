@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { Wix_Madefor_Text } from "next/font/google"
+import { Fraunces, Wix_Madefor_Text } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { CookieConsent } from "@/components/cookie-consent"
 import "./globals.css"
@@ -12,6 +12,14 @@ const wix = Wix_Madefor_Text({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-wix",
+  display: "swap",
+})
+
+/* Nur für den Schriftzug neben dem Monogramm: das Logo ist aus Fraunces gezeichnet. */
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-brand",
   display: "swap",
 })
 
@@ -72,7 +80,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={wix.variable}
+      className={`${wix.variable} ${fraunces.variable}`}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >

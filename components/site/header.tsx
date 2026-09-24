@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useId, useState } from "react"
+import { Brand } from "./brand"
 
 const LINKS = [
   { href: "/#methode", label: "Methode" },
@@ -38,9 +39,7 @@ export function Header() {
       <a href="#hauptinhalt" className="skip-link">Zum Inhalt springen</a>
       <header className={`header${scrolled ? " scrolled" : ""}`}>
         <div className="container nav">
-          <Link href="/" className="brand" aria-label="Goebel & Partner Consulting – Startseite">
-            Goebel &amp; Partner
-          </Link>
+          <Brand />
 
           <nav className="nav-links" aria-label="Hauptnavigation">
             {LINKS.map((l) => (

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Check, Arrow } from "@/components/site/icons"
+import { Arrow, Check, LinkedIn } from "@/components/site/icons"
 
 /**
  * Erste Ansicht: Aussage links, Gesicht rechts, ein Weg zum Termin.
@@ -23,13 +23,8 @@ export function Hero() {
             <Link href="#buchung" className="btn">
               Kostenlose Analyse sichern <Arrow className="arrow" />
             </Link>
-            <Link href="/prozess-check" className="link">4-Minuten-Prozess-Check <Arrow /></Link>
+            <Link href="/prozess-check" className="btn btn-outline">4-Minuten-Prozess-Check <Arrow className="arrow" /></Link>
           </div>
-          <ul className="hero-facts">
-            <li><Check size={18} />Immobilienkaufmann, 8+&nbsp;Jahre Branche</li>
-            <li><Check size={18} />Vor Ort bei Ihnen</li>
-            <li><Check size={18} />Ihre Software bleibt</li>
-          </ul>
         </div>
         <figure className="hero-portrait">
           <img
@@ -42,6 +37,16 @@ export function Hero() {
         </figure>
       </div>
       <div className="container">
+        <ul className="hero-facts">
+          <li><Check size={18} />Immobilienkaufmann, 8+&nbsp;Jahre Branche</li>
+          <li><Check size={18} />Vor Ort bei Ihnen</li>
+          <li><Check size={18} />Ihre Software bleibt</li>
+          <li>
+            <a href="https://www.linkedin.com/in/tim-goebel-gpc/" target="_blank" rel="noopener" className="fact-link">
+              <LinkedIn size={17} />Über 1.600 Follower auf LinkedIn
+            </a>
+          </li>
+        </ul>
         <div className="hero-logos">
           <p className="sr-only">Tim Goebel spricht unter anderem bei:</p>
           <ul>

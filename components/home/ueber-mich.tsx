@@ -34,7 +34,7 @@ export function UeberMich() {
             </p>
             <div className="about-links">
               <a href="https://www.linkedin.com/in/tim-goebel-gpc/" target="_blank" rel="noopener" className="link">
-                <LinkedIn />Tim Goebel auf LinkedIn ansehen <Arrow />
+                <LinkedIn />Tim Goebel auf LinkedIn · über 1.600 Follower <Arrow />
               </a>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import { SectionHead } from "@/components/site/section-head"
 
 const POINTS = [
   {
@@ -19,11 +18,11 @@ export function Problem() {
   return (
     <section className="section" id="problem">
       <div className="container">
+        <div className="head wide">
+          <h2>Ihre besten Leute verbringen den halben Tag mit Anfragen, die ein gutes System längst selbst vorbereiten könnte.</h2>
+        </div>
         <div className="split">
-          <SectionHead
-            title="Ihre besten Leute verbringen den halben Tag mit Anfragen, die ein gutes System längst selbst vorbereiten könnte."
-            sub="Und genau die Leute, die das auffangen sollen, finden Sie auf dem Arbeitsmarkt nicht mehr."
-          />
+          <p className="sub">Und genau die Leute, die das auffangen sollen, finden Sie auf dem Arbeitsmarkt nicht mehr.</p>
           <p className="lead">
             Der Posteingang läuft voll, das Telefon klingelt mitten in der Abrechnung, eine
             Schadensmeldung springt dreimal hin und her. Und kündigt ein Sachbearbeiter, geht
