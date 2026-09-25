@@ -15,7 +15,7 @@ export function FuerWen() {
               <ul className="fit-list">
                 <li><Check size={19} />Ihre besten Leute arbeiten den halben Tag Anfragen ab, statt zu verwalten — und abends ist der Berg trotzdem nicht kleiner.</li>
                 <li><Check size={19} />Sie finden kaum neue Mitarbeiter — und wollen die, die Sie haben, nicht an stumpfe Routine verlieren.</li>
-                <li><Check size={19} />Sie wollen Ihre Software behalten — nicht schon wieder ein System einführen, das Monate kostet und am Ende keiner nutzt.</li>
+                <li><Check size={19} />Sie wollen Ihre Software behalten — nicht schon wieder ein neues System einführen, mit Datenumzug, Schulungsmarathon und am Ende nutzt es keiner.</li>
                 <li><Check size={19} />Ob Miet-, WEG- oder gemischte Verwaltung, ob 3 oder 30 Köpfe: Bei Ihnen wiederholen sich täglich dieselben Anfragen.</li>
               </ul>
               <p className="fit-note">Am besten passt es ab etwa 500 Einheiten — darunter lohnt sich der Aufwand selten, und das sage ich Ihnen vorher.</p>

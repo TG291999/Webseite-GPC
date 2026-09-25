@@ -24,7 +24,7 @@ export function Ablauf() {
           <li className="step">
             <span className="step-n" aria-hidden="true">3</span>
             <h3>Umsetzung &amp; Schulung</h3>
-            <p>Vor Ort, mit Ihrem Team: Abläufe festlegen, Handbuch schreiben, Software richtig einrichten, automatisieren — und schulen, wo gearbeitet wird. Ohne Systemwechsel.</p>
+            <p>Vor Ort, mit Ihrem Team: Abläufe festlegen, Handbuch schreiben, Software richtig einrichten, automatisieren — und schulen, wo gearbeitet wird. Drei bis vier Monate für die wichtigsten Abläufe, spürbar ab dem ersten Monat. Ohne Systemwechsel.</p>
           </li>
         </ol>
         <p className="step-note"><b>Rentabilitätsgarantie:</b> Ich setze nur um, was sich im ersten Jahr rechnet. Rechnet sich eine Maßnahme nicht, wird sie nicht gebaut.</p>

@@ -45,7 +45,7 @@ export const FAQ_ITEMS: Array<{ q: string; a: string }> = [
   },
   {
     q: "Wie lange dauert die Umsetzung?",
-    a: "4–6 Wochen in klar getakteten Phasen, nicht in Vollzeit. Am laufenden Betrieb ändert sich währenddessen nichts.",
+    a: "Für die wichtigsten Abläufe drei bis vier Monate — in festen Terminen vor Ort, nicht in Vollzeit. Wir fangen mit dem größten Zeitfresser an, deshalb spüren Sie die Entlastung schon im ersten Monat. Grob: Monat 1 der größte Zeitfresser, Monat 2–3 die weiteren Kernabläufe, Monat 4 Handbuch, Schulung und Übergabe. Den genauen Zeitplan bekommen Sie mit dem Umsetzungsplan. Am laufenden Betrieb ändert sich währenddessen nichts.",
   },
   {
     q: "Was kostet das?",
