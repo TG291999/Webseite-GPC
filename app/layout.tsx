@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       "Klare Abläufe, entlastete Sachbearbeiter, Wissen, das im Haus bleibt — vor Ort, in Ihrer Software, ohne IT-Projekt. Kostenlose 45-Minuten-Analyse für Hausverwaltungen.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image-2026-09.png",
         width: 1200,
         height: 630,
         alt: "Goebel & Partner Consulting — Struktur, Automatisierung und KI für Hausverwaltungen",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Die meisten starten mit KI. Ich starte mit Struktur.",
     description:
       "Kostenlose 45-Minuten-Automatisierungs-Analyse für Hausverwaltungen — ohne Systemwechsel.",
-    images: ["/og-image.png"],
+    images: ["/og-image-2026-09.png"],
   },
 }
 

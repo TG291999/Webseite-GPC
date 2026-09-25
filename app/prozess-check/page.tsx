@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: BESCHREIBUNG,
     images: [
       {
-        url: "/og-prozess-check.png",
+        url: "/og-prozess-check-2026-09.png",
         width: 1200,
         height: 630,
         alt: "Prozess-Check für Hausverwaltungen — was kostet Sie ein einziger Routineprozess im Jahr?",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITEL,
     description: BESCHREIBUNG,
-    images: ["/og-prozess-check.png"],
+    images: ["/og-prozess-check-2026-09.png"],
   },
 }
 
