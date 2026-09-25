@@ -202,7 +202,7 @@ export function Beispiele() {
 
         <p className="sc-footnote">
             Das sind keine Theorie-Beispiele. Diese Abläufe stammen direkt aus dem Verwaltungsalltag,
-            den ich aus über 8&nbsp;Jahren in der Branche kenne.
+            den ich aus über 9&nbsp;Jahren in der Branche kenne.
         </p>
       </div>
     </section>

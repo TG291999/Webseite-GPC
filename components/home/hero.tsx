@@ -38,7 +38,7 @@ export function Hero() {
       </div>
       <div className="container">
         <ul className="hero-facts">
-          <li><Check size={18} />Immobilienkaufmann, 8+&nbsp;Jahre Branche</li>
+          <li><Check size={18} />Immobilienkaufmann, 9+&nbsp;Jahre Branche</li>
           <li><Check size={18} />Vor Ort bei Ihnen</li>
           <li><Check size={18} />Ihre Software bleibt</li>
           <li>

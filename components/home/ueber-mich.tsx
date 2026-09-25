@@ -13,7 +13,7 @@ export function UeberMich() {
           <div className="about-text">
             <SectionHead
               title="Ich komme aus Ihrer Welt — und arbeite von innen heraus."
-              sub="Immobilienkaufmann, 8+ Jahre Branche, Gründer einer Hausverwaltungs-Software. Heute sitze ich bei Verwaltungen im Büro, gehe Abläufe durch und bringe Struktur rein — bevor ich irgendetwas automatisiere."
+              sub="Immobilienkaufmann, 9+ Jahre Branche, Gründer einer Hausverwaltungs-Software. Heute sitze ich bei Verwaltungen im Büro, gehe Abläufe durch und bringe Struktur rein — bevor ich irgendetwas automatisiere."
             />
             <p>
               Ich habe nicht über Hausverwaltung gelesen — ich war drin: Vermietung, Vertrieb,
