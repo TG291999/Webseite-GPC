@@ -1,10 +1,11 @@
 import Link from "next/link"
-import { Brand } from "./brand"
+import { Brand, Monogram } from "./brand"
 
 export function Footer() {
   const year = new Date().getFullYear()
   return (
     <footer className="footer">
+      <Monogram className="watermark" />
       <div className="container">
         <div className="footer-grid">
           <div>

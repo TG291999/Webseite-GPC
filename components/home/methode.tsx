@@ -1,3 +1,4 @@
+import { Monogram } from "@/components/site/brand"
 import { SectionHead } from "@/components/site/section-head"
 
 const PILLARS = [
@@ -27,6 +28,7 @@ const PILLARS = [
 export function Methode() {
   return (
     <section className="section on-ink pillars" id="methode">
+      <Monogram className="watermark" />
       <div className="container">
         <SectionHead title={<>Die meisten starten mit KI.<br />Ich starte mit <em>Struktur.</em></>} />
         <p className="intro">

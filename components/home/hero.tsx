@@ -28,9 +28,9 @@ export function Hero() {
         </div>
         <figure className="hero-portrait">
           <img
-            src="/assets/plates/portrait-sakko.jpg"
-            width={1333}
-            height={1099}
+            src="/assets/plates/portrait-tim.jpg"
+            width={1024}
+            height={844}
             alt="Tim Goebel, Inhaber von Goebel & Partner Consulting"
             fetchPriority="high"
           />
